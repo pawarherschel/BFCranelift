@@ -1,0 +1,12 @@
+[package]
+name = "BFCranelift"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cranelift = "0.89.2"
+cranelift-codegen = { version = "0.89.2", features = ["all-arch"] }
+cranelift-module = "0.89.2"
+cranelift-jit = "0.89.2"
+cranelift-native = "0.89.2"
+target-lexicon = "0.12.16"
