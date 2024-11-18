@@ -5,8 +5,8 @@ function u0:0(i64) -> i64 windows_fastcall {
 block0(v0: i64):
     v1 = iconst.i64 0
     v2 = iconst.i64 0x752f
-    v3 = iconst.i64 0x7ff7_3d1f_3dc0
-    v4 = iconst.i64 0x7ff7_3d1f_3f80
+    v3 = iconst.i64 0x7ff6_8a4b_3dc0
+    v4 = iconst.i64 0x7ff6_8a4b_3f80
     v6 = iadd v0, v1  ; v1 = 0
     v7 = load.i8 v6
     brif v7, block2(v1), block3(v1)  ; v1 = 0, v1 = 0
@@ -16,7 +16,7 @@ block2(v8: i64):
     v20 -> v8
     v9 = iadd.i64 v0, v8
     v10 = load.i8 v9
-    v11 = call_indirect.i64 sig0, v3(v10)  ; v3 = 0x7ff7_3d1f_3dc0
+    v11 = call_indirect.i64 sig0, v3(v10)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v11, block1(v11), block4
 
 block4:
@@ -27,7 +27,7 @@ block4:
 block5:
     v15 = iadd.i64 v0, v14
     v16 = load.i8 v15
-    v17 = call_indirect.i64 sig0, v3(v16)  ; v3 = 0x7ff7_3d1f_3dc0
+    v17 = call_indirect.i64 sig0, v3(v16)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v17, block1(v17), block7
 
 block7:
@@ -37,34 +37,34 @@ block7:
 
 block6:
     v21 = iadd.i64 v0, v8
-    v22 = call_indirect.i64 sig1, v4(v21)  ; v4 = 0x7ff7_3d1f_3f80
+    v22 = call_indirect.i64 sig1, v4(v21)  ; v4 = 0x7ff6_8a4b_3f80
     brif v22, block1(v22), block8
 
 block8:
     v23 = iadd.i64 v0, v20
     v24 = load.i8 v23
-    v25 = call_indirect.i64 sig0, v3(v24)  ; v3 = 0x7ff7_3d1f_3dc0
+    v25 = call_indirect.i64 sig0, v3(v24)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v25, block1(v25), block9
 
 block9:
     v26 = iadd.i64 v0, v20
     v27 = load.i8 v26
-    v28 = call_indirect.i64 sig0, v3(v27)  ; v3 = 0x7ff7_3d1f_3dc0
+    v28 = call_indirect.i64 sig0, v3(v27)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v28, block1(v28), block10
 
 block10:
     v29 = iadd.i64 v0, v20
-    v30 = call_indirect.i64 sig1, v4(v29)  ; v4 = 0x7ff7_3d1f_3f80
+    v30 = call_indirect.i64 sig1, v4(v29)  ; v4 = 0x7ff6_8a4b_3f80
     brif v30, block1(v30), block11
 
 block11:
     v31 = iadd.i64 v0, v20
-    v32 = call_indirect.i64 sig1, v4(v31)  ; v4 = 0x7ff7_3d1f_3f80
+    v32 = call_indirect.i64 sig1, v4(v31)  ; v4 = 0x7ff6_8a4b_3f80
     brif v32, block1(v32), block12
 
 block12:
     v33 = iadd.i64 v0, v20
-    v34 = call_indirect.i64 sig1, v4(v33)  ; v4 = 0x7ff7_3d1f_3f80
+    v34 = call_indirect.i64 sig1, v4(v33)  ; v4 = 0x7ff6_8a4b_3f80
     brif v34, block1(v34), block13
 
 block13:
@@ -73,7 +73,7 @@ block13:
     v37 = iadd_imm v36, 1
     store v37, v35
     v38 = iadd.i64 v0, v20
-    v39 = call_indirect.i64 sig1, v4(v38)  ; v4 = 0x7ff7_3d1f_3f80
+    v39 = call_indirect.i64 sig1, v4(v38)  ; v4 = 0x7ff6_8a4b_3f80
     brif v39, block1(v39), block14
 
 block14:
@@ -82,7 +82,7 @@ block14:
     v42 = iadd_imm v41, -1
     store v42, v40
     v43 = iadd.i64 v0, v20
-    v44 = call_indirect.i64 sig1, v4(v43)  ; v4 = 0x7ff7_3d1f_3f80
+    v44 = call_indirect.i64 sig1, v4(v43)  ; v4 = 0x7ff6_8a4b_3f80
     brif v44, block1(v44), block15
 
 block15:
@@ -95,7 +95,7 @@ block15:
     v55 -> v50
     v58 -> v50
     v51 = iadd.i64 v0, v50
-    v52 = call_indirect.i64 sig1, v4(v51)  ; v4 = 0x7ff7_3d1f_3f80
+    v52 = call_indirect.i64 sig1, v4(v51)  ; v4 = 0x7ff6_8a4b_3f80
     brif v52, block1(v52), block16
 
 block16:
@@ -111,13 +111,13 @@ block17:
 block18:
     v59 = iadd.i64 v0, v50
     v60 = load.i8 v59
-    v61 = call_indirect.i64 sig0, v3(v60)  ; v3 = 0x7ff7_3d1f_3dc0
+    v61 = call_indirect.i64 sig0, v3(v60)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v61, block1(v61), block19
 
 block19:
     v62 = iadd.i64 v0, v58
     v63 = load.i8 v62
-    v64 = call_indirect.i64 sig0, v3(v63)  ; v3 = 0x7ff7_3d1f_3dc0
+    v64 = call_indirect.i64 sig0, v3(v63)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v64, block1(v64), block20
 
 block20:
@@ -320,7 +320,7 @@ block22(v214: i64):
     v220 = select.i64 v219, v1, v218  ; v1 = 0
     v221 = iadd.i64 v0, v220
     v222 = load.i8 v221
-    v223 = call_indirect.i64 sig0, v3(v222)  ; v3 = 0x7ff7_3d1f_3dc0
+    v223 = call_indirect.i64 sig0, v3(v222)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v223, block1(v223), block27
 
 block27:
@@ -341,7 +341,7 @@ block27:
     store v235, v233
     v236 = iadd.i64 v0, v226
     v237 = load.i8 v236
-    v238 = call_indirect.i64 sig0, v3(v237)  ; v3 = 0x7ff7_3d1f_3dc0
+    v238 = call_indirect.i64 sig0, v3(v237)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v238, block1(v238), block28
 
 block28:
@@ -375,13 +375,13 @@ block28:
     store v259, v257
     v260 = iadd.i64 v0, v226
     v261 = load.i8 v260
-    v262 = call_indirect.i64 sig0, v3(v261)  ; v3 = 0x7ff7_3d1f_3dc0
+    v262 = call_indirect.i64 sig0, v3(v261)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v262, block1(v262), block29
 
 block29:
     v263 = iadd.i64 v0, v226
     v264 = load.i8 v263
-    v265 = call_indirect.i64 sig0, v3(v264)  ; v3 = 0x7ff7_3d1f_3dc0
+    v265 = call_indirect.i64 sig0, v3(v264)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v265, block1(v265), block30
 
 block30:
@@ -399,7 +399,7 @@ block30:
     store v274, v272
     v275 = iadd.i64 v0, v226
     v276 = load.i8 v275
-    v277 = call_indirect.i64 sig0, v3(v276)  ; v3 = 0x7ff7_3d1f_3dc0
+    v277 = call_indirect.i64 sig0, v3(v276)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v277, block1(v277), block31
 
 block31:
@@ -411,7 +411,7 @@ block31:
     v283 = select.i64 v282, v1, v281  ; v1 = 0
     v284 = iadd.i64 v0, v283
     v285 = load.i8 v284
-    v286 = call_indirect.i64 sig0, v3(v285)  ; v3 = 0x7ff7_3d1f_3dc0
+    v286 = call_indirect.i64 sig0, v3(v285)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v286, block1(v286), block32
 
 block32:
@@ -424,7 +424,7 @@ block32:
     store v292, v290
     v293 = iadd.i64 v0, v289
     v294 = load.i8 v293
-    v295 = call_indirect.i64 sig0, v3(v294)  ; v3 = 0x7ff7_3d1f_3dc0
+    v295 = call_indirect.i64 sig0, v3(v294)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v295, block1(v295), block33
 
 block33:
@@ -433,7 +433,7 @@ block33:
     v298 = select.i64 v297, v2, v296  ; v2 = 0x752f
     v299 = iadd.i64 v0, v298
     v300 = load.i8 v299
-    v301 = call_indirect.i64 sig0, v3(v300)  ; v3 = 0x7ff7_3d1f_3dc0
+    v301 = call_indirect.i64 sig0, v3(v300)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v301, block1(v301), block34
 
 block34:
@@ -451,7 +451,7 @@ block34:
     store v310, v308
     v311 = iadd.i64 v0, v298
     v312 = load.i8 v311
-    v313 = call_indirect.i64 sig0, v3(v312)  ; v3 = 0x7ff7_3d1f_3dc0
+    v313 = call_indirect.i64 sig0, v3(v312)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v313, block1(v313), block35
 
 block35:
@@ -481,7 +481,7 @@ block35:
     store v331, v329
     v332 = iadd.i64 v0, v298
     v333 = load.i8 v332
-    v334 = call_indirect.i64 sig0, v3(v333)  ; v3 = 0x7ff7_3d1f_3dc0
+    v334 = call_indirect.i64 sig0, v3(v333)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v334, block1(v334), block36
 
 block36:
@@ -519,7 +519,7 @@ block36:
     store v358, v356
     v359 = iadd.i64 v0, v298
     v360 = load.i8 v359
-    v361 = call_indirect.i64 sig0, v3(v360)  ; v3 = 0x7ff7_3d1f_3dc0
+    v361 = call_indirect.i64 sig0, v3(v360)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v361, block1(v361), block37
 
 block37:
@@ -535,7 +535,7 @@ block37:
     store v370, v368
     v371 = iadd.i64 v0, v367
     v372 = load.i8 v371
-    v373 = call_indirect.i64 sig0, v3(v372)  ; v3 = 0x7ff7_3d1f_3dc0
+    v373 = call_indirect.i64 sig0, v3(v372)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v373, block1(v373), block38
 
 block38:
@@ -552,7 +552,7 @@ block38:
     store v382, v380
     v383 = iadd.i64 v0, v376
     v384 = load.i8 v383
-    v385 = call_indirect.i64 sig0, v3(v384)  ; v3 = 0x7ff7_3d1f_3dc0
+    v385 = call_indirect.i64 sig0, v3(v384)  ; v3 = 0x7ff6_8a4b_3dc0
     brif v385, block1(v385), block39
 
 block39:
