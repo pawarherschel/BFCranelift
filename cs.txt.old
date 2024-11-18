@@ -28,8 +28,8 @@
     bytes:       [72, 137, 207]
 0x1034: movzbq (%rdi, %rsi), %rcx
     bytes:       [72, 15, 182, 76, 55, 0]
-0x103a: movabsq $0x7ff75b691bf0, %rax
-    bytes:       [72, 184, 240, 27, 105, 91, 247, 127, 0, 0]
+0x103a: movabsq $0x7ff752661bf0, %rax
+    bytes:       [72, 184, 240, 27, 102, 82, 247, 127, 0, 0]
 0x1044: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x1048: callq *%rax
@@ -54,8 +54,8 @@
     bytes:       [15, 132, 49, 0, 0, 0]
 0x106f: movzbq (%rdi, %rsi), %rcx
     bytes:       [72, 15, 182, 76, 55, 0]
-0x1075: movabsq $0x7ff75b691bf0, %rax
-    bytes:       [72, 184, 240, 27, 105, 91, 247, 127, 0, 0]
+0x1075: movabsq $0x7ff752661bf0, %rax
+    bytes:       [72, 184, 240, 27, 102, 82, 247, 127, 0, 0]
 0x107f: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x1083: callq *%rax
@@ -72,8 +72,8 @@
     bytes:       [132, 192]
 0x109a: jne 0x106f
     bytes:       [15, 133, 207, 255, 255, 255]
-0x10a0: movabsq $0x7ff75b691db0, %rdx
-    bytes:       [72, 186, 176, 29, 105, 91, 247, 127, 0, 0]
+0x10a0: movabsq $0x7ff752661db0, %rdx
+    bytes:       [72, 186, 176, 29, 102, 82, 247, 127, 0, 0]
 0x10aa: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x10ae: movq %r12, %rcx
@@ -88,8 +88,8 @@
     bytes:       [15, 133, 151, 7, 0, 0]
 0x10c0: movzbq (%rdi, %rsi), %rcx
     bytes:       [72, 15, 182, 76, 55, 0]
-0x10c6: movabsq $0x7ff75b691bf0, %rax
-    bytes:       [72, 184, 240, 27, 105, 91, 247, 127, 0, 0]
+0x10c6: movabsq $0x7ff752661bf0, %rax
+    bytes:       [72, 184, 240, 27, 102, 82, 247, 127, 0, 0]
 0x10d0: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x10d4: callq *%rax
@@ -102,8 +102,8 @@
     bytes:       [15, 133, 116, 7, 0, 0]
 0x10e3: movzbq (%rdi, %rsi), %rcx
     bytes:       [72, 15, 182, 76, 55, 0]
-0x10e9: movabsq $0x7ff75b691bf0, %r9
-    bytes:       [73, 185, 240, 27, 105, 91, 247, 127, 0, 0]
+0x10e9: movabsq $0x7ff752661bf0, %r9
+    bytes:       [73, 185, 240, 27, 102, 82, 247, 127, 0, 0]
 0x10f3: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x10f7: callq *%r9
@@ -114,8 +114,8 @@
     bytes:       [72, 133, 192]
 0x1101: jne 0x1857
     bytes:       [15, 133, 80, 7, 0, 0]
-0x1107: movabsq $0x7ff75b691db0, %rdx
-    bytes:       [72, 186, 176, 29, 105, 91, 247, 127, 0, 0]
+0x1107: movabsq $0x7ff752661db0, %rdx
+    bytes:       [72, 186, 176, 29, 102, 82, 247, 127, 0, 0]
 0x1111: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x1115: movq %r12, %rcx
@@ -128,8 +128,8 @@
     bytes:       [72, 133, 192]
 0x1121: jne 0x1857
     bytes:       [15, 133, 48, 7, 0, 0]
-0x1127: movabsq $0x7ff75b691db0, %rax
-    bytes:       [72, 184, 176, 29, 105, 91, 247, 127, 0, 0]
+0x1127: movabsq $0x7ff752661db0, %rax
+    bytes:       [72, 184, 176, 29, 102, 82, 247, 127, 0, 0]
 0x1131: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x1135: movq %r12, %rcx
@@ -142,8 +142,8 @@
     bytes:       [72, 133, 192]
 0x1141: jne 0x1857
     bytes:       [15, 133, 16, 7, 0, 0]
-0x1147: movabsq $0x7ff75b691db0, %r9
-    bytes:       [73, 185, 176, 29, 105, 91, 247, 127, 0, 0]
+0x1147: movabsq $0x7ff752661db0, %r9
+    bytes:       [73, 185, 176, 29, 102, 82, 247, 127, 0, 0]
 0x1151: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x1155: movq %r12, %rcx
@@ -162,8 +162,8 @@
     bytes:       [131, 193, 1]
 0x1171: movb %cl, (%rdi, %rsi)
     bytes:       [136, 76, 55, 0]
-0x1175: movabsq $0x7ff75b691db0, %rdx
-    bytes:       [72, 186, 176, 29, 105, 91, 247, 127, 0, 0]
+0x1175: movabsq $0x7ff752661db0, %rdx
+    bytes:       [72, 186, 176, 29, 102, 82, 247, 127, 0, 0]
 0x117f: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x1183: movq %r12, %rcx
@@ -182,8 +182,8 @@
     bytes:       [131, 192, 255]
 0x119e: movb %al, (%rdi, %rsi)
     bytes:       [136, 68, 55, 0]
-0x11a2: movabsq $0x7ff75b691db0, %rax
-    bytes:       [72, 184, 176, 29, 105, 91, 247, 127, 0, 0]
+0x11a2: movabsq $0x7ff752661db0, %rax
+    bytes:       [72, 184, 176, 29, 102, 82, 247, 127, 0, 0]
 0x11ac: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x11b0: movq %r12, %rcx
@@ -212,8 +212,8 @@
     bytes:       [72, 137, 249]
 0x11e8: addq %rsi, %rcx
     bytes:       [72, 1, 241]
-0x11eb: movabsq $0x7ff75b691db0, %rax
-    bytes:       [72, 184, 176, 29, 105, 91, 247, 127, 0, 0]
+0x11eb: movabsq $0x7ff752661db0, %rax
+    bytes:       [72, 184, 176, 29, 102, 82, 247, 127, 0, 0]
 0x11f5: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x11f9: callq *%rax
@@ -234,8 +234,8 @@
     bytes:       [132, 201]
 0x1218: jne 0x1216
     bytes:       [15, 133, 248, 255, 255, 255]
-0x121e: movabsq $0x7ff75b691bf0, %r10
-    bytes:       [73, 186, 240, 27, 105, 91, 247, 127, 0, 0]
+0x121e: movabsq $0x7ff752661bf0, %r10
+    bytes:       [73, 186, 240, 27, 102, 82, 247, 127, 0, 0]
 0x1228: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x122c: callq *%r10
@@ -248,8 +248,8 @@
     bytes:       [15, 133, 27, 6, 0, 0]
 0x123c: movzbq (%rdi, %rsi), %rcx
     bytes:       [72, 15, 182, 76, 55, 0]
-0x1242: movabsq $0x7ff75b691bf0, %rdx
-    bytes:       [72, 186, 240, 27, 105, 91, 247, 127, 0, 0]
+0x1242: movabsq $0x7ff752661bf0, %rdx
+    bytes:       [72, 186, 240, 27, 102, 82, 247, 127, 0, 0]
 0x124c: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x1250: callq *%rdx
@@ -534,8 +534,8 @@
     bytes:       [72, 15, 68, 53, 127, 3, 0, 0]
 0x1509: movzbq (%rdi, %rsi), %rcx
     bytes:       [72, 15, 182, 76, 55, 0]
-0x150f: movabsq $0x7ff75b691bf0, %r10
-    bytes:       [73, 186, 240, 27, 105, 91, 247, 127, 0, 0]
+0x150f: movabsq $0x7ff752661bf0, %r10
+    bytes:       [73, 186, 240, 27, 102, 82, 247, 127, 0, 0]
 0x1519: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x151d: callq *%r10
@@ -566,8 +566,8 @@
     bytes:       [131, 193, 255]
 0x1557: movb %cl, (%rdi, %rsi)
     bytes:       [136, 76, 55, 0]
-0x155b: movabsq $0x7ff75b691bf0, %r11
-    bytes:       [73, 187, 240, 27, 105, 91, 247, 127, 0, 0]
+0x155b: movabsq $0x7ff752661bf0, %r11
+    bytes:       [73, 187, 240, 27, 102, 82, 247, 127, 0, 0]
 0x1565: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x1569: callq *%r11
@@ -608,8 +608,8 @@
     bytes:       [131, 193, 1]
 0x15ac: movb %cl, (%rdi, %rsi)
     bytes:       [136, 76, 55, 0]
-0x15b0: movabsq $0x7ff75b691bf0, %rdx
-    bytes:       [72, 186, 240, 27, 105, 91, 247, 127, 0, 0]
+0x15b0: movabsq $0x7ff752661bf0, %rdx
+    bytes:       [72, 186, 240, 27, 102, 82, 247, 127, 0, 0]
 0x15ba: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x15be: callq *%rdx
@@ -622,8 +622,8 @@
     bytes:       [15, 133, 138, 2, 0, 0]
 0x15cd: movzbq (%rdi, %rsi), %rcx
     bytes:       [72, 15, 182, 76, 55, 0]
-0x15d3: movabsq $0x7ff75b691bf0, %rax
-    bytes:       [72, 184, 240, 27, 105, 91, 247, 127, 0, 0]
+0x15d3: movabsq $0x7ff752661bf0, %rax
+    bytes:       [72, 184, 240, 27, 102, 82, 247, 127, 0, 0]
 0x15dd: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x15e1: callq *%rax
@@ -648,8 +648,8 @@
     bytes:       [131, 193, 1]
 0x1607: movb %cl, (%rdi, %rsi)
     bytes:       [136, 76, 55, 0]
-0x160b: movabsq $0x7ff75b691bf0, %rax
-    bytes:       [72, 184, 240, 27, 105, 91, 247, 127, 0, 0]
+0x160b: movabsq $0x7ff752661bf0, %rax
+    bytes:       [72, 184, 240, 27, 102, 82, 247, 127, 0, 0]
 0x1615: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x1619: callq *%rax
@@ -674,8 +674,8 @@
     bytes:       [72, 15, 68, 53, 58, 2, 0, 0]
 0x164e: movzbq (%rdi, %rsi), %rcx
     bytes:       [72, 15, 182, 76, 55, 0]
-0x1654: movabsq $0x7ff75b691bf0, %r11
-    bytes:       [73, 187, 240, 27, 105, 91, 247, 127, 0, 0]
+0x1654: movabsq $0x7ff752661bf0, %r11
+    bytes:       [73, 187, 240, 27, 102, 82, 247, 127, 0, 0]
 0x165e: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x1662: callq *%r11
@@ -698,8 +698,8 @@
     bytes:       [131, 193, 255]
 0x168b: movb %cl, (%rdi, %rsi)
     bytes:       [136, 76, 55, 0]
-0x168f: movabsq $0x7ff75b691bf0, %r10
-    bytes:       [73, 186, 240, 27, 105, 91, 247, 127, 0, 0]
+0x168f: movabsq $0x7ff752661bf0, %r10
+    bytes:       [73, 186, 240, 27, 102, 82, 247, 127, 0, 0]
 0x1699: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x169d: callq *%r10
@@ -718,8 +718,8 @@
     bytes:       [72, 15, 76, 53, 211, 1, 0, 0]
 0x16bd: movzbq (%rdi, %rsi), %rcx
     bytes:       [72, 15, 182, 76, 55, 0]
-0x16c3: movabsq $0x7ff75b691bf0, %r8
-    bytes:       [73, 184, 240, 27, 105, 91, 247, 127, 0, 0]
+0x16c3: movabsq $0x7ff752661bf0, %r8
+    bytes:       [73, 184, 240, 27, 102, 82, 247, 127, 0, 0]
 0x16cd: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x16d1: callq *%r8
@@ -744,8 +744,8 @@
     bytes:       [131, 193, 1]
 0x16f8: movb %cl, (%rdi, %rsi)
     bytes:       [136, 76, 55, 0]
-0x16fc: movabsq $0x7ff75b691bf0, %r8
-    bytes:       [73, 184, 240, 27, 105, 91, 247, 127, 0, 0]
+0x16fc: movabsq $0x7ff752661bf0, %r8
+    bytes:       [73, 184, 240, 27, 102, 82, 247, 127, 0, 0]
 0x1706: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x170a: callq *%r8
@@ -782,8 +782,8 @@
     bytes:       [131, 193, 255]
 0x1746: movb %cl, (%rdi, %rsi)
     bytes:       [136, 76, 55, 0]
-0x174a: movabsq $0x7ff75b691bf0, %r11
-    bytes:       [73, 187, 240, 27, 105, 91, 247, 127, 0, 0]
+0x174a: movabsq $0x7ff752661bf0, %r11
+    bytes:       [73, 187, 240, 27, 102, 82, 247, 127, 0, 0]
 0x1754: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x1758: callq *%r11
@@ -828,8 +828,8 @@
     bytes:       [131, 193, 255]
 0x17a2: movb %cl, (%rdi, %rsi)
     bytes:       [136, 76, 55, 0]
-0x17a6: movabsq $0x7ff75b691bf0, %rdx
-    bytes:       [72, 186, 240, 27, 105, 91, 247, 127, 0, 0]
+0x17a6: movabsq $0x7ff752661bf0, %rdx
+    bytes:       [72, 186, 240, 27, 102, 82, 247, 127, 0, 0]
 0x17b0: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x17b4: callq *%rdx
@@ -858,8 +858,8 @@
     bytes:       [131, 193, 1]
 0x17f2: movb %cl, (%rdi, %rsi)
     bytes:       [136, 76, 55, 0]
-0x17f6: movabsq $0x7ff75b691bf0, %rdx
-    bytes:       [72, 186, 240, 27, 105, 91, 247, 127, 0, 0]
+0x17f6: movabsq $0x7ff752661bf0, %rdx
+    bytes:       [72, 186, 240, 27, 102, 82, 247, 127, 0, 0]
 0x1800: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x1804: callq *%rdx
@@ -886,8 +886,8 @@
     bytes:       [131, 193, 1]
 0x1836: movb %cl, (%rdi, %rsi)
     bytes:       [136, 76, 55, 0]
-0x183a: movabsq $0x7ff75b691bf0, %rdx
-    bytes:       [72, 186, 240, 27, 105, 91, 247, 127, 0, 0]
+0x183a: movabsq $0x7ff752661bf0, %rdx
+    bytes:       [72, 186, 240, 27, 102, 82, 247, 127, 0, 0]
 0x1844: subq $0x20, %rsp
     bytes:       [72, 131, 236, 32]
 0x1848: callq *%rdx

@@ -3,7 +3,7 @@ extern crate core;
 use crate::program::Program;
 use capstone::arch::BuildsCapstone as _;
 use capstone::arch::BuildsCapstoneSyntax as _;
-use capstone::{Capstone, InsnGroupId, RegId};
+use capstone::Capstone;
 use std::fmt::Write as _;
 use std::io::Write as _;
 
@@ -79,7 +79,7 @@ fn main() {
 
     let mut buf = String::new();
 
-    println!("found {} instructions", insns.len());
+    println!("number of instructions generated: {}", insns.len());
 
     for i in insns.iter() {
         writeln!(buf, "{i}").unwrap();
@@ -90,6 +90,9 @@ fn main() {
         }
     }
 
+    if std::fs::metadata("cs.txt").is_ok() {
+        std::fs::rename("cs.txt", "cs.txt.old").unwrap();
+    }
     let mut f = std::fs::File::create("cs.txt").unwrap();
     write!(f, "{buf}").unwrap();
 
@@ -100,14 +103,4 @@ fn main() {
     println!("memory: {not_trailing_zeros}");
 
     println!("{memory:?}");
-}
-fn reg_names(cs: &Capstone, regs: &[RegId]) -> String {
-    let names: Vec<String> = regs.iter().map(|&x| cs.reg_name(x).unwrap()).collect();
-    names.join(", ")
-}
-
-/// Print instruction group names
-fn group_names(cs: &Capstone, regs: &[InsnGroupId]) -> String {
-    let names: Vec<String> = regs.iter().map(|&x| cs.group_name(x).unwrap()).collect();
-    names.join(", ")
 }
