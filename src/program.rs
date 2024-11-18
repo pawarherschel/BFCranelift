@@ -7,7 +7,7 @@ use cranelift::prelude::{
 };
 use std::io::{Read, Write};
 
-extern "fastcall" fn write(value: u8) -> *mut std::io::Error {
+extern "C" fn write(value: u8) -> *mut std::io::Error {
     // Writing a non-UTF-8 byte sequence on Windows error out.
     if cfg!(target_os = "windows") && value >= 128 {
         return std::ptr::null_mut();
@@ -24,7 +24,7 @@ extern "fastcall" fn write(value: u8) -> *mut std::io::Error {
     }
 }
 
-unsafe extern "fastcall" fn read(buf: *mut u8) -> *mut std::io::Error {
+unsafe extern "C" fn read(buf: *mut u8) -> *mut std::io::Error {
     let mut stdin = std::io::stdin().lock();
     loop {
         let mut value = 0;
@@ -80,7 +80,7 @@ impl Program {
 
         let pointer_type = isa.pointer_type();
 
-        let mut sig = Signature::new(isa::CallConv::WindowsFastcall);
+        let mut sig = Signature::new(isa::CallConv::triple_default(isa.triple()));
         sig.params.push(AbiParam::new(pointer_type));
         sig.returns.push(AbiParam::new(pointer_type));
 
@@ -107,7 +107,7 @@ impl Program {
         let mem_flags = MemFlags::new();
 
         let (write_sig, write_address) = {
-            let mut write_sig = Signature::new(isa::CallConv::WindowsFastcall);
+            let mut write_sig = Signature::new(isa::CallConv::triple_default(isa.triple()));
             write_sig.params.push(AbiParam::new(types::I8));
             write_sig.returns.push(AbiParam::new(pointer_type));
             let writer_sig = func_builder.import_signature(write_sig);
@@ -117,7 +117,7 @@ impl Program {
             (writer_sig, write_address)
         };
         let (read_sig, read_address) = {
-            let mut read_sig = Signature::new(isa::CallConv::WindowsFastcall);
+            let mut read_sig = Signature::new(isa::CallConv::triple_default(isa.triple()));
             read_sig.params.push(AbiParam::new(pointer_type));
             read_sig.returns.push(AbiParam::new(pointer_type));
             let read_sig = func_builder.import_signature(read_sig);
