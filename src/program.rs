@@ -1,3 +1,4 @@
+use cranelift::codegen::control::ControlPlane;
 use cranelift::codegen::ir::{Function, UserFuncName};
 use cranelift::codegen::{verify_function, Context};
 use cranelift::prelude::{
@@ -171,8 +172,11 @@ impl Program {
 
                     let after_block = func_builder.create_block();
 
-                    func_builder.ins().brnz(result, exit_block, &[result]);
-                    func_builder.ins().jump(after_block, &[]);
+                    func_builder
+                        .ins()
+                        .brif(result, exit_block, &[result], after_block, &[]);
+                    // func_builder.ins().brnz(result, exit_block, &[result]);
+                    // func_builder.ins().jump(after_block, &[]);
 
                     func_builder.seal_block(after_block);
                     func_builder.switch_to_block(after_block);
@@ -189,8 +193,11 @@ impl Program {
 
                     let after_block = func_builder.create_block();
 
-                    func_builder.ins().brnz(result, exit_block, &[result]);
-                    func_builder.ins().jump(after_block, &[]);
+                    func_builder
+                        .ins()
+                        .brif(result, exit_block, &[result], after_block, &[]);
+                    // func_builder.ins().brnz(result, exit_block, &[result]);
+                    // func_builder.ins().jump(after_block, &[]);
 
                     func_builder.seal_block(after_block);
                     func_builder.switch_to_block(after_block);
@@ -229,8 +236,11 @@ impl Program {
                         .ins()
                         .load(types::I8, mem_flags, cell_address, 0);
 
-                    func_builder.ins().brz(cell_value, after_block, &[]);
-                    func_builder.ins().jump(inner_block, &[]);
+                    func_builder
+                        .ins()
+                        .brif(cell_value, inner_block, &[], after_block, &[]);
+                    // func_builder.ins().brz(cell_value, after_block, &[]);
+                    // func_builder.ins().jump(inner_block, &[]);
 
                     func_builder.switch_to_block(inner_block);
 
@@ -248,8 +258,11 @@ impl Program {
                         .ins()
                         .load(types::I8, mem_flags, cell_address, 0);
 
-                    func_builder.ins().brz(cell_value, after_block, &[]);
-                    func_builder.ins().jump(inner_block, &[]);
+                    func_builder
+                        .ins()
+                        .brif(cell_value, inner_block, &[], after_block, &[]);
+                    // func_builder.ins().brz(cell_value, after_block, &[]);
+                    // func_builder.ins().jump(inner_block, &[]);
 
                     func_builder.seal_block(inner_block);
                     func_builder.seal_block(after_block);
@@ -266,12 +279,13 @@ impl Program {
 
         func_builder.ins().return_(&[zero]);
 
-        func_builder.finalize();
         func_builder.switch_to_block(exit_block);
         func_builder.seal_block(exit_block);
 
         let result = func_builder.block_params(exit_block)[0];
         func_builder.ins().return_(&[result]);
+
+        func_builder.finalize();
 
         let res = verify_function(&func, &*isa);
 
@@ -286,7 +300,10 @@ impl Program {
         std::fs::write("clir", clir).unwrap();
 
         let mut ctx = Context::for_function(func);
-        let code = match ctx.compile(&*isa) {
+        let code = match ctx.compile(
+            &*isa,
+            /* &mut ControlPlane */ &mut ControlPlane::default(),
+        ) {
             Ok(x) => x,
             Err(err) => {
                 eprintln!("error compiling: {err:#?}");

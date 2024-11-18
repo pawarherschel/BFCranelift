@@ -1,938 +1,904 @@
-0x1000: pushq %rbp
+0x1000: push rbp
     bytes:       [85]
-0x1001: movq %rsp, %rbp
+0x1001: mov rbp, rsp
     bytes:       [72, 137, 229]
-0x1004: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x1008: movq %rsi, (%rsp)
-    bytes:       [72, 137, 52, 36]
-0x100c: movq %rdi, 8(%rsp)
-    bytes:       [72, 137, 124, 36, 8]
-0x1011: movq %r12, 0x10(%rsp)
-    bytes:       [76, 137, 100, 36, 16]
-0x1016: movzbq (%rcx), %r10
-    bytes:       [76, 15, 182, 17]
-0x101a: xorq %rsi, %rsi
-    bytes:       [72, 49, 246]
-0x101d: testb %r10b, %r10b
-    bytes:       [69, 132, 210]
-0x1020: jne 0x102e
-    bytes:       [15, 133, 8, 0, 0, 0]
-0x1026: movq %rcx, %rdi
-    bytes:       [72, 137, 207]
-0x1029: jmp 0x126d
-    bytes:       [233, 63, 2, 0, 0]
-0x102e: xorq %rsi, %rsi
-    bytes:       [72, 49, 246]
-0x1031: movq %rcx, %rdi
-    bytes:       [72, 137, 207]
-0x1034: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x103a: movabsq $0x7ff752661bf0, %rax
-    bytes:       [72, 184, 240, 27, 102, 82, 247, 127, 0, 0]
-0x1044: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x1048: callq *%rax
-    bytes:       [255, 208]
-0x104a: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x104e: testq %rax, %rax
-    bytes:       [72, 133, 192]
-0x1051: jne 0x1857
-    bytes:       [15, 133, 0, 8, 0, 0]
-0x1057: movq %rdi, %rcx
-    bytes:       [72, 137, 249]
-0x105a: addq %rsi, %rcx
-    bytes:       [72, 1, 241]
-0x105d: movq %rcx, %r12
-    bytes:       [73, 137, 204]
-0x1060: movzbq (%rdi, %rsi), %r10
-    bytes:       [76, 15, 182, 84, 55, 0]
-0x1066: testb %r10b, %r10b
-    bytes:       [69, 132, 210]
-0x1069: je 0x10a0
-    bytes:       [15, 132, 49, 0, 0, 0]
-0x106f: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x1075: movabsq $0x7ff752661bf0, %rax
-    bytes:       [72, 184, 240, 27, 102, 82, 247, 127, 0, 0]
-0x107f: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x1083: callq *%rax
-    bytes:       [255, 208]
-0x1085: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x1089: testq %rax, %rax
-    bytes:       [72, 133, 192]
-0x108c: jne 0x1857
-    bytes:       [15, 133, 197, 7, 0, 0]
-0x1092: movzbq (%rdi, %rsi), %rax
-    bytes:       [72, 15, 182, 68, 55, 0]
-0x1098: testb %al, %al
-    bytes:       [132, 192]
-0x109a: jne 0x106f
-    bytes:       [15, 133, 207, 255, 255, 255]
-0x10a0: movabsq $0x7ff752661db0, %rdx
-    bytes:       [72, 186, 176, 29, 102, 82, 247, 127, 0, 0]
-0x10aa: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x10ae: movq %r12, %rcx
-    bytes:       [76, 137, 225]
-0x10b1: callq *%rdx
-    bytes:       [255, 210]
-0x10b3: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x10b7: testq %rax, %rax
-    bytes:       [72, 133, 192]
-0x10ba: jne 0x1857
-    bytes:       [15, 133, 151, 7, 0, 0]
-0x10c0: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x10c6: movabsq $0x7ff752661bf0, %rax
-    bytes:       [72, 184, 240, 27, 102, 82, 247, 127, 0, 0]
-0x10d0: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x10d4: callq *%rax
-    bytes:       [255, 208]
-0x10d6: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x10da: testq %rax, %rax
-    bytes:       [72, 133, 192]
-0x10dd: jne 0x1857
-    bytes:       [15, 133, 116, 7, 0, 0]
-0x10e3: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x10e9: movabsq $0x7ff752661bf0, %r9
-    bytes:       [73, 185, 240, 27, 102, 82, 247, 127, 0, 0]
-0x10f3: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x10f7: callq *%r9
-    bytes:       [65, 255, 209]
-0x10fa: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x10fe: testq %rax, %rax
-    bytes:       [72, 133, 192]
-0x1101: jne 0x1857
-    bytes:       [15, 133, 80, 7, 0, 0]
-0x1107: movabsq $0x7ff752661db0, %rdx
-    bytes:       [72, 186, 176, 29, 102, 82, 247, 127, 0, 0]
-0x1111: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x1115: movq %r12, %rcx
-    bytes:       [76, 137, 225]
-0x1118: callq *%rdx
-    bytes:       [255, 210]
-0x111a: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x111e: testq %rax, %rax
-    bytes:       [72, 133, 192]
-0x1121: jne 0x1857
-    bytes:       [15, 133, 48, 7, 0, 0]
-0x1127: movabsq $0x7ff752661db0, %rax
-    bytes:       [72, 184, 176, 29, 102, 82, 247, 127, 0, 0]
-0x1131: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x1135: movq %r12, %rcx
-    bytes:       [76, 137, 225]
-0x1138: callq *%rax
-    bytes:       [255, 208]
-0x113a: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x113e: testq %rax, %rax
-    bytes:       [72, 133, 192]
-0x1141: jne 0x1857
-    bytes:       [15, 133, 16, 7, 0, 0]
-0x1147: movabsq $0x7ff752661db0, %r9
-    bytes:       [73, 185, 176, 29, 102, 82, 247, 127, 0, 0]
-0x1151: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x1155: movq %r12, %rcx
-    bytes:       [76, 137, 225]
-0x1158: callq *%r9
-    bytes:       [65, 255, 209]
-0x115b: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x115f: testq %rax, %rax
-    bytes:       [72, 133, 192]
-0x1162: jne 0x1857
-    bytes:       [15, 133, 239, 6, 0, 0]
-0x1168: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x116e: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x1171: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x1175: movabsq $0x7ff752661db0, %rdx
-    bytes:       [72, 186, 176, 29, 102, 82, 247, 127, 0, 0]
-0x117f: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x1183: movq %r12, %rcx
-    bytes:       [76, 137, 225]
-0x1186: callq *%rdx
-    bytes:       [255, 210]
-0x1188: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x118c: testq %rax, %rax
-    bytes:       [72, 133, 192]
-0x118f: jne 0x1857
-    bytes:       [15, 133, 194, 6, 0, 0]
-0x1195: movzbq (%rdi, %rsi), %rax
-    bytes:       [72, 15, 182, 68, 55, 0]
-0x119b: addl $-1, %eax
-    bytes:       [131, 192, 255]
-0x119e: movb %al, (%rdi, %rsi)
-    bytes:       [136, 68, 55, 0]
-0x11a2: movabsq $0x7ff752661db0, %rax
-    bytes:       [72, 184, 176, 29, 102, 82, 247, 127, 0, 0]
-0x11ac: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x11b0: movq %r12, %rcx
-    bytes:       [76, 137, 225]
-0x11b3: callq *%rax
-    bytes:       [255, 208]
-0x11b5: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x11b9: testq %rax, %rax
-    bytes:       [72, 133, 192]
-0x11bc: jne 0x1857
-    bytes:       [15, 133, 149, 6, 0, 0]
-0x11c2: addq $-1, %rsi
-    bytes:       [72, 131, 198, 255]
-0x11c6: cmpq $0, %rsi
-    bytes:       [72, 131, 254, 0]
-0x11ca: cmovlq 0x6be(%rip), %rsi
-    bytes:       [72, 15, 76, 53, 190, 6, 0, 0]
-0x11d2: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x11d6: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x11dd: cmoveq 0x6a3(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 163, 6, 0, 0]
-0x11e5: movq %rdi, %rcx
-    bytes:       [72, 137, 249]
-0x11e8: addq %rsi, %rcx
-    bytes:       [72, 1, 241]
-0x11eb: movabsq $0x7ff752661db0, %rax
-    bytes:       [72, 184, 176, 29, 102, 82, 247, 127, 0, 0]
-0x11f5: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x11f9: callq *%rax
-    bytes:       [255, 208]
-0x11fb: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x11ff: testq %rax, %rax
-    bytes:       [72, 133, 192]
-0x1202: jne 0x1857
-    bytes:       [15, 133, 79, 6, 0, 0]
-0x1208: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x120e: testb %cl, %cl
-    bytes:       [132, 201]
-0x1210: je 0x121e
-    bytes:       [15, 132, 8, 0, 0, 0]
-0x1216: testb %cl, %cl
-    bytes:       [132, 201]
-0x1218: jne 0x1216
-    bytes:       [15, 133, 248, 255, 255, 255]
-0x121e: movabsq $0x7ff752661bf0, %r10
-    bytes:       [73, 186, 240, 27, 102, 82, 247, 127, 0, 0]
-0x1228: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x122c: callq *%r10
-    bytes:       [65, 255, 210]
-0x122f: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x1233: testq %rax, %rax
-    bytes:       [72, 133, 192]
-0x1236: jne 0x1857
-    bytes:       [15, 133, 27, 6, 0, 0]
-0x123c: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x1242: movabsq $0x7ff752661bf0, %rdx
-    bytes:       [72, 186, 240, 27, 102, 82, 247, 127, 0, 0]
-0x124c: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x1250: callq *%rdx
-    bytes:       [255, 210]
-0x1252: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x1256: testq %rax, %rax
-    bytes:       [72, 133, 192]
-0x1259: jne 0x1857
-    bytes:       [15, 133, 248, 5, 0, 0]
-0x125f: movzbq (%rdi, %rsi), %rax
-    bytes:       [72, 15, 182, 68, 55, 0]
-0x1265: testb %al, %al
-    bytes:       [132, 192]
-0x1267: jne 0x1034
-    bytes:       [15, 133, 199, 253, 255, 255]
-0x126d: movzbq (%rdi, %rsi), %r8
-    bytes:       [76, 15, 182, 68, 55, 0]
-0x1273: addl $1, %r8d
-    bytes:       [65, 131, 192, 1]
-0x1277: movb %r8b, (%rdi, %rsi)
-    bytes:       [68, 136, 68, 55, 0]
-0x127c: addl $1, %r8d
-    bytes:       [65, 131, 192, 1]
-0x1280: movb %r8b, (%rdi, %rsi)
-    bytes:       [68, 136, 68, 55, 0]
-0x1285: addl $1, %r8d
-    bytes:       [65, 131, 192, 1]
-0x1289: movb %r8b, (%rdi, %rsi)
-    bytes:       [68, 136, 68, 55, 0]
-0x128e: addl $1, %r8d
-    bytes:       [65, 131, 192, 1]
-0x1292: movb %r8b, (%rdi, %rsi)
-    bytes:       [68, 136, 68, 55, 0]
-0x1297: addl $1, %r8d
-    bytes:       [65, 131, 192, 1]
-0x129b: movb %r8b, (%rdi, %rsi)
-    bytes:       [68, 136, 68, 55, 0]
-0x12a0: addl $1, %r8d
-    bytes:       [65, 131, 192, 1]
-0x12a4: movb %r8b, (%rdi, %rsi)
-    bytes:       [68, 136, 68, 55, 0]
-0x12a9: addl $1, %r8d
-    bytes:       [65, 131, 192, 1]
-0x12ad: movb %r8b, (%rdi, %rsi)
-    bytes:       [68, 136, 68, 55, 0]
-0x12b2: addl $1, %r8d
-    bytes:       [65, 131, 192, 1]
-0x12b6: movb %r8b, (%rdi, %rsi)
-    bytes:       [68, 136, 68, 55, 0]
-0x12bb: testb %r8b, %r8b
-    bytes:       [69, 132, 192]
-0x12be: je 0x14e3
-    bytes:       [15, 132, 31, 2, 0, 0]
-0x12c4: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x12c8: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x12cf: cmoveq 0x5b1(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 177, 5, 0, 0]
-0x12d7: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x12dd: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x12e0: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x12e4: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x12e7: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x12eb: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x12ee: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x12f2: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x12f5: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x12f9: testb %cl, %cl
-    bytes:       [132, 201]
-0x12fb: je 0x1401
-    bytes:       [15, 132, 0, 1, 0, 0]
-0x1301: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x1305: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x130c: cmoveq 0x574(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 116, 5, 0, 0]
-0x1314: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x131a: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x131d: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x1321: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x1324: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x1328: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x132c: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x1333: cmoveq 0x54d(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 77, 5, 0, 0]
-0x133b: movzbq (%rdi, %rsi), %r8
-    bytes:       [76, 15, 182, 68, 55, 0]
-0x1341: addl $1, %r8d
-    bytes:       [65, 131, 192, 1]
-0x1345: movb %r8b, (%rdi, %rsi)
-    bytes:       [68, 136, 68, 55, 0]
-0x134a: addl $1, %r8d
-    bytes:       [65, 131, 192, 1]
-0x134e: movb %r8b, (%rdi, %rsi)
-    bytes:       [68, 136, 68, 55, 0]
-0x1353: addl $1, %r8d
-    bytes:       [65, 131, 192, 1]
-0x1357: movb %r8b, (%rdi, %rsi)
-    bytes:       [68, 136, 68, 55, 0]
-0x135c: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x1360: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x1367: cmoveq 0x519(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 25, 5, 0, 0]
-0x136f: movzbq (%rdi, %rsi), %rax
-    bytes:       [72, 15, 182, 68, 55, 0]
-0x1375: addl $1, %eax
-    bytes:       [131, 192, 1]
-0x1378: movb %al, (%rdi, %rsi)
-    bytes:       [136, 68, 55, 0]
-0x137c: addl $1, %eax
-    bytes:       [131, 192, 1]
-0x137f: movb %al, (%rdi, %rsi)
-    bytes:       [136, 68, 55, 0]
-0x1383: addl $1, %eax
-    bytes:       [131, 192, 1]
-0x1386: movb %al, (%rdi, %rsi)
-    bytes:       [136, 68, 55, 0]
-0x138a: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x138e: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x1395: cmoveq 0x4eb(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 235, 4, 0, 0]
-0x139d: movzbq (%rdi, %rsi), %r9
-    bytes:       [76, 15, 182, 76, 55, 0]
-0x13a3: addl $1, %r9d
-    bytes:       [65, 131, 193, 1]
-0x13a7: movb %r9b, (%rdi, %rsi)
-    bytes:       [68, 136, 76, 55, 0]
-0x13ac: addq $-1, %rsi
-    bytes:       [72, 131, 198, 255]
-0x13b0: cmpq $0, %rsi
-    bytes:       [72, 131, 254, 0]
-0x13b4: cmovlq 0x4d4(%rip), %rsi
-    bytes:       [72, 15, 76, 53, 212, 4, 0, 0]
-0x13bc: addq $-1, %rsi
-    bytes:       [72, 131, 198, 255]
-0x13c0: cmpq $0, %rsi
-    bytes:       [72, 131, 254, 0]
-0x13c4: cmovlq 0x4c4(%rip), %rsi
-    bytes:       [72, 15, 76, 53, 196, 4, 0, 0]
-0x13cc: addq $-1, %rsi
-    bytes:       [72, 131, 198, 255]
-0x13d0: cmpq $0, %rsi
-    bytes:       [72, 131, 254, 0]
-0x13d4: cmovlq 0x4b4(%rip), %rsi
-    bytes:       [72, 15, 76, 53, 180, 4, 0, 0]
-0x13dc: addq $-1, %rsi
-    bytes:       [72, 131, 198, 255]
-0x13e0: cmpq $0, %rsi
-    bytes:       [72, 131, 254, 0]
-0x13e4: cmovlq 0x4a4(%rip), %rsi
-    bytes:       [72, 15, 76, 53, 164, 4, 0, 0]
-0x13ec: movzbq (%rdi, %rsi), %rax
-    bytes:       [72, 15, 182, 68, 55, 0]
-0x13f2: addl $-1, %eax
-    bytes:       [131, 192, 255]
-0x13f5: movb %al, (%rdi, %rsi)
-    bytes:       [136, 68, 55, 0]
-0x13f9: testb %al, %al
-    bytes:       [132, 192]
-0x13fb: jne 0x1301
-    bytes:       [15, 133, 0, 255, 255, 255]
-0x1401: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x1405: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x140c: cmoveq 0x474(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 116, 4, 0, 0]
-0x1414: movzbq (%rdi, %rsi), %r9
-    bytes:       [76, 15, 182, 76, 55, 0]
-0x141a: addl $1, %r9d
-    bytes:       [65, 131, 193, 1]
-0x141e: movb %r9b, (%rdi, %rsi)
-    bytes:       [68, 136, 76, 55, 0]
-0x1423: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x1427: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x142e: cmoveq 0x452(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 82, 4, 0, 0]
-0x1436: movzbq (%rdi, %rsi), %r11
-    bytes:       [76, 15, 182, 92, 55, 0]
-0x143c: addl $1, %r11d
-    bytes:       [65, 131, 195, 1]
-0x1440: movb %r11b, (%rdi, %rsi)
-    bytes:       [68, 136, 92, 55, 0]
-0x1445: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x1449: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x1450: cmoveq 0x430(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 48, 4, 0, 0]
-0x1458: movzbq (%rdi, %rsi), %rax
-    bytes:       [72, 15, 182, 68, 55, 0]
-0x145e: addl $-1, %eax
-    bytes:       [131, 192, 255]
-0x1461: movb %al, (%rdi, %rsi)
-    bytes:       [136, 68, 55, 0]
-0x1465: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x1469: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x1470: cmoveq 0x410(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 16, 4, 0, 0]
-0x1478: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x147c: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x1483: cmoveq 0x3fd(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 253, 3, 0, 0]
-0x148b: movzbq (%rdi, %rsi), %rdx
-    bytes:       [72, 15, 182, 84, 55, 0]
-0x1491: addl $1, %edx
-    bytes:       [131, 194, 1]
-0x1494: movb %dl, (%rdi, %rsi)
-    bytes:       [136, 84, 55, 0]
-0x1498: testb %dl, %dl
+0x1004: sub rsp, 0x40
+    bytes:       [72, 131, 236, 64]
+0x1008: mov qword ptr [rsp + 0x20], rsi
+    bytes:       [72, 137, 116, 36, 32]
+0x100d: mov qword ptr [rsp + 0x28], rdi
+    bytes:       [72, 137, 124, 36, 40]
+0x1012: mov qword ptr [rsp + 0x30], r14
+    bytes:       [76, 137, 116, 36, 48]
+0x1017: movzx rdx, byte ptr [rcx]
+    bytes:       [72, 15, 182, 17]
+0x101b: xor rdi, rdi
+    bytes:       [72, 49, 255]
+0x101e: test dl, dl
     bytes:       [132, 210]
-0x149a: je 0x14be
-    bytes:       [15, 132, 30, 0, 0, 0]
-0x14a0: addq $-1, %rsi
-    bytes:       [72, 131, 198, 255]
-0x14a4: cmpq $0, %rsi
-    bytes:       [72, 131, 254, 0]
-0x14a8: cmovlq 0x3e0(%rip), %rsi
-    bytes:       [72, 15, 76, 53, 224, 3, 0, 0]
-0x14b0: movzbq (%rdi, %rsi), %rax
-    bytes:       [72, 15, 182, 68, 55, 0]
-0x14b6: testb %al, %al
-    bytes:       [132, 192]
-0x14b8: jne 0x14a0
-    bytes:       [15, 133, 226, 255, 255, 255]
-0x14be: addq $-1, %rsi
-    bytes:       [72, 131, 198, 255]
-0x14c2: cmpq $0, %rsi
-    bytes:       [72, 131, 254, 0]
-0x14c6: cmovlq 0x3c2(%rip), %rsi
-    bytes:       [72, 15, 76, 53, 194, 3, 0, 0]
-0x14ce: movzbq (%rdi, %rsi), %rax
-    bytes:       [72, 15, 182, 68, 55, 0]
-0x14d4: addl $-1, %eax
-    bytes:       [131, 192, 255]
-0x14d7: movb %al, (%rdi, %rsi)
-    bytes:       [136, 68, 55, 0]
-0x14db: testb %al, %al
-    bytes:       [132, 192]
-0x14dd: jne 0x12c4
-    bytes:       [15, 133, 225, 253, 255, 255]
-0x14e3: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x14e7: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x14ee: cmoveq 0x392(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 146, 3, 0, 0]
-0x14f6: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x14fa: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x1501: cmoveq 0x37f(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 127, 3, 0, 0]
-0x1509: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x150f: movabsq $0x7ff752661bf0, %r10
-    bytes:       [73, 186, 240, 27, 102, 82, 247, 127, 0, 0]
-0x1519: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x151d: callq *%r10
-    bytes:       [65, 255, 210]
-0x1520: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x1524: testq %rax, %rax
+0x1020: je 0x102e
+    bytes:       [15, 132, 8, 0, 0, 0]
+0x1026: mov rsi, rcx
+    bytes:       [72, 137, 206]
+0x1029: jmp 0x1036
+    bytes:       [233, 8, 0, 0, 0]
+0x102e: mov rsi, rcx
+    bytes:       [72, 137, 206]
+0x1031: jmp 0x11fe
+    bytes:       [233, 200, 1, 0, 0]
+0x1036: lea rcx, [rsi + rdi]
+    bytes:       [72, 141, 12, 62]
+0x103a: mov r14, rcx
+    bytes:       [73, 137, 206]
+0x103d: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x1042: movabs r9, 0x7ff73d1f3dc0
+    bytes:       [73, 185, 192, 61, 31, 61, 247, 127, 0, 0]
+0x104c: call r9
+    bytes:       [65, 255, 209]
+0x104f: test rax, rax
     bytes:       [72, 133, 192]
-0x1527: jne 0x1857
-    bytes:       [15, 133, 42, 3, 0, 0]
-0x152d: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x1531: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x1538: cmoveq 0x348(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 72, 3, 0, 0]
-0x1540: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x1546: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x1549: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x154d: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x1550: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x1554: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x1557: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x155b: movabsq $0x7ff752661bf0, %r11
-    bytes:       [73, 187, 240, 27, 102, 82, 247, 127, 0, 0]
-0x1565: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x1569: callq *%r11
-    bytes:       [65, 255, 211]
-0x156c: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x1570: testq %rax, %rax
-    bytes:       [72, 133, 192]
-0x1573: jne 0x1857
-    bytes:       [15, 133, 222, 2, 0, 0]
-0x1579: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x157f: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x1582: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x1586: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x1589: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x158d: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x1590: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x1594: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x1597: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x159b: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x159e: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x15a2: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x15a5: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x15a9: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x15ac: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x15b0: movabsq $0x7ff752661bf0, %rdx
-    bytes:       [72, 186, 240, 27, 102, 82, 247, 127, 0, 0]
-0x15ba: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x15be: callq *%rdx
+0x1052: jne 0x1806
+    bytes:       [15, 133, 174, 7, 0, 0]
+0x1058: movzx r11, byte ptr [rsi + rdi]
+    bytes:       [76, 15, 182, 28, 62]
+0x105d: test r11b, r11b
+    bytes:       [69, 132, 219]
+0x1060: je 0x108e
+    bytes:       [15, 132, 40, 0, 0, 0]
+0x1066: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x106b: movabs rdx, 0x7ff73d1f3dc0
+    bytes:       [72, 186, 192, 61, 31, 61, 247, 127, 0, 0]
+0x1075: call rdx
     bytes:       [255, 210]
-0x15c0: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x15c4: testq %rax, %rax
+0x1077: test rax, rax
     bytes:       [72, 133, 192]
-0x15c7: jne 0x1857
-    bytes:       [15, 133, 138, 2, 0, 0]
-0x15cd: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x15d3: movabsq $0x7ff752661bf0, %rax
-    bytes:       [72, 184, 240, 27, 102, 82, 247, 127, 0, 0]
-0x15dd: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x15e1: callq *%rax
+0x107a: jne 0x1806
+    bytes:       [15, 133, 134, 7, 0, 0]
+0x1080: movzx r8, byte ptr [rsi + rdi]
+    bytes:       [76, 15, 182, 4, 62]
+0x1085: test r8b, r8b
+    bytes:       [69, 132, 192]
+0x1088: jne 0x1066
+    bytes:       [15, 133, 216, 255, 255, 255]
+0x108e: movabs rax, 0x7ff73d1f3f80
+    bytes:       [72, 184, 128, 63, 31, 61, 247, 127, 0, 0]
+0x1098: mov rcx, r14
+    bytes:       [76, 137, 241]
+0x109b: call rax
     bytes:       [255, 208]
-0x15e3: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x15e7: testq %rax, %rax
+0x109d: test rax, rax
     bytes:       [72, 133, 192]
-0x15ea: jne 0x1857
-    bytes:       [15, 133, 103, 2, 0, 0]
-0x15f0: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x15f6: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x15f9: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x15fd: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x1600: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x1604: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x1607: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x160b: movabsq $0x7ff752661bf0, %rax
-    bytes:       [72, 184, 240, 27, 102, 82, 247, 127, 0, 0]
-0x1615: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x1619: callq *%rax
+0x10a0: jne 0x1806
+    bytes:       [15, 133, 96, 7, 0, 0]
+0x10a6: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x10ab: movabs rax, 0x7ff73d1f3dc0
+    bytes:       [72, 184, 192, 61, 31, 61, 247, 127, 0, 0]
+0x10b5: call rax
     bytes:       [255, 208]
-0x161b: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x161f: testq %rax, %rax
+0x10b7: test rax, rax
     bytes:       [72, 133, 192]
-0x1622: jne 0x1857
-    bytes:       [15, 133, 47, 2, 0, 0]
-0x1628: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x162c: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x1633: cmoveq 0x24d(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 77, 2, 0, 0]
-0x163b: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x163f: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x1646: cmoveq 0x23a(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 58, 2, 0, 0]
-0x164e: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x1654: movabsq $0x7ff752661bf0, %r11
-    bytes:       [73, 187, 240, 27, 102, 82, 247, 127, 0, 0]
-0x165e: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x1662: callq *%r11
+0x10ba: jne 0x1806
+    bytes:       [15, 133, 70, 7, 0, 0]
+0x10c0: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x10c5: movabs rdx, 0x7ff73d1f3dc0
+    bytes:       [72, 186, 192, 61, 31, 61, 247, 127, 0, 0]
+0x10cf: call rdx
+    bytes:       [255, 210]
+0x10d1: test rax, rax
+    bytes:       [72, 133, 192]
+0x10d4: jne 0x1806
+    bytes:       [15, 133, 44, 7, 0, 0]
+0x10da: movabs r9, 0x7ff73d1f3f80
+    bytes:       [73, 185, 128, 63, 31, 61, 247, 127, 0, 0]
+0x10e4: mov rcx, r14
+    bytes:       [76, 137, 241]
+0x10e7: call r9
+    bytes:       [65, 255, 209]
+0x10ea: test rax, rax
+    bytes:       [72, 133, 192]
+0x10ed: jne 0x1806
+    bytes:       [15, 133, 19, 7, 0, 0]
+0x10f3: movabs r11, 0x7ff73d1f3f80
+    bytes:       [73, 187, 128, 63, 31, 61, 247, 127, 0, 0]
+0x10fd: mov rcx, r14
+    bytes:       [76, 137, 241]
+0x1100: call r11
     bytes:       [65, 255, 211]
-0x1665: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x1669: testq %rax, %rax
+0x1103: test rax, rax
     bytes:       [72, 133, 192]
-0x166c: jne 0x1857
-    bytes:       [15, 133, 229, 1, 0, 0]
-0x1672: addq $-1, %rsi
-    bytes:       [72, 131, 198, 255]
-0x1676: cmpq $0, %rsi
-    bytes:       [72, 131, 254, 0]
-0x167a: cmovlq 0x20e(%rip), %rsi
-    bytes:       [72, 15, 76, 53, 14, 2, 0, 0]
-0x1682: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x1688: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x168b: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x168f: movabsq $0x7ff752661bf0, %r10
-    bytes:       [73, 186, 240, 27, 102, 82, 247, 127, 0, 0]
-0x1699: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x169d: callq *%r10
+0x1106: jne 0x1806
+    bytes:       [15, 133, 250, 6, 0, 0]
+0x110c: movabs rax, 0x7ff73d1f3f80
+    bytes:       [72, 184, 128, 63, 31, 61, 247, 127, 0, 0]
+0x1116: mov rcx, r14
+    bytes:       [76, 137, 241]
+0x1119: call rax
+    bytes:       [255, 208]
+0x111b: test rax, rax
+    bytes:       [72, 133, 192]
+0x111e: jne 0x1806
+    bytes:       [15, 133, 226, 6, 0, 0]
+0x1124: movzx rax, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 4, 62]
+0x1129: add eax, 1
+    bytes:       [131, 192, 1]
+0x112c: mov byte ptr [rsi + rdi], al
+    bytes:       [136, 4, 62]
+0x112f: movabs rdx, 0x7ff73d1f3f80
+    bytes:       [72, 186, 128, 63, 31, 61, 247, 127, 0, 0]
+0x1139: mov rcx, r14
+    bytes:       [76, 137, 241]
+0x113c: call rdx
+    bytes:       [255, 210]
+0x113e: test rax, rax
+    bytes:       [72, 133, 192]
+0x1141: jne 0x1806
+    bytes:       [15, 133, 191, 6, 0, 0]
+0x1147: movzx r8, byte ptr [rsi + rdi]
+    bytes:       [76, 15, 182, 4, 62]
+0x114c: add r8d, 0xff
+    bytes:       [65, 129, 192, 255, 0, 0, 0]
+0x1153: mov byte ptr [rsi + rdi], r8b
+    bytes:       [68, 136, 4, 62]
+0x1157: movabs r10, 0x7ff73d1f3f80
+    bytes:       [73, 186, 128, 63, 31, 61, 247, 127, 0, 0]
+0x1161: mov rcx, r14
+    bytes:       [76, 137, 241]
+0x1164: call r10
     bytes:       [65, 255, 210]
-0x16a0: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x16a4: testq %rax, %rax
+0x1167: test rax, rax
     bytes:       [72, 133, 192]
-0x16a7: jne 0x1857
-    bytes:       [15, 133, 170, 1, 0, 0]
-0x16ad: addq $-1, %rsi
-    bytes:       [72, 131, 198, 255]
-0x16b1: cmpq $0, %rsi
-    bytes:       [72, 131, 254, 0]
-0x16b5: cmovlq 0x1d3(%rip), %rsi
-    bytes:       [72, 15, 76, 53, 211, 1, 0, 0]
-0x16bd: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x16c3: movabsq $0x7ff752661bf0, %r8
-    bytes:       [73, 184, 240, 27, 102, 82, 247, 127, 0, 0]
-0x16cd: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x16d1: callq *%r8
+0x116a: jne 0x1806
+    bytes:       [15, 133, 150, 6, 0, 0]
+0x1170: movabs rax, 0x7ff73d1f3f80
+    bytes:       [72, 184, 128, 63, 31, 61, 247, 127, 0, 0]
+0x117a: lea r11, [rdi - 1]
+    bytes:       [76, 141, 95, 255]
+0x117e: test r11, r11
+    bytes:       [77, 133, 219]
+0x1181: cmovl r11, qword ptr [rip + 0x697]
+    bytes:       [76, 15, 76, 29, 151, 6, 0, 0]
+0x1189: lea rdi, [r11 + 1]
+    bytes:       [73, 141, 123, 1]
+0x118d: cmp rdi, 0x7530
+    bytes:       [72, 129, 255, 48, 117, 0, 0]
+0x1194: cmove rdi, qword ptr [rip + 0x68c]
+    bytes:       [72, 15, 68, 61, 140, 6, 0, 0]
+0x119c: lea rcx, [rsi + rdi]
+    bytes:       [72, 141, 12, 62]
+0x11a0: call rax
+    bytes:       [255, 208]
+0x11a2: test rax, rax
+    bytes:       [72, 133, 192]
+0x11a5: jne 0x1806
+    bytes:       [15, 133, 91, 6, 0, 0]
+0x11ab: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x11b0: test cl, cl
+    bytes:       [132, 201]
+0x11b2: je 0x11c0
+    bytes:       [15, 132, 8, 0, 0, 0]
+0x11b8: test cl, cl
+    bytes:       [132, 201]
+0x11ba: jne 0x11b8
+    bytes:       [15, 133, 248, 255, 255, 255]
+0x11c0: movabs rdx, 0x7ff73d1f3dc0
+    bytes:       [72, 186, 192, 61, 31, 61, 247, 127, 0, 0]
+0x11ca: call rdx
+    bytes:       [255, 210]
+0x11cc: test rax, rax
+    bytes:       [72, 133, 192]
+0x11cf: jne 0x1806
+    bytes:       [15, 133, 49, 6, 0, 0]
+0x11d5: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x11da: movabs r8, 0x7ff73d1f3dc0
+    bytes:       [73, 184, 192, 61, 31, 61, 247, 127, 0, 0]
+0x11e4: call r8
     bytes:       [65, 255, 208]
-0x16d4: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x16d8: testq %rax, %rax
+0x11e7: test rax, rax
     bytes:       [72, 133, 192]
-0x16db: jne 0x1857
-    bytes:       [15, 133, 118, 1, 0, 0]
-0x16e1: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x16e7: addl $1, %ecx
+0x11ea: jne 0x1806
+    bytes:       [15, 133, 22, 6, 0, 0]
+0x11f0: movzx r10, byte ptr [rsi + rdi]
+    bytes:       [76, 15, 182, 20, 62]
+0x11f5: test r10b, r10b
+    bytes:       [69, 132, 210]
+0x11f8: jne 0x1036
+    bytes:       [15, 133, 56, 254, 255, 255]
+0x11fe: movzx rax, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 4, 62]
+0x1203: mov rcx, rax
+    bytes:       [72, 137, 193]
+0x1206: add ecx, 1
     bytes:       [131, 193, 1]
-0x16ea: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x16ee: addl $1, %ecx
+0x1209: mov byte ptr [rsi + rdi], cl
+    bytes:       [136, 12, 62]
+0x120c: mov rcx, rax
+    bytes:       [72, 137, 193]
+0x120f: add ecx, 2
+    bytes:       [131, 193, 2]
+0x1212: mov byte ptr [rsi + rdi], cl
+    bytes:       [136, 12, 62]
+0x1215: mov rcx, rax
+    bytes:       [72, 137, 193]
+0x1218: add ecx, 3
+    bytes:       [131, 193, 3]
+0x121b: mov byte ptr [rsi + rdi], cl
+    bytes:       [136, 12, 62]
+0x121e: mov rcx, rax
+    bytes:       [72, 137, 193]
+0x1221: add ecx, 4
+    bytes:       [131, 193, 4]
+0x1224: mov byte ptr [rsi + rdi], cl
+    bytes:       [136, 12, 62]
+0x1227: mov rdx, rax
+    bytes:       [72, 137, 194]
+0x122a: add edx, 5
+    bytes:       [131, 194, 5]
+0x122d: mov byte ptr [rsi + rdi], dl
+    bytes:       [136, 20, 62]
+0x1230: mov r8, rax
+    bytes:       [73, 137, 192]
+0x1233: add r8d, 6
+    bytes:       [65, 131, 192, 6]
+0x1237: mov byte ptr [rsi + rdi], r8b
+    bytes:       [68, 136, 4, 62]
+0x123b: mov r9, rax
+    bytes:       [73, 137, 193]
+0x123e: add r9d, 7
+    bytes:       [65, 131, 193, 7]
+0x1242: mov byte ptr [rsi + rdi], r9b
+    bytes:       [68, 136, 12, 62]
+0x1246: add eax, 8
+    bytes:       [131, 192, 8]
+0x1249: mov byte ptr [rsi + rdi], al
+    bytes:       [136, 4, 62]
+0x124c: test al, al
+    bytes:       [132, 192]
+0x124e: je 0x147b
+    bytes:       [15, 132, 39, 2, 0, 0]
+0x1254: lea r9, [rdi + 1]
+    bytes:       [76, 141, 79, 1]
+0x1258: cmp r9, 0x7530
+    bytes:       [73, 129, 249, 48, 117, 0, 0]
+0x125f: cmove r9, qword ptr [rip + 0x5c1]
+    bytes:       [76, 15, 68, 13, 193, 5, 0, 0]
+0x1267: movzx r10, byte ptr [rsi + r9]
+    bytes:       [78, 15, 182, 20, 14]
+0x126c: mov rax, r10
+    bytes:       [76, 137, 208]
+0x126f: add eax, 1
+    bytes:       [131, 192, 1]
+0x1272: mov byte ptr [rsi + r9], al
+    bytes:       [66, 136, 4, 14]
+0x1276: mov rcx, r10
+    bytes:       [76, 137, 209]
+0x1279: add ecx, 2
+    bytes:       [131, 193, 2]
+0x127c: mov byte ptr [rsi + r9], cl
+    bytes:       [66, 136, 12, 14]
+0x1280: mov rdx, r10
+    bytes:       [76, 137, 210]
+0x1283: add edx, 3
+    bytes:       [131, 194, 3]
+0x1286: mov byte ptr [rsi + r9], dl
+    bytes:       [66, 136, 20, 14]
+0x128a: add r10d, 4
+    bytes:       [65, 131, 194, 4]
+0x128e: mov byte ptr [rsi + r9], r10b
+    bytes:       [70, 136, 20, 14]
+0x1292: test r10b, r10b
+    bytes:       [69, 132, 210]
+0x1295: je 0x139d
+    bytes:       [15, 132, 2, 1, 0, 0]
+0x129b: lea r10, [r9 + 1]
+    bytes:       [77, 141, 81, 1]
+0x129f: cmp r10, 0x7530
+    bytes:       [73, 129, 250, 48, 117, 0, 0]
+0x12a6: cmove r10, qword ptr [rip + 0x57a]
+    bytes:       [76, 15, 68, 21, 122, 5, 0, 0]
+0x12ae: movzx r11, byte ptr [rsi + r10]
+    bytes:       [78, 15, 182, 28, 22]
+0x12b3: mov rdi, r11
+    bytes:       [76, 137, 223]
+0x12b6: add edi, 1
+    bytes:       [131, 199, 1]
+0x12b9: mov byte ptr [rsi + r10], dil
+    bytes:       [66, 136, 60, 22]
+0x12bd: add r11d, 2
+    bytes:       [65, 131, 195, 2]
+0x12c1: mov byte ptr [rsi + r10], r11b
+    bytes:       [70, 136, 28, 22]
+0x12c5: lea rdi, [r10 + 1]
+    bytes:       [73, 141, 122, 1]
+0x12c9: cmp rdi, 0x7530
+    bytes:       [72, 129, 255, 48, 117, 0, 0]
+0x12d0: cmove rdi, qword ptr [rip + 0x550]
+    bytes:       [72, 15, 68, 61, 80, 5, 0, 0]
+0x12d8: movzx rax, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 4, 62]
+0x12dd: mov rcx, rax
+    bytes:       [72, 137, 193]
+0x12e0: add ecx, 1
     bytes:       [131, 193, 1]
-0x16f1: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x16f5: addl $1, %ecx
+0x12e3: mov byte ptr [rsi + rdi], cl
+    bytes:       [136, 12, 62]
+0x12e6: mov rdx, rax
+    bytes:       [72, 137, 194]
+0x12e9: add edx, 2
+    bytes:       [131, 194, 2]
+0x12ec: mov byte ptr [rsi + rdi], dl
+    bytes:       [136, 20, 62]
+0x12ef: add eax, 3
+    bytes:       [131, 192, 3]
+0x12f2: mov byte ptr [rsi + rdi], al
+    bytes:       [136, 4, 62]
+0x12f5: lea r8, [rdi + 1]
+    bytes:       [76, 141, 71, 1]
+0x12f9: cmp r8, 0x7530
+    bytes:       [73, 129, 248, 48, 117, 0, 0]
+0x1300: cmove r8, qword ptr [rip + 0x520]
+    bytes:       [76, 15, 68, 5, 32, 5, 0, 0]
+0x1308: movzx rdx, byte ptr [rsi + r8]
+    bytes:       [74, 15, 182, 20, 6]
+0x130d: mov r10, rdx
+    bytes:       [73, 137, 210]
+0x1310: add r10d, 1
+    bytes:       [65, 131, 194, 1]
+0x1314: mov byte ptr [rsi + r8], r10b
+    bytes:       [70, 136, 20, 6]
+0x1318: mov r11, rdx
+    bytes:       [73, 137, 211]
+0x131b: add r11d, 2
+    bytes:       [65, 131, 195, 2]
+0x131f: mov byte ptr [rsi + r8], r11b
+    bytes:       [70, 136, 28, 6]
+0x1323: add edx, 3
+    bytes:       [131, 194, 3]
+0x1326: mov byte ptr [rsi + r8], dl
+    bytes:       [66, 136, 20, 6]
+0x132a: lea rdi, [r8 + 1]
+    bytes:       [73, 141, 120, 1]
+0x132e: cmp rdi, 0x7530
+    bytes:       [72, 129, 255, 48, 117, 0, 0]
+0x1335: cmove rdi, qword ptr [rip + 0x4eb]
+    bytes:       [72, 15, 68, 61, 235, 4, 0, 0]
+0x133d: movzx rax, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 4, 62]
+0x1342: add eax, 1
+    bytes:       [131, 192, 1]
+0x1345: mov byte ptr [rsi + rdi], al
+    bytes:       [136, 4, 62]
+0x1348: lea rax, [rdi - 1]
+    bytes:       [72, 141, 71, 255]
+0x134c: test rax, rax
+    bytes:       [72, 133, 192]
+0x134f: cmovl rax, qword ptr [rip + 0x4c9]
+    bytes:       [72, 15, 76, 5, 201, 4, 0, 0]
+0x1357: lea rcx, [rax - 1]
+    bytes:       [72, 141, 72, 255]
+0x135b: test rcx, rcx
+    bytes:       [72, 133, 201]
+0x135e: cmovl rcx, qword ptr [rip + 0x4ba]
+    bytes:       [72, 15, 76, 13, 186, 4, 0, 0]
+0x1366: lea rdx, [rcx - 1]
+    bytes:       [72, 141, 81, 255]
+0x136a: test rdx, rdx
+    bytes:       [72, 133, 210]
+0x136d: cmovl rdx, qword ptr [rip + 0x4ab]
+    bytes:       [72, 15, 76, 21, 171, 4, 0, 0]
+0x1375: lea r9, [rdx - 1]
+    bytes:       [76, 141, 74, 255]
+0x1379: test r9, r9
+    bytes:       [77, 133, 201]
+0x137c: cmovl r9, qword ptr [rip + 0x49c]
+    bytes:       [76, 15, 76, 13, 156, 4, 0, 0]
+0x1384: movzx r10, byte ptr [rsi + r9]
+    bytes:       [78, 15, 182, 20, 14]
+0x1389: add r10d, 0xff
+    bytes:       [65, 129, 194, 255, 0, 0, 0]
+0x1390: mov byte ptr [rsi + r9], r10b
+    bytes:       [70, 136, 20, 14]
+0x1394: test r10b, r10b
+    bytes:       [69, 132, 210]
+0x1397: jne 0x129b
+    bytes:       [15, 133, 254, 254, 255, 255]
+0x139d: lea rdi, [r9 + 1]
+    bytes:       [73, 141, 121, 1]
+0x13a1: cmp rdi, 0x7530
+    bytes:       [72, 129, 255, 48, 117, 0, 0]
+0x13a8: cmove rdi, qword ptr [rip + 0x478]
+    bytes:       [72, 15, 68, 61, 120, 4, 0, 0]
+0x13b0: movzx rax, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 4, 62]
+0x13b5: add eax, 1
+    bytes:       [131, 192, 1]
+0x13b8: mov byte ptr [rsi + rdi], al
+    bytes:       [136, 4, 62]
+0x13bb: lea rax, [rdi + 1]
+    bytes:       [72, 141, 71, 1]
+0x13bf: cmp rax, 0x7530
+    bytes:       [72, 129, 248, 48, 117, 0, 0]
+0x13c6: cmove rax, qword ptr [rip + 0x45a]
+    bytes:       [72, 15, 68, 5, 90, 4, 0, 0]
+0x13ce: movzx rcx, byte ptr [rsi + rax]
+    bytes:       [72, 15, 182, 12, 6]
+0x13d3: add ecx, 1
     bytes:       [131, 193, 1]
-0x16f8: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x16fc: movabsq $0x7ff752661bf0, %r8
-    bytes:       [73, 184, 240, 27, 102, 82, 247, 127, 0, 0]
-0x1706: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x170a: callq *%r8
+0x13d6: mov byte ptr [rsi + rax], cl
+    bytes:       [136, 12, 6]
+0x13d9: lea rdx, [rax + 1]
+    bytes:       [72, 141, 80, 1]
+0x13dd: cmp rdx, 0x7530
+    bytes:       [72, 129, 250, 48, 117, 0, 0]
+0x13e4: cmove rdx, qword ptr [rip + 0x43c]
+    bytes:       [72, 15, 68, 21, 60, 4, 0, 0]
+0x13ec: movzx r8, byte ptr [rsi + rdx]
+    bytes:       [76, 15, 182, 4, 22]
+0x13f1: add r8d, 0xff
+    bytes:       [65, 129, 192, 255, 0, 0, 0]
+0x13f8: mov byte ptr [rsi + rdx], r8b
+    bytes:       [68, 136, 4, 22]
+0x13fc: lea r9, [rdx + 1]
+    bytes:       [76, 141, 74, 1]
+0x1400: cmp r9, 0x7530
+    bytes:       [73, 129, 249, 48, 117, 0, 0]
+0x1407: cmove r9, qword ptr [rip + 0x419]
+    bytes:       [76, 15, 68, 13, 25, 4, 0, 0]
+0x140f: lea r11, [r9 + 1]
+    bytes:       [77, 141, 89, 1]
+0x1413: cmp r11, 0x7530
+    bytes:       [73, 129, 251, 48, 117, 0, 0]
+0x141a: cmove r11, qword ptr [rip + 0x406]
+    bytes:       [76, 15, 68, 29, 6, 4, 0, 0]
+0x1422: movzx rdi, byte ptr [rsi + r11]
+    bytes:       [74, 15, 182, 60, 30]
+0x1427: add edi, 1
+    bytes:       [131, 199, 1]
+0x142a: mov byte ptr [rsi + r11], dil
+    bytes:       [66, 136, 60, 30]
+0x142e: test dil, dil
+    bytes:       [64, 132, 255]
+0x1431: je 0x1453
+    bytes:       [15, 132, 28, 0, 0, 0]
+0x1437: add r11, -1
+    bytes:       [73, 131, 195, 255]
+0x143b: test r11, r11
+    bytes:       [77, 133, 219]
+0x143e: cmovl r11, qword ptr [rip + 0x3da]
+    bytes:       [76, 15, 76, 29, 218, 3, 0, 0]
+0x1446: movzx rdx, byte ptr [rsi + r11]
+    bytes:       [74, 15, 182, 20, 30]
+0x144b: test dl, dl
+    bytes:       [132, 210]
+0x144d: jne 0x1437
+    bytes:       [15, 133, 228, 255, 255, 255]
+0x1453: lea rdi, [r11 - 1]
+    bytes:       [73, 141, 123, 255]
+0x1457: test rdi, rdi
+    bytes:       [72, 133, 255]
+0x145a: cmovl rdi, qword ptr [rip + 0x3be]
+    bytes:       [72, 15, 76, 61, 190, 3, 0, 0]
+0x1462: movzx r9, byte ptr [rsi + rdi]
+    bytes:       [76, 15, 182, 12, 62]
+0x1467: add r9d, 0xff
+    bytes:       [65, 129, 193, 255, 0, 0, 0]
+0x146e: mov byte ptr [rsi + rdi], r9b
+    bytes:       [68, 136, 12, 62]
+0x1472: test r9b, r9b
+    bytes:       [69, 132, 201]
+0x1475: jne 0x1254
+    bytes:       [15, 133, 217, 253, 255, 255]
+0x147b: add rdi, 1
+    bytes:       [72, 131, 199, 1]
+0x147f: cmp rdi, 0x7530
+    bytes:       [72, 129, 255, 48, 117, 0, 0]
+0x1486: cmove rdi, qword ptr [rip + 0x39a]
+    bytes:       [72, 15, 68, 61, 154, 3, 0, 0]
+0x148e: add rdi, 1
+    bytes:       [72, 131, 199, 1]
+0x1492: cmp rdi, 0x7530
+    bytes:       [72, 129, 255, 48, 117, 0, 0]
+0x1499: cmove rdi, qword ptr [rip + 0x387]
+    bytes:       [72, 15, 68, 61, 135, 3, 0, 0]
+0x14a1: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x14a6: movabs rdx, 0x7ff73d1f3dc0
+    bytes:       [72, 186, 192, 61, 31, 61, 247, 127, 0, 0]
+0x14b0: call rdx
+    bytes:       [255, 210]
+0x14b2: test rax, rax
+    bytes:       [72, 133, 192]
+0x14b5: jne 0x1806
+    bytes:       [15, 133, 75, 3, 0, 0]
+0x14bb: add rdi, 1
+    bytes:       [72, 131, 199, 1]
+0x14bf: cmp rdi, 0x7530
+    bytes:       [72, 129, 255, 48, 117, 0, 0]
+0x14c6: cmove rdi, qword ptr [rip + 0x35a]
+    bytes:       [72, 15, 68, 61, 90, 3, 0, 0]
+0x14ce: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x14d3: mov r9, rcx
+    bytes:       [73, 137, 201]
+0x14d6: add r9d, 0xff
+    bytes:       [65, 129, 193, 255, 0, 0, 0]
+0x14dd: mov byte ptr [rsi + rdi], r9b
+    bytes:       [68, 136, 12, 62]
+0x14e1: mov r10, rcx
+    bytes:       [73, 137, 202]
+0x14e4: add r10d, 0xfe
+    bytes:       [65, 129, 194, 254, 0, 0, 0]
+0x14eb: mov byte ptr [rsi + rdi], r10b
+    bytes:       [68, 136, 20, 62]
+0x14ef: add ecx, 0xfd
+    bytes:       [129, 193, 253, 0, 0, 0]
+0x14f5: mov byte ptr [rsi + rdi], cl
+    bytes:       [136, 12, 62]
+0x14f8: movabs rax, 0x7ff73d1f3dc0
+    bytes:       [72, 184, 192, 61, 31, 61, 247, 127, 0, 0]
+0x1502: call rax
+    bytes:       [255, 208]
+0x1504: test rax, rax
+    bytes:       [72, 133, 192]
+0x1507: jne 0x1806
+    bytes:       [15, 133, 249, 2, 0, 0]
+0x150d: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x1512: mov rax, rcx
+    bytes:       [72, 137, 200]
+0x1515: add eax, 1
+    bytes:       [131, 192, 1]
+0x1518: mov byte ptr [rsi + rdi], al
+    bytes:       [136, 4, 62]
+0x151b: mov rdx, rcx
+    bytes:       [72, 137, 202]
+0x151e: add edx, 2
+    bytes:       [131, 194, 2]
+0x1521: mov byte ptr [rsi + rdi], dl
+    bytes:       [136, 20, 62]
+0x1524: mov rdx, rcx
+    bytes:       [72, 137, 202]
+0x1527: add edx, 3
+    bytes:       [131, 194, 3]
+0x152a: mov byte ptr [rsi + rdi], dl
+    bytes:       [136, 20, 62]
+0x152d: mov r8, rcx
+    bytes:       [73, 137, 200]
+0x1530: add r8d, 4
+    bytes:       [65, 131, 192, 4]
+0x1534: mov byte ptr [rsi + rdi], r8b
+    bytes:       [68, 136, 4, 62]
+0x1538: mov r9, rcx
+    bytes:       [73, 137, 201]
+0x153b: add r9d, 5
+    bytes:       [65, 131, 193, 5]
+0x153f: mov byte ptr [rsi + rdi], r9b
+    bytes:       [68, 136, 12, 62]
+0x1543: mov r10, rcx
+    bytes:       [73, 137, 202]
+0x1546: add r10d, 6
+    bytes:       [65, 131, 194, 6]
+0x154a: mov byte ptr [rsi + rdi], r10b
+    bytes:       [68, 136, 20, 62]
+0x154e: add ecx, 7
+    bytes:       [131, 193, 7]
+0x1551: mov byte ptr [rsi + rdi], cl
+    bytes:       [136, 12, 62]
+0x1554: movabs rax, 0x7ff73d1f3dc0
+    bytes:       [72, 184, 192, 61, 31, 61, 247, 127, 0, 0]
+0x155e: call rax
+    bytes:       [255, 208]
+0x1560: test rax, rax
+    bytes:       [72, 133, 192]
+0x1563: jne 0x1806
+    bytes:       [15, 133, 157, 2, 0, 0]
+0x1569: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x156e: movabs rax, 0x7ff73d1f3dc0
+    bytes:       [72, 184, 192, 61, 31, 61, 247, 127, 0, 0]
+0x1578: call rax
+    bytes:       [255, 208]
+0x157a: test rax, rax
+    bytes:       [72, 133, 192]
+0x157d: jne 0x1806
+    bytes:       [15, 133, 131, 2, 0, 0]
+0x1583: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x1588: mov rdx, rcx
+    bytes:       [72, 137, 202]
+0x158b: add edx, 1
+    bytes:       [131, 194, 1]
+0x158e: mov byte ptr [rsi + rdi], dl
+    bytes:       [136, 20, 62]
+0x1591: mov r8, rcx
+    bytes:       [73, 137, 200]
+0x1594: add r8d, 2
+    bytes:       [65, 131, 192, 2]
+0x1598: mov byte ptr [rsi + rdi], r8b
+    bytes:       [68, 136, 4, 62]
+0x159c: add ecx, 3
+    bytes:       [131, 193, 3]
+0x159f: mov byte ptr [rsi + rdi], cl
+    bytes:       [136, 12, 62]
+0x15a2: movabs r10, 0x7ff73d1f3dc0
+    bytes:       [73, 186, 192, 61, 31, 61, 247, 127, 0, 0]
+0x15ac: call r10
+    bytes:       [65, 255, 210]
+0x15af: test rax, rax
+    bytes:       [72, 133, 192]
+0x15b2: jne 0x1806
+    bytes:       [15, 133, 78, 2, 0, 0]
+0x15b8: lea r11, [rdi + 1]
+    bytes:       [76, 141, 95, 1]
+0x15bc: cmp r11, 0x7530
+    bytes:       [73, 129, 251, 48, 117, 0, 0]
+0x15c3: cmove r11, qword ptr [rip + 0x25d]
+    bytes:       [76, 15, 68, 29, 93, 2, 0, 0]
+0x15cb: lea rdi, [r11 + 1]
+    bytes:       [73, 141, 123, 1]
+0x15cf: cmp rdi, 0x7530
+    bytes:       [72, 129, 255, 48, 117, 0, 0]
+0x15d6: cmove rdi, qword ptr [rip + 0x24a]
+    bytes:       [72, 15, 68, 61, 74, 2, 0, 0]
+0x15de: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x15e3: movabs rax, 0x7ff73d1f3dc0
+    bytes:       [72, 184, 192, 61, 31, 61, 247, 127, 0, 0]
+0x15ed: call rax
+    bytes:       [255, 208]
+0x15ef: test rax, rax
+    bytes:       [72, 133, 192]
+0x15f2: jne 0x1806
+    bytes:       [15, 133, 14, 2, 0, 0]
+0x15f8: add rdi, -1
+    bytes:       [72, 131, 199, 255]
+0x15fc: test rdi, rdi
+    bytes:       [72, 133, 255]
+0x15ff: cmovl rdi, qword ptr [rip + 0x219]
+    bytes:       [72, 15, 76, 61, 25, 2, 0, 0]
+0x1607: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x160c: add ecx, 0xff
+    bytes:       [129, 193, 255, 0, 0, 0]
+0x1612: mov byte ptr [rsi + rdi], cl
+    bytes:       [136, 12, 62]
+0x1615: movabs r9, 0x7ff73d1f3dc0
+    bytes:       [73, 185, 192, 61, 31, 61, 247, 127, 0, 0]
+0x161f: call r9
+    bytes:       [65, 255, 209]
+0x1622: test rax, rax
+    bytes:       [72, 133, 192]
+0x1625: jne 0x1806
+    bytes:       [15, 133, 219, 1, 0, 0]
+0x162b: add rdi, -1
+    bytes:       [72, 131, 199, 255]
+0x162f: test rdi, rdi
+    bytes:       [72, 133, 255]
+0x1632: cmovl rdi, qword ptr [rip + 0x1e6]
+    bytes:       [72, 15, 76, 61, 230, 1, 0, 0]
+0x163a: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x163f: movabs rax, 0x7ff73d1f3dc0
+    bytes:       [72, 184, 192, 61, 31, 61, 247, 127, 0, 0]
+0x1649: call rax
+    bytes:       [255, 208]
+0x164b: test rax, rax
+    bytes:       [72, 133, 192]
+0x164e: jne 0x1806
+    bytes:       [15, 133, 178, 1, 0, 0]
+0x1654: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x1659: mov rax, rcx
+    bytes:       [72, 137, 200]
+0x165c: add eax, 1
+    bytes:       [131, 192, 1]
+0x165f: mov byte ptr [rsi + rdi], al
+    bytes:       [136, 4, 62]
+0x1662: mov rdx, rcx
+    bytes:       [72, 137, 202]
+0x1665: add edx, 2
+    bytes:       [131, 194, 2]
+0x1668: mov byte ptr [rsi + rdi], dl
+    bytes:       [136, 20, 62]
+0x166b: add ecx, 3
+    bytes:       [131, 193, 3]
+0x166e: mov byte ptr [rsi + rdi], cl
+    bytes:       [136, 12, 62]
+0x1671: movabs r8, 0x7ff73d1f3dc0
+    bytes:       [73, 184, 192, 61, 31, 61, 247, 127, 0, 0]
+0x167b: call r8
     bytes:       [65, 255, 208]
-0x170d: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x1711: testq %rax, %rax
+0x167e: test rax, rax
     bytes:       [72, 133, 192]
-0x1714: jne 0x1857
-    bytes:       [15, 133, 61, 1, 0, 0]
-0x171a: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x1720: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x1723: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x1727: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x172a: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x172e: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x1731: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x1735: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x1738: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x173c: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x173f: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x1743: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x1746: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x174a: movabsq $0x7ff752661bf0, %r11
-    bytes:       [73, 187, 240, 27, 102, 82, 247, 127, 0, 0]
-0x1754: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x1758: callq *%r11
-    bytes:       [65, 255, 211]
-0x175b: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x175f: testq %rax, %rax
-    bytes:       [72, 133, 192]
-0x1762: jne 0x1857
-    bytes:       [15, 133, 239, 0, 0, 0]
-0x1768: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x176e: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x1771: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x1775: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x1778: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x177c: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x177f: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x1783: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x1786: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x178a: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x178d: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x1791: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x1794: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x1798: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x179b: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x179f: addl $-1, %ecx
-    bytes:       [131, 193, 255]
-0x17a2: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x17a6: movabsq $0x7ff752661bf0, %rdx
-    bytes:       [72, 186, 240, 27, 102, 82, 247, 127, 0, 0]
-0x17b0: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x17b4: callq *%rdx
+0x1681: jne 0x1806
+    bytes:       [15, 133, 127, 1, 0, 0]
+0x1687: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x168c: mov r10, rcx
+    bytes:       [73, 137, 202]
+0x168f: add r10d, 0xff
+    bytes:       [65, 129, 194, 255, 0, 0, 0]
+0x1696: mov byte ptr [rsi + rdi], r10b
+    bytes:       [68, 136, 20, 62]
+0x169a: mov r11, rcx
+    bytes:       [73, 137, 203]
+0x169d: add r11d, 0xfe
+    bytes:       [65, 129, 195, 254, 0, 0, 0]
+0x16a4: mov byte ptr [rsi + rdi], r11b
+    bytes:       [68, 136, 28, 62]
+0x16a8: mov rax, rcx
+    bytes:       [72, 137, 200]
+0x16ab: add eax, 0xfd
+    bytes:       [129, 192, 253, 0, 0, 0]
+0x16b1: mov byte ptr [rsi + rdi], al
+    bytes:       [136, 4, 62]
+0x16b4: mov rax, rcx
+    bytes:       [72, 137, 200]
+0x16b7: add eax, 0xfc
+    bytes:       [129, 192, 252, 0, 0, 0]
+0x16bd: mov byte ptr [rsi + rdi], al
+    bytes:       [136, 4, 62]
+0x16c0: mov rax, rcx
+    bytes:       [72, 137, 200]
+0x16c3: add eax, 0xfb
+    bytes:       [129, 192, 251, 0, 0, 0]
+0x16c9: mov byte ptr [rsi + rdi], al
+    bytes:       [136, 4, 62]
+0x16cc: add ecx, 0xfa
+    bytes:       [129, 193, 250, 0, 0, 0]
+0x16d2: mov byte ptr [rsi + rdi], cl
+    bytes:       [136, 12, 62]
+0x16d5: movabs rdx, 0x7ff73d1f3dc0
+    bytes:       [72, 186, 192, 61, 31, 61, 247, 127, 0, 0]
+0x16df: call rdx
     bytes:       [255, 210]
-0x17b6: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x17ba: testq %rax, %rax
+0x16e1: test rax, rax
     bytes:       [72, 133, 192]
-0x17bd: jne 0x1857
-    bytes:       [15, 133, 148, 0, 0, 0]
-0x17c3: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x17c7: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x17ce: cmoveq 0xb2(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 178, 0, 0, 0]
-0x17d6: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x17da: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x17e1: cmoveq 0x9f(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 159, 0, 0, 0]
-0x17e9: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x17ef: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x17f2: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x17f6: movabsq $0x7ff752661bf0, %rdx
-    bytes:       [72, 186, 240, 27, 102, 82, 247, 127, 0, 0]
-0x1800: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x1804: callq *%rdx
-    bytes:       [255, 210]
-0x1806: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x180a: testq %rax, %rax
+0x16e4: jne 0x1806
+    bytes:       [15, 133, 28, 1, 0, 0]
+0x16ea: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x16ef: mov r9, rcx
+    bytes:       [73, 137, 201]
+0x16f2: add r9d, 0xff
+    bytes:       [65, 129, 193, 255, 0, 0, 0]
+0x16f9: mov byte ptr [rsi + rdi], r9b
+    bytes:       [68, 136, 12, 62]
+0x16fd: mov r10, rcx
+    bytes:       [73, 137, 202]
+0x1700: add r10d, 0xfe
+    bytes:       [65, 129, 194, 254, 0, 0, 0]
+0x1707: mov byte ptr [rsi + rdi], r10b
+    bytes:       [68, 136, 20, 62]
+0x170b: mov r11, rcx
+    bytes:       [73, 137, 203]
+0x170e: add r11d, 0xfd
+    bytes:       [65, 129, 195, 253, 0, 0, 0]
+0x1715: mov byte ptr [rsi + rdi], r11b
+    bytes:       [68, 136, 28, 62]
+0x1719: mov rax, rcx
+    bytes:       [72, 137, 200]
+0x171c: add eax, 0xfc
+    bytes:       [129, 192, 252, 0, 0, 0]
+0x1722: mov byte ptr [rsi + rdi], al
+    bytes:       [136, 4, 62]
+0x1725: mov rax, rcx
+    bytes:       [72, 137, 200]
+0x1728: add eax, 0xfb
+    bytes:       [129, 192, 251, 0, 0, 0]
+0x172e: mov byte ptr [rsi + rdi], al
+    bytes:       [136, 4, 62]
+0x1731: mov rax, rcx
+    bytes:       [72, 137, 200]
+0x1734: add eax, 0xfa
+    bytes:       [129, 192, 250, 0, 0, 0]
+0x173a: mov byte ptr [rsi + rdi], al
+    bytes:       [136, 4, 62]
+0x173d: mov rdx, rcx
+    bytes:       [72, 137, 202]
+0x1740: add edx, 0xf9
+    bytes:       [129, 194, 249, 0, 0, 0]
+0x1746: mov byte ptr [rsi + rdi], dl
+    bytes:       [136, 20, 62]
+0x1749: add ecx, 0xf8
+    bytes:       [129, 193, 248, 0, 0, 0]
+0x174f: mov byte ptr [rsi + rdi], cl
+    bytes:       [136, 12, 62]
+0x1752: movabs r8, 0x7ff73d1f3dc0
+    bytes:       [73, 184, 192, 61, 31, 61, 247, 127, 0, 0]
+0x175c: call r8
+    bytes:       [65, 255, 208]
+0x175f: test rax, rax
     bytes:       [72, 133, 192]
-0x180d: jne 0x1857
-    bytes:       [15, 133, 68, 0, 0, 0]
-0x1813: addq $1, %rsi
-    bytes:       [72, 131, 198, 1]
-0x1817: cmpq $0x7530, %rsi
-    bytes:       [72, 129, 254, 48, 117, 0, 0]
-0x181e: cmoveq 0x62(%rip), %rsi
-    bytes:       [72, 15, 68, 53, 98, 0, 0, 0]
-0x1826: movzbq (%rdi, %rsi), %rcx
-    bytes:       [72, 15, 182, 76, 55, 0]
-0x182c: addl $1, %ecx
+0x1762: jne 0x1806
+    bytes:       [15, 133, 158, 0, 0, 0]
+0x1768: lea r9, [rdi + 1]
+    bytes:       [76, 141, 79, 1]
+0x176c: cmp r9, 0x7530
+    bytes:       [73, 129, 249, 48, 117, 0, 0]
+0x1773: cmove r9, qword ptr [rip + 0xad]
+    bytes:       [76, 15, 68, 13, 173, 0, 0, 0]
+0x177b: lea rdi, [r9 + 1]
+    bytes:       [73, 141, 121, 1]
+0x177f: cmp rdi, 0x7530
+    bytes:       [72, 129, 255, 48, 117, 0, 0]
+0x1786: cmove rdi, qword ptr [rip + 0x9a]
+    bytes:       [72, 15, 68, 61, 154, 0, 0, 0]
+0x178e: movzx rcx, byte ptr [rsi + rdi]
+    bytes:       [72, 15, 182, 12, 62]
+0x1793: add ecx, 1
     bytes:       [131, 193, 1]
-0x182f: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x1833: addl $1, %ecx
-    bytes:       [131, 193, 1]
-0x1836: movb %cl, (%rdi, %rsi)
-    bytes:       [136, 76, 55, 0]
-0x183a: movabsq $0x7ff752661bf0, %rdx
-    bytes:       [72, 186, 240, 27, 102, 82, 247, 127, 0, 0]
-0x1844: subq $0x20, %rsp
-    bytes:       [72, 131, 236, 32]
-0x1848: callq *%rdx
-    bytes:       [255, 210]
-0x184a: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x184e: testq %rax, %rax
+0x1796: mov byte ptr [rsi + rdi], cl
+    bytes:       [136, 12, 62]
+0x1799: movabs rax, 0x7ff73d1f3dc0
+    bytes:       [72, 184, 192, 61, 31, 61, 247, 127, 0, 0]
+0x17a3: call rax
+    bytes:       [255, 208]
+0x17a5: test rax, rax
     bytes:       [72, 133, 192]
-0x1851: je 0x186e
-    bytes:       [15, 132, 23, 0, 0, 0]
-0x1857: movq (%rsp), %rsi
-    bytes:       [72, 139, 52, 36]
-0x185b: movq 8(%rsp), %rdi
-    bytes:       [72, 139, 124, 36, 8]
-0x1860: movq 0x10(%rsp), %r12
-    bytes:       [76, 139, 100, 36, 16]
-0x1865: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x1869: movq %rbp, %rsp
-    bytes:       [72, 137, 236]
-0x186c: popq %rbp
-    bytes:       [93]
-0x186d: retq 
-    bytes:       [195]
-0x186e: xorq %rax, %rax
+0x17a8: jne 0x1806
+    bytes:       [15, 133, 88, 0, 0, 0]
+0x17ae: lea rax, [rdi + 1]
+    bytes:       [72, 141, 71, 1]
+0x17b2: cmp rax, 0x7530
+    bytes:       [72, 129, 248, 48, 117, 0, 0]
+0x17b9: cmove rax, qword ptr [rip + 0x67]
+    bytes:       [72, 15, 68, 5, 103, 0, 0, 0]
+0x17c1: movzx rcx, byte ptr [rsi + rax]
+    bytes:       [72, 15, 182, 12, 6]
+0x17c6: mov rdx, rcx
+    bytes:       [72, 137, 202]
+0x17c9: add edx, 1
+    bytes:       [131, 194, 1]
+0x17cc: mov byte ptr [rsi + rax], dl
+    bytes:       [136, 20, 6]
+0x17cf: add ecx, 2
+    bytes:       [131, 193, 2]
+0x17d2: mov byte ptr [rsi + rax], cl
+    bytes:       [136, 12, 6]
+0x17d5: movabs r9, 0x7ff73d1f3dc0
+    bytes:       [73, 185, 192, 61, 31, 61, 247, 127, 0, 0]
+0x17df: call r9
+    bytes:       [65, 255, 209]
+0x17e2: test rax, rax
+    bytes:       [72, 133, 192]
+0x17e5: jne 0x1806
+    bytes:       [15, 133, 27, 0, 0, 0]
+0x17eb: xor rax, rax
     bytes:       [72, 49, 192]
-0x1871: movq (%rsp), %rsi
-    bytes:       [72, 139, 52, 36]
-0x1875: movq 8(%rsp), %rdi
-    bytes:       [72, 139, 124, 36, 8]
-0x187a: movq 0x10(%rsp), %r12
-    bytes:       [76, 139, 100, 36, 16]
-0x187f: addq $0x20, %rsp
-    bytes:       [72, 131, 196, 32]
-0x1883: movq %rbp, %rsp
+0x17ee: mov rsi, qword ptr [rsp + 0x20]
+    bytes:       [72, 139, 116, 36, 32]
+0x17f3: mov rdi, qword ptr [rsp + 0x28]
+    bytes:       [72, 139, 124, 36, 40]
+0x17f8: mov r14, qword ptr [rsp + 0x30]
+    bytes:       [76, 139, 116, 36, 48]
+0x17fd: add rsp, 0x40
+    bytes:       [72, 131, 196, 64]
+0x1801: mov rsp, rbp
     bytes:       [72, 137, 236]
-0x1886: popq %rbp
+0x1804: pop rbp
     bytes:       [93]
-0x1887: retq 
+0x1805: ret 
     bytes:       [195]
-0x1888: addb %al, (%rax)
-    bytes:       [0, 0]
-0x188a: addb %al, (%rax)
-    bytes:       [0, 0]
-0x188c: addb %al, (%rax)
-    bytes:       [0, 0]
-0x188e: addb %al, (%rax)
+0x1806: mov rsi, qword ptr [rsp + 0x20]
+    bytes:       [72, 139, 116, 36, 32]
+0x180b: mov rdi, qword ptr [rsp + 0x28]
+    bytes:       [72, 139, 124, 36, 40]
+0x1810: mov r14, qword ptr [rsp + 0x30]
+    bytes:       [76, 139, 116, 36, 48]
+0x1815: add rsp, 0x40
+    bytes:       [72, 131, 196, 64]
+0x1819: mov rsp, rbp
+    bytes:       [72, 137, 236]
+0x181c: pop rbp
+    bytes:       [93]
+0x181d: ret 
+    bytes:       [195]
+0x181e: add byte ptr [rax], al
     bytes:       [0, 0]

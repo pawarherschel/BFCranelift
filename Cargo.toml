@@ -4,10 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-cranelift = "0.89.2"
+cranelift = "0.113.1"
 target-lexicon = "0.12.16"
 memmap2 = "0.9.5"
 capstone = "0.12.0"
-
-# https://docs.rs/cranelift-codegen/latest/src/cranelift_codegen/opt/rustwide/target/x86_64-unknown-linux-gnu/debug/build/cranelift-codegen-b5deaeb0cd154533/out/settings.rs.html#490-664
-# https://docs.rs/crate/cranelift-codegen/0.89.2/source/

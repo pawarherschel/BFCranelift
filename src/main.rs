@@ -68,7 +68,7 @@ fn main() {
     let cs = Capstone::new()
         .x86()
         .mode(capstone::arch::x86::ArchMode::Mode64)
-        .syntax(capstone::arch::x86::ArchSyntax::Att)
+        .syntax(capstone::arch::x86::ArchSyntax::Intel)
         .detail(true)
         .build()
         .unwrap();
