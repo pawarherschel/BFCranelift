@@ -4,560 +4,395 @@ function u0:0(i64) -> i64 windows_fastcall {
 
 block0(v0: i64):
     v1 = iconst.i64 0
-    v2 = iconst.i64 0x752f
-    v3 = iconst.i64 0x7ff6_cb8b_4240
-    v4 = iconst.i64 0x7ff6_cb8b_4400
-    v6 = iadd v0, v1  ; v1 = 0
-    v7 = load.i8 v6
-    brif v7, block2(v1), block3(v1)  ; v1 = 0, v1 = 0
+    v2 = iconst.i64 0x7ff7_011c_42d0
+    v3 = iconst.i64 0x7ff7_011c_4490
+    v5 = iadd v0, v1  ; v1 = 0
+    v6 = load.i8 v5
+    brif v6, block2(v1), block3(v1)  ; v1 = 0, v1 = 0
 
-block2(v8: i64):
-    v14 -> v8
-    v20 -> v8
-    v9 = iadd.i64 v0, v8
-    v10 = load.i8 v9
-    v11 = call_indirect.i64 sig0, v3(v10)  ; v3 = 0x7ff6_cb8b_4240
-    brif v11, block1(v11), block4
+block2(v7: i64):
+    v13 -> v7
+    v19 -> v7
+    v8 = iadd.i64 v0, v7
+    v9 = load.i8 v8
+    v10 = call_indirect.i64 sig0, v2(v9)  ; v2 = 0x7ff7_011c_42d0
+    brif v10, block1(v10), block4
 
 block4:
-    v12 = iadd.i64 v0, v8
-    v13 = load.i8 v12
-    brif v13, block5, block6
+    v11 = iadd.i64 v0, v7
+    v12 = load.i8 v11
+    brif v12, block5, block6
 
 block5:
-    v15 = iadd.i64 v0, v14
-    v16 = load.i8 v15
-    v17 = call_indirect.i64 sig0, v3(v16)  ; v3 = 0x7ff6_cb8b_4240
-    brif v17, block1(v17), block7
+    v14 = iadd.i64 v0, v13
+    v15 = load.i8 v14
+    v16 = call_indirect.i64 sig0, v2(v15)  ; v2 = 0x7ff7_011c_42d0
+    brif v16, block1(v16), block7
 
 block7:
-    v18 = iadd.i64 v0, v14
-    v19 = load.i8 v18
-    brif v19, block5, block6
+    v17 = iadd.i64 v0, v13
+    v18 = load.i8 v17
+    brif v18, block5, block6
 
 block6:
-    v21 = iadd.i64 v0, v8
-    v22 = call_indirect.i64 sig1, v4(v21)  ; v4 = 0x7ff6_cb8b_4400
-    brif v22, block1(v22), block8
+    v20 = iadd.i64 v0, v7
+    v21 = call_indirect.i64 sig1, v3(v20)  ; v3 = 0x7ff7_011c_4490
+    brif v21, block1(v21), block8
 
 block8:
-    v23 = iadd.i64 v0, v20
-    v24 = load.i8 v23
-    v25 = call_indirect.i64 sig0, v3(v24)  ; v3 = 0x7ff6_cb8b_4240
-    brif v25, block1(v25), block9
+    v22 = iadd.i64 v0, v19
+    v23 = load.i8 v22
+    v24 = call_indirect.i64 sig0, v2(v23)  ; v2 = 0x7ff7_011c_42d0
+    brif v24, block1(v24), block9
 
 block9:
-    v26 = iadd.i64 v0, v20
-    v27 = load.i8 v26
-    v28 = call_indirect.i64 sig0, v3(v27)  ; v3 = 0x7ff6_cb8b_4240
-    brif v28, block1(v28), block10
+    v25 = iadd.i64 v0, v19
+    v26 = load.i8 v25
+    v27 = call_indirect.i64 sig0, v2(v26)  ; v2 = 0x7ff7_011c_42d0
+    brif v27, block1(v27), block10
 
 block10:
-    v29 = iadd.i64 v0, v20
-    v30 = call_indirect.i64 sig1, v4(v29)  ; v4 = 0x7ff6_cb8b_4400
-    brif v30, block1(v30), block11
+    v28 = iadd.i64 v0, v19
+    v29 = call_indirect.i64 sig1, v3(v28)  ; v3 = 0x7ff7_011c_4490
+    brif v29, block1(v29), block11
 
 block11:
-    v31 = iadd.i64 v0, v20
-    v32 = call_indirect.i64 sig1, v4(v31)  ; v4 = 0x7ff6_cb8b_4400
-    brif v32, block1(v32), block12
+    v30 = iadd.i64 v0, v19
+    v31 = call_indirect.i64 sig1, v3(v30)  ; v3 = 0x7ff7_011c_4490
+    brif v31, block1(v31), block12
 
 block12:
-    v33 = iadd.i64 v0, v20
-    v34 = call_indirect.i64 sig1, v4(v33)  ; v4 = 0x7ff6_cb8b_4400
-    brif v34, block1(v34), block13
+    v32 = iadd.i64 v0, v19
+    v33 = call_indirect.i64 sig1, v3(v32)  ; v3 = 0x7ff7_011c_4490
+    brif v33, block1(v33), block13
 
 block13:
-    v35 = iadd.i64 v0, v20
-    v36 = load.i8 v35
-    v37 = iadd_imm v36, 1
-    store v37, v35
-    v38 = iadd.i64 v0, v20
-    v39 = call_indirect.i64 sig1, v4(v38)  ; v4 = 0x7ff6_cb8b_4400
-    brif v39, block1(v39), block14
+    v34 = iadd.i64 v0, v19
+    v35 = load.i8 v34
+    v36 = iadd_imm v35, 1
+    store v36, v34
+    v37 = iadd.i64 v0, v19
+    v38 = call_indirect.i64 sig1, v3(v37)  ; v3 = 0x7ff7_011c_4490
+    brif v38, block1(v38), block14
 
 block14:
-    v40 = iadd.i64 v0, v20
-    v41 = load.i8 v40
-    v42 = iadd_imm v41, -1
-    store v42, v40
-    v43 = iadd.i64 v0, v20
-    v44 = call_indirect.i64 sig1, v4(v43)  ; v4 = 0x7ff6_cb8b_4400
-    brif v44, block1(v44), block15
+    v39 = iadd.i64 v0, v19
+    v40 = load.i8 v39
+    v41 = iadd_imm v40, -1
+    store v41, v39
+    v42 = iadd.i64 v0, v19
+    v43 = call_indirect.i64 sig1, v3(v42)  ; v3 = 0x7ff7_011c_4490
+    brif v43, block1(v43), block15
 
 block15:
-    v45 = iadd_imm.i64 v20, -1
-    v46 = icmp_imm slt v45, 0
-    v47 = select.i64 v46, v2, v45  ; v2 = 0x752f
-    v48 = iadd_imm v47, 1
-    v49 = icmp_imm eq v48, 0x7530
-    v50 = select.i64 v49, v1, v48  ; v1 = 0
-    v55 -> v50
-    v58 -> v50
-    v51 = iadd.i64 v0, v50
-    v52 = call_indirect.i64 sig1, v4(v51)  ; v4 = 0x7ff6_cb8b_4400
-    brif v52, block1(v52), block16
+    v44 = iadd_imm.i64 v19, 0
+    v45 = iadd_imm.i64 v19, 0x7530
+    v46 = icmp_imm.i64 slt v19, 0
+    v47 = select v46, v45, v44
+    v52 -> v47
+    v55 -> v47
+    v48 = iadd.i64 v0, v47
+    v49 = call_indirect.i64 sig1, v3(v48)  ; v3 = 0x7ff7_011c_4490
+    brif v49, block1(v49), block16
 
 block16:
-    v53 = iadd.i64 v0, v50
+    v50 = iadd.i64 v0, v47
+    v51 = load.i8 v50
+    brif v51, block17, block18
+
+block17:
+    v53 = iadd.i64 v0, v52
     v54 = load.i8 v53
     brif v54, block17, block18
 
-block17:
-    v56 = iadd.i64 v0, v55
-    v57 = load.i8 v56
-    brif v57, block17, block18
-
 block18:
-    v59 = iadd.i64 v0, v50
-    v60 = load.i8 v59
-    v61 = call_indirect.i64 sig0, v3(v60)  ; v3 = 0x7ff6_cb8b_4240
-    brif v61, block1(v61), block19
+    v56 = iadd.i64 v0, v47
+    v57 = load.i8 v56
+    v58 = call_indirect.i64 sig0, v2(v57)  ; v2 = 0x7ff7_011c_42d0
+    brif v58, block1(v58), block19
 
 block19:
-    v62 = iadd.i64 v0, v58
-    v63 = load.i8 v62
-    v64 = call_indirect.i64 sig0, v3(v63)  ; v3 = 0x7ff6_cb8b_4240
-    brif v64, block1(v64), block20
+    v59 = iadd.i64 v0, v55
+    v60 = load.i8 v59
+    v61 = call_indirect.i64 sig0, v2(v60)  ; v2 = 0x7ff7_011c_42d0
+    brif v61, block1(v61), block20
 
 block20:
-    v65 = iadd.i64 v0, v58
+    v62 = iadd.i64 v0, v55
+    v63 = load.i8 v62
+    brif v63, block2(v55), block3(v55)
+
+block3(v64: i64):
+    v65 = iadd.i64 v0, v64
     v66 = load.i8 v65
-    brif v66, block2(v58), block3(v58)
-
-block3(v67: i64):
-    v68 = iadd.i64 v0, v67
+    v67 = iadd_imm v66, 8
+    store v67, v65
+    v68 = iadd.i64 v0, v64
     v69 = load.i8 v68
-    v70 = iadd_imm v69, 1
-    store v70, v68
-    v71 = iadd.i64 v0, v67
-    v72 = load.i8 v71
-    v73 = iadd_imm v72, 1
-    store v73, v71
-    v74 = iadd.i64 v0, v67
-    v75 = load.i8 v74
-    v76 = iadd_imm v75, 1
-    store v76, v74
-    v77 = iadd.i64 v0, v67
-    v78 = load.i8 v77
-    v79 = iadd_imm v78, 1
-    store v79, v77
-    v80 = iadd.i64 v0, v67
-    v81 = load.i8 v80
-    v82 = iadd_imm v81, 1
-    store v82, v80
-    v83 = iadd.i64 v0, v67
-    v84 = load.i8 v83
-    v85 = iadd_imm v84, 1
-    store v85, v83
-    v86 = iadd.i64 v0, v67
-    v87 = load.i8 v86
-    v88 = iadd_imm v87, 1
-    store v88, v86
-    v89 = iadd.i64 v0, v67
-    v90 = load.i8 v89
-    v91 = iadd_imm v90, 1
-    store v91, v89
-    v92 = iadd.i64 v0, v67
+    brif v69, block21(v64), block22(v64)
+
+block21(v70: i64):
+    v71 = iadd_imm v70, 1
+    v72 = iadd_imm v70, -29999
+    v73 = icmp_imm slt v71, 0x7530
+    v74 = select v73, v71, v72
+    v75 = iadd.i64 v0, v74
+    v76 = load.i8 v75
+    v77 = iadd_imm v76, 4
+    store v77, v75
+    v78 = iadd.i64 v0, v74
+    v79 = load.i8 v78
+    brif v79, block23(v74), block24(v74)
+
+block23(v80: i64):
+    v81 = iadd_imm v80, 1
+    v82 = iadd_imm v80, -29999
+    v83 = icmp_imm slt v81, 0x7530
+    v84 = select v83, v81, v82
+    v85 = iadd.i64 v0, v84
+    v86 = load.i8 v85
+    v87 = iadd_imm v86, 2
+    store v87, v85
+    v88 = iadd_imm v84, 1
+    v89 = iadd_imm v84, -29999
+    v90 = icmp_imm slt v88, 0x7530
+    v91 = select v90, v88, v89
+    v92 = iadd.i64 v0, v91
     v93 = load.i8 v92
-    brif v93, block21(v67), block22(v67)
-
-block21(v94: i64):
-    v95 = iadd_imm v94, 1
-    v96 = icmp_imm eq v95, 0x7530
-    v97 = select.i64 v96, v1, v95  ; v1 = 0
-    v98 = iadd.i64 v0, v97
-    v99 = load.i8 v98
-    v100 = iadd_imm v99, 1
-    store v100, v98
-    v101 = iadd.i64 v0, v97
-    v102 = load.i8 v101
-    v103 = iadd_imm v102, 1
-    store v103, v101
-    v104 = iadd.i64 v0, v97
-    v105 = load.i8 v104
-    v106 = iadd_imm v105, 1
-    store v106, v104
-    v107 = iadd.i64 v0, v97
-    v108 = load.i8 v107
-    v109 = iadd_imm v108, 1
-    store v109, v107
-    v110 = iadd.i64 v0, v97
-    v111 = load.i8 v110
-    brif v111, block23(v97), block24(v97)
-
-block23(v112: i64):
-    v113 = iadd_imm v112, 1
-    v114 = icmp_imm eq v113, 0x7530
-    v115 = select.i64 v114, v1, v113  ; v1 = 0
-    v116 = iadd.i64 v0, v115
+    v94 = iadd_imm v93, 3
+    store v94, v92
+    v95 = iadd_imm v91, 1
+    v96 = iadd_imm v91, -29999
+    v97 = icmp_imm slt v95, 0x7530
+    v98 = select v97, v95, v96
+    v99 = iadd.i64 v0, v98
+    v100 = load.i8 v99
+    v101 = iadd_imm v100, 3
+    store v101, v99
+    v102 = iadd_imm v98, 1
+    v103 = iadd_imm v98, -29999
+    v104 = icmp_imm slt v102, 0x7530
+    v105 = select v104, v102, v103
+    v106 = iadd.i64 v0, v105
+    v107 = load.i8 v106
+    v108 = iadd_imm v107, 1
+    store v108, v106
+    v109 = iadd_imm v105, -4
+    v110 = iadd_imm v105, 0x752c
+    v111 = icmp_imm slt v105, 0
+    v112 = select v111, v110, v109
+    v113 = iadd.i64 v0, v112
+    v114 = load.i8 v113
+    v115 = iadd_imm v114, -1
+    store v115, v113
+    v116 = iadd.i64 v0, v112
     v117 = load.i8 v116
-    v118 = iadd_imm v117, 1
-    store v118, v116
-    v119 = iadd.i64 v0, v115
-    v120 = load.i8 v119
-    v121 = iadd_imm v120, 1
-    store v121, v119
-    v122 = iadd_imm v115, 1
-    v123 = icmp_imm eq v122, 0x7530
-    v124 = select.i64 v123, v1, v122  ; v1 = 0
-    v125 = iadd.i64 v0, v124
-    v126 = load.i8 v125
-    v127 = iadd_imm v126, 1
-    store v127, v125
-    v128 = iadd.i64 v0, v124
-    v129 = load.i8 v128
-    v130 = iadd_imm v129, 1
-    store v130, v128
-    v131 = iadd.i64 v0, v124
-    v132 = load.i8 v131
-    v133 = iadd_imm v132, 1
-    store v133, v131
-    v134 = iadd_imm v124, 1
-    v135 = icmp_imm eq v134, 0x7530
-    v136 = select.i64 v135, v1, v134  ; v1 = 0
+    brif v117, block23(v112), block24(v112)
+
+block24(v118: i64):
+    v119 = iadd_imm v118, 1
+    v120 = iadd_imm v118, -29999
+    v121 = icmp_imm slt v119, 0x7530
+    v122 = select v121, v119, v120
+    v123 = iadd.i64 v0, v122
+    v124 = load.i8 v123
+    v125 = iadd_imm v124, 1
+    store v125, v123
+    v126 = iadd_imm v122, 1
+    v127 = iadd_imm v122, -29999
+    v128 = icmp_imm slt v126, 0x7530
+    v129 = select v128, v126, v127
+    v130 = iadd.i64 v0, v129
+    v131 = load.i8 v130
+    v132 = iadd_imm v131, 1
+    store v132, v130
+    v133 = iadd_imm v129, 1
+    v134 = iadd_imm v129, -29999
+    v135 = icmp_imm slt v133, 0x7530
+    v136 = select v135, v133, v134
     v137 = iadd.i64 v0, v136
     v138 = load.i8 v137
-    v139 = iadd_imm v138, 1
+    v139 = iadd_imm v138, -1
     store v139, v137
-    v140 = iadd.i64 v0, v136
-    v141 = load.i8 v140
-    v142 = iadd_imm v141, 1
-    store v142, v140
-    v143 = iadd.i64 v0, v136
-    v144 = load.i8 v143
-    v145 = iadd_imm v144, 1
-    store v145, v143
-    v146 = iadd_imm v136, 1
-    v147 = icmp_imm eq v146, 0x7530
-    v148 = select.i64 v147, v1, v146  ; v1 = 0
-    v149 = iadd.i64 v0, v148
-    v150 = load.i8 v149
-    v151 = iadd_imm v150, 1
-    store v151, v149
-    v152 = iadd_imm v148, -1
-    v153 = icmp_imm slt v152, 0
-    v154 = select.i64 v153, v2, v152  ; v2 = 0x752f
-    v155 = iadd_imm v154, -1
-    v156 = icmp_imm slt v155, 0
-    v157 = select.i64 v156, v2, v155  ; v2 = 0x752f
-    v158 = iadd_imm v157, -1
-    v159 = icmp_imm slt v158, 0
-    v160 = select.i64 v159, v2, v158  ; v2 = 0x752f
-    v161 = iadd_imm v160, -1
-    v162 = icmp_imm slt v161, 0
-    v163 = select.i64 v162, v2, v161  ; v2 = 0x752f
-    v164 = iadd.i64 v0, v163
+    v140 = iadd_imm v136, 2
+    v141 = iadd_imm v136, -29998
+    v142 = icmp_imm slt v140, 0x7530
+    v143 = select v142, v140, v141
+    v144 = iadd.i64 v0, v143
+    v145 = load.i8 v144
+    v146 = iadd_imm v145, 1
+    store v146, v144
+    v147 = iadd.i64 v0, v143
+    v148 = load.i8 v147
+    brif v148, block25(v143), block26(v143)
+
+block25(v149: i64):
+    v150 = iadd_imm v149, -1
+    v151 = iadd_imm v149, 0x752f
+    v152 = icmp_imm slt v149, 0
+    v153 = select v152, v151, v150
+    v154 = iadd.i64 v0, v153
+    v155 = load.i8 v154
+    brif v155, block25(v153), block26(v153)
+
+block26(v156: i64):
+    v157 = iadd_imm v156, -1
+    v158 = iadd_imm v156, 0x752f
+    v159 = icmp_imm slt v156, 0
+    v160 = select v159, v158, v157
+    v161 = iadd.i64 v0, v160
+    v162 = load.i8 v161
+    v163 = iadd_imm v162, -1
+    store v163, v161
+    v164 = iadd.i64 v0, v160
     v165 = load.i8 v164
-    v166 = iadd_imm v165, -1
-    store v166, v164
-    v167 = iadd.i64 v0, v163
-    v168 = load.i8 v167
-    brif v168, block23(v163), block24(v163)
+    brif v165, block21(v160), block22(v160)
 
-block24(v169: i64):
-    v170 = iadd_imm v169, 1
-    v171 = icmp_imm eq v170, 0x7530
-    v172 = select.i64 v171, v1, v170  ; v1 = 0
-    v173 = iadd.i64 v0, v172
-    v174 = load.i8 v173
-    v175 = iadd_imm v174, 1
-    store v175, v173
-    v176 = iadd_imm v172, 1
-    v177 = icmp_imm eq v176, 0x7530
-    v178 = select.i64 v177, v1, v176  ; v1 = 0
-    v179 = iadd.i64 v0, v178
-    v180 = load.i8 v179
-    v181 = iadd_imm v180, 1
-    store v181, v179
-    v182 = iadd_imm v178, 1
-    v183 = icmp_imm eq v182, 0x7530
-    v184 = select.i64 v183, v1, v182  ; v1 = 0
-    v185 = iadd.i64 v0, v184
-    v186 = load.i8 v185
-    v187 = iadd_imm v186, -1
-    store v187, v185
-    v188 = iadd_imm v184, 1
-    v189 = icmp_imm eq v188, 0x7530
-    v190 = select.i64 v189, v1, v188  ; v1 = 0
-    v191 = iadd_imm v190, 1
-    v192 = icmp_imm eq v191, 0x7530
-    v193 = select.i64 v192, v1, v191  ; v1 = 0
-    v194 = iadd.i64 v0, v193
-    v195 = load.i8 v194
-    v196 = iadd_imm v195, 1
-    store v196, v194
-    v197 = iadd.i64 v0, v193
-    v198 = load.i8 v197
-    brif v198, block25(v193), block26(v193)
-
-block25(v199: i64):
-    v200 = iadd_imm v199, -1
-    v201 = icmp_imm slt v200, 0
-    v202 = select.i64 v201, v2, v200  ; v2 = 0x752f
-    v203 = iadd.i64 v0, v202
-    v204 = load.i8 v203
-    brif v204, block25(v202), block26(v202)
-
-block26(v205: i64):
-    v206 = iadd_imm v205, -1
-    v207 = icmp_imm slt v206, 0
-    v208 = select.i64 v207, v2, v206  ; v2 = 0x752f
-    v209 = iadd.i64 v0, v208
-    v210 = load.i8 v209
-    v211 = iadd_imm v210, -1
-    store v211, v209
-    v212 = iadd.i64 v0, v208
-    v213 = load.i8 v212
-    brif v213, block21(v208), block22(v208)
-
-block22(v214: i64):
-    v215 = iadd_imm v214, 1
-    v216 = icmp_imm eq v215, 0x7530
-    v217 = select.i64 v216, v1, v215  ; v1 = 0
-    v218 = iadd_imm v217, 1
-    v219 = icmp_imm eq v218, 0x7530
-    v220 = select.i64 v219, v1, v218  ; v1 = 0
-    v221 = iadd.i64 v0, v220
-    v222 = load.i8 v221
-    v223 = call_indirect.i64 sig0, v3(v222)  ; v3 = 0x7ff6_cb8b_4240
-    brif v223, block1(v223), block27
+block22(v166: i64):
+    v167 = iadd_imm v166, 2
+    v168 = iadd_imm v166, -29998
+    v169 = icmp_imm slt v167, 0x7530
+    v170 = select v169, v167, v168
+    v171 = iadd.i64 v0, v170
+    v172 = load.i8 v171
+    v173 = call_indirect.i64 sig0, v2(v172)  ; v2 = 0x7ff7_011c_42d0
+    brif v173, block1(v173), block27
 
 block27:
-    v224 = iadd_imm.i64 v220, 1
-    v225 = icmp_imm eq v224, 0x7530
-    v226 = select.i64 v225, v1, v224  ; v1 = 0
-    v227 = iadd.i64 v0, v226
-    v228 = load.i8 v227
-    v229 = iadd_imm v228, -1
-    store v229, v227
-    v230 = iadd.i64 v0, v226
-    v231 = load.i8 v230
-    v232 = iadd_imm v231, -1
-    store v232, v230
-    v233 = iadd.i64 v0, v226
-    v234 = load.i8 v233
-    v235 = iadd_imm v234, -1
-    store v235, v233
-    v236 = iadd.i64 v0, v226
-    v237 = load.i8 v236
-    v238 = call_indirect.i64 sig0, v3(v237)  ; v3 = 0x7ff6_cb8b_4240
-    brif v238, block1(v238), block28
+    v174 = iadd_imm.i64 v170, 1
+    v175 = iadd_imm.i64 v170, -29999
+    v176 = icmp_imm slt v174, 0x7530
+    v177 = select v176, v174, v175
+    v178 = iadd.i64 v0, v177
+    v179 = load.i8 v178
+    v180 = iadd_imm v179, -3
+    store v180, v178
+    v181 = iadd.i64 v0, v177
+    v182 = load.i8 v181
+    v183 = call_indirect.i64 sig0, v2(v182)  ; v2 = 0x7ff7_011c_42d0
+    brif v183, block1(v183), block28
 
 block28:
-    v239 = iadd.i64 v0, v226
-    v240 = load.i8 v239
-    v241 = iadd_imm v240, 1
-    store v241, v239
-    v242 = iadd.i64 v0, v226
-    v243 = load.i8 v242
-    v244 = iadd_imm v243, 1
-    store v244, v242
-    v245 = iadd.i64 v0, v226
+    v184 = iadd.i64 v0, v177
+    v185 = load.i8 v184
+    v186 = iadd_imm v185, 7
+    store v186, v184
+    v187 = iadd.i64 v0, v177
+    v188 = load.i8 v187
+    v189 = call_indirect.i64 sig0, v2(v188)  ; v2 = 0x7ff7_011c_42d0
+    brif v189, block1(v189), block29
+
+block29:
+    v190 = iadd.i64 v0, v177
+    v191 = load.i8 v190
+    v192 = call_indirect.i64 sig0, v2(v191)  ; v2 = 0x7ff7_011c_42d0
+    brif v192, block1(v192), block30
+
+block30:
+    v193 = iadd.i64 v0, v177
+    v194 = load.i8 v193
+    v195 = iadd_imm v194, 3
+    store v195, v193
+    v196 = iadd.i64 v0, v177
+    v197 = load.i8 v196
+    v198 = call_indirect.i64 sig0, v2(v197)  ; v2 = 0x7ff7_011c_42d0
+    brif v198, block1(v198), block31
+
+block31:
+    v199 = iadd_imm.i64 v177, 2
+    v200 = iadd_imm.i64 v177, -29998
+    v201 = icmp_imm slt v199, 0x7530
+    v202 = select v201, v199, v200
+    v203 = iadd.i64 v0, v202
+    v204 = load.i8 v203
+    v205 = call_indirect.i64 sig0, v2(v204)  ; v2 = 0x7ff7_011c_42d0
+    brif v205, block1(v205), block32
+
+block32:
+    v206 = iadd_imm.i64 v202, -1
+    v207 = iadd_imm.i64 v202, 0x752f
+    v208 = icmp_imm.i64 slt v202, 0
+    v209 = select v208, v207, v206
+    v210 = iadd.i64 v0, v209
+    v211 = load.i8 v210
+    v212 = iadd_imm v211, -1
+    store v212, v210
+    v213 = iadd.i64 v0, v209
+    v214 = load.i8 v213
+    v215 = call_indirect.i64 sig0, v2(v214)  ; v2 = 0x7ff7_011c_42d0
+    brif v215, block1(v215), block33
+
+block33:
+    v216 = iadd_imm.i64 v209, -1
+    v217 = iadd_imm.i64 v209, 0x752f
+    v218 = icmp_imm.i64 slt v209, 0
+    v219 = select v218, v217, v216
+    v220 = iadd.i64 v0, v219
+    v221 = load.i8 v220
+    v222 = call_indirect.i64 sig0, v2(v221)  ; v2 = 0x7ff7_011c_42d0
+    brif v222, block1(v222), block34
+
+block34:
+    v223 = iadd.i64 v0, v219
+    v224 = load.i8 v223
+    v225 = iadd_imm v224, 3
+    store v225, v223
+    v226 = iadd.i64 v0, v219
+    v227 = load.i8 v226
+    v228 = call_indirect.i64 sig0, v2(v227)  ; v2 = 0x7ff7_011c_42d0
+    brif v228, block1(v228), block35
+
+block35:
+    v229 = iadd.i64 v0, v219
+    v230 = load.i8 v229
+    v231 = iadd_imm v230, -6
+    store v231, v229
+    v232 = iadd.i64 v0, v219
+    v233 = load.i8 v232
+    v234 = call_indirect.i64 sig0, v2(v233)  ; v2 = 0x7ff7_011c_42d0
+    brif v234, block1(v234), block36
+
+block36:
+    v235 = iadd.i64 v0, v219
+    v236 = load.i8 v235
+    v237 = iadd_imm v236, -8
+    store v237, v235
+    v238 = iadd.i64 v0, v219
+    v239 = load.i8 v238
+    v240 = call_indirect.i64 sig0, v2(v239)  ; v2 = 0x7ff7_011c_42d0
+    brif v240, block1(v240), block37
+
+block37:
+    v241 = iadd_imm.i64 v219, 2
+    v242 = iadd_imm.i64 v219, -29998
+    v243 = icmp_imm slt v241, 0x7530
+    v244 = select v243, v241, v242
+    v245 = iadd.i64 v0, v244
     v246 = load.i8 v245
     v247 = iadd_imm v246, 1
     store v247, v245
-    v248 = iadd.i64 v0, v226
+    v248 = iadd.i64 v0, v244
     v249 = load.i8 v248
-    v250 = iadd_imm v249, 1
-    store v250, v248
-    v251 = iadd.i64 v0, v226
-    v252 = load.i8 v251
-    v253 = iadd_imm v252, 1
-    store v253, v251
-    v254 = iadd.i64 v0, v226
-    v255 = load.i8 v254
-    v256 = iadd_imm v255, 1
-    store v256, v254
-    v257 = iadd.i64 v0, v226
-    v258 = load.i8 v257
-    v259 = iadd_imm v258, 1
-    store v259, v257
-    v260 = iadd.i64 v0, v226
-    v261 = load.i8 v260
-    v262 = call_indirect.i64 sig0, v3(v261)  ; v3 = 0x7ff6_cb8b_4240
-    brif v262, block1(v262), block29
-
-block29:
-    v263 = iadd.i64 v0, v226
-    v264 = load.i8 v263
-    v265 = call_indirect.i64 sig0, v3(v264)  ; v3 = 0x7ff6_cb8b_4240
-    brif v265, block1(v265), block30
-
-block30:
-    v266 = iadd.i64 v0, v226
-    v267 = load.i8 v266
-    v268 = iadd_imm v267, 1
-    store v268, v266
-    v269 = iadd.i64 v0, v226
-    v270 = load.i8 v269
-    v271 = iadd_imm v270, 1
-    store v271, v269
-    v272 = iadd.i64 v0, v226
-    v273 = load.i8 v272
-    v274 = iadd_imm v273, 1
-    store v274, v272
-    v275 = iadd.i64 v0, v226
-    v276 = load.i8 v275
-    v277 = call_indirect.i64 sig0, v3(v276)  ; v3 = 0x7ff6_cb8b_4240
-    brif v277, block1(v277), block31
-
-block31:
-    v278 = iadd_imm.i64 v226, 1
-    v279 = icmp_imm eq v278, 0x7530
-    v280 = select.i64 v279, v1, v278  ; v1 = 0
-    v281 = iadd_imm v280, 1
-    v282 = icmp_imm eq v281, 0x7530
-    v283 = select.i64 v282, v1, v281  ; v1 = 0
-    v284 = iadd.i64 v0, v283
-    v285 = load.i8 v284
-    v286 = call_indirect.i64 sig0, v3(v285)  ; v3 = 0x7ff6_cb8b_4240
-    brif v286, block1(v286), block32
-
-block32:
-    v287 = iadd_imm.i64 v283, -1
-    v288 = icmp_imm slt v287, 0
-    v289 = select.i64 v288, v2, v287  ; v2 = 0x752f
-    v290 = iadd.i64 v0, v289
-    v291 = load.i8 v290
-    v292 = iadd_imm v291, -1
-    store v292, v290
-    v293 = iadd.i64 v0, v289
-    v294 = load.i8 v293
-    v295 = call_indirect.i64 sig0, v3(v294)  ; v3 = 0x7ff6_cb8b_4240
-    brif v295, block1(v295), block33
-
-block33:
-    v296 = iadd_imm.i64 v289, -1
-    v297 = icmp_imm slt v296, 0
-    v298 = select.i64 v297, v2, v296  ; v2 = 0x752f
-    v299 = iadd.i64 v0, v298
-    v300 = load.i8 v299
-    v301 = call_indirect.i64 sig0, v3(v300)  ; v3 = 0x7ff6_cb8b_4240
-    brif v301, block1(v301), block34
-
-block34:
-    v302 = iadd.i64 v0, v298
-    v303 = load.i8 v302
-    v304 = iadd_imm v303, 1
-    store v304, v302
-    v305 = iadd.i64 v0, v298
-    v306 = load.i8 v305
-    v307 = iadd_imm v306, 1
-    store v307, v305
-    v308 = iadd.i64 v0, v298
-    v309 = load.i8 v308
-    v310 = iadd_imm v309, 1
-    store v310, v308
-    v311 = iadd.i64 v0, v298
-    v312 = load.i8 v311
-    v313 = call_indirect.i64 sig0, v3(v312)  ; v3 = 0x7ff6_cb8b_4240
-    brif v313, block1(v313), block35
-
-block35:
-    v314 = iadd.i64 v0, v298
-    v315 = load.i8 v314
-    v316 = iadd_imm v315, -1
-    store v316, v314
-    v317 = iadd.i64 v0, v298
-    v318 = load.i8 v317
-    v319 = iadd_imm v318, -1
-    store v319, v317
-    v320 = iadd.i64 v0, v298
-    v321 = load.i8 v320
-    v322 = iadd_imm v321, -1
-    store v322, v320
-    v323 = iadd.i64 v0, v298
-    v324 = load.i8 v323
-    v325 = iadd_imm v324, -1
-    store v325, v323
-    v326 = iadd.i64 v0, v298
-    v327 = load.i8 v326
-    v328 = iadd_imm v327, -1
-    store v328, v326
-    v329 = iadd.i64 v0, v298
-    v330 = load.i8 v329
-    v331 = iadd_imm v330, -1
-    store v331, v329
-    v332 = iadd.i64 v0, v298
-    v333 = load.i8 v332
-    v334 = call_indirect.i64 sig0, v3(v333)  ; v3 = 0x7ff6_cb8b_4240
-    brif v334, block1(v334), block36
-
-block36:
-    v335 = iadd.i64 v0, v298
-    v336 = load.i8 v335
-    v337 = iadd_imm v336, -1
-    store v337, v335
-    v338 = iadd.i64 v0, v298
-    v339 = load.i8 v338
-    v340 = iadd_imm v339, -1
-    store v340, v338
-    v341 = iadd.i64 v0, v298
-    v342 = load.i8 v341
-    v343 = iadd_imm v342, -1
-    store v343, v341
-    v344 = iadd.i64 v0, v298
-    v345 = load.i8 v344
-    v346 = iadd_imm v345, -1
-    store v346, v344
-    v347 = iadd.i64 v0, v298
-    v348 = load.i8 v347
-    v349 = iadd_imm v348, -1
-    store v349, v347
-    v350 = iadd.i64 v0, v298
-    v351 = load.i8 v350
-    v352 = iadd_imm v351, -1
-    store v352, v350
-    v353 = iadd.i64 v0, v298
-    v354 = load.i8 v353
-    v355 = iadd_imm v354, -1
-    store v355, v353
-    v356 = iadd.i64 v0, v298
-    v357 = load.i8 v356
-    v358 = iadd_imm v357, -1
-    store v358, v356
-    v359 = iadd.i64 v0, v298
-    v360 = load.i8 v359
-    v361 = call_indirect.i64 sig0, v3(v360)  ; v3 = 0x7ff6_cb8b_4240
-    brif v361, block1(v361), block37
-
-block37:
-    v362 = iadd_imm.i64 v298, 1
-    v363 = icmp_imm eq v362, 0x7530
-    v364 = select.i64 v363, v1, v362  ; v1 = 0
-    v365 = iadd_imm v364, 1
-    v366 = icmp_imm eq v365, 0x7530
-    v367 = select.i64 v366, v1, v365  ; v1 = 0
-    v368 = iadd.i64 v0, v367
-    v369 = load.i8 v368
-    v370 = iadd_imm v369, 1
-    store v370, v368
-    v371 = iadd.i64 v0, v367
-    v372 = load.i8 v371
-    v373 = call_indirect.i64 sig0, v3(v372)  ; v3 = 0x7ff6_cb8b_4240
-    brif v373, block1(v373), block38
+    v250 = call_indirect.i64 sig0, v2(v249)  ; v2 = 0x7ff7_011c_42d0
+    brif v250, block1(v250), block38
 
 block38:
-    v374 = iadd_imm.i64 v367, 1
-    v375 = icmp_imm eq v374, 0x7530
-    v376 = select.i64 v375, v1, v374  ; v1 = 0
-    v377 = iadd.i64 v0, v376
-    v378 = load.i8 v377
-    v379 = iadd_imm v378, 1
-    store v379, v377
-    v380 = iadd.i64 v0, v376
-    v381 = load.i8 v380
-    v382 = iadd_imm v381, 1
-    store v382, v380
-    v383 = iadd.i64 v0, v376
-    v384 = load.i8 v383
-    v385 = call_indirect.i64 sig0, v3(v384)  ; v3 = 0x7ff6_cb8b_4240
-    brif v385, block1(v385), block39
+    v251 = iadd_imm.i64 v244, 1
+    v252 = iadd_imm.i64 v244, -29999
+    v253 = icmp_imm slt v251, 0x7530
+    v254 = select v253, v251, v252
+    v255 = iadd.i64 v0, v254
+    v256 = load.i8 v255
+    v257 = iadd_imm v256, 2
+    store v257, v255
+    v258 = iadd.i64 v0, v254
+    v259 = load.i8 v258
+    v260 = call_indirect.i64 sig0, v2(v259)  ; v2 = 0x7ff7_011c_42d0
+    brif v260, block1(v260), block39
 
 block39:
     return v1  ; v1 = 0
 
-block1(v5: i64):
-    return v5
+block1(v4: i64):
+    return v4
 }

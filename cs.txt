@@ -38,8 +38,8 @@
     bytes:       [73, 137, 204]
 0x1048: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x104d: movabs r8, 0x7ff7011c42d0
-    bytes:       [73, 184, 208, 66, 28, 1, 247, 127, 0, 0]
+0x104d: movabs r8, 0x7ff7369742d0
+    bytes:       [73, 184, 208, 66, 151, 54, 247, 127, 0, 0]
 0x1057: call r8
     bytes:       [65, 255, 208]
 0x105a: test rax, rax
@@ -54,8 +54,8 @@
     bytes:       [15, 132, 39, 0, 0, 0]
 0x1071: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x1076: movabs rax, 0x7ff7011c42d0
-    bytes:       [72, 184, 208, 66, 28, 1, 247, 127, 0, 0]
+0x1076: movabs rax, 0x7ff7369742d0
+    bytes:       [72, 184, 208, 66, 151, 54, 247, 127, 0, 0]
 0x1080: call rax
     bytes:       [255, 208]
 0x1082: test rax, rax
@@ -68,8 +68,8 @@
     bytes:       [132, 210]
 0x1092: jne 0x1071
     bytes:       [15, 133, 217, 255, 255, 255]
-0x1098: movabs r11, 0x7ff7011c4490
-    bytes:       [73, 187, 144, 68, 28, 1, 247, 127, 0, 0]
+0x1098: movabs r11, 0x7ff736974490
+    bytes:       [73, 187, 144, 68, 151, 54, 247, 127, 0, 0]
 0x10a2: mov rcx, r12
     bytes:       [76, 137, 225]
 0x10a5: call r11
@@ -80,8 +80,8 @@
     bytes:       [15, 133, 108, 5, 0, 0]
 0x10b1: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x10b6: movabs rax, 0x7ff7011c42d0
-    bytes:       [72, 184, 208, 66, 28, 1, 247, 127, 0, 0]
+0x10b6: movabs rax, 0x7ff7369742d0
+    bytes:       [72, 184, 208, 66, 151, 54, 247, 127, 0, 0]
 0x10c0: call rax
     bytes:       [255, 208]
 0x10c2: test rax, rax
@@ -90,16 +90,16 @@
     bytes:       [15, 133, 82, 5, 0, 0]
 0x10cb: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x10d0: movabs rdx, 0x7ff7011c42d0
-    bytes:       [72, 186, 208, 66, 28, 1, 247, 127, 0, 0]
+0x10d0: movabs rdx, 0x7ff7369742d0
+    bytes:       [72, 186, 208, 66, 151, 54, 247, 127, 0, 0]
 0x10da: call rdx
     bytes:       [255, 210]
 0x10dc: test rax, rax
     bytes:       [72, 133, 192]
 0x10df: jne 0x161d
     bytes:       [15, 133, 56, 5, 0, 0]
-0x10e5: movabs r8, 0x7ff7011c4490
-    bytes:       [73, 184, 144, 68, 28, 1, 247, 127, 0, 0]
+0x10e5: movabs r8, 0x7ff736974490
+    bytes:       [73, 184, 144, 68, 151, 54, 247, 127, 0, 0]
 0x10ef: mov rcx, r12
     bytes:       [76, 137, 225]
 0x10f2: call r8
@@ -108,8 +108,8 @@
     bytes:       [72, 133, 192]
 0x10f8: jne 0x161d
     bytes:       [15, 133, 31, 5, 0, 0]
-0x10fe: movabs r10, 0x7ff7011c4490
-    bytes:       [73, 186, 144, 68, 28, 1, 247, 127, 0, 0]
+0x10fe: movabs r10, 0x7ff736974490
+    bytes:       [73, 186, 144, 68, 151, 54, 247, 127, 0, 0]
 0x1108: mov rcx, r12
     bytes:       [76, 137, 225]
 0x110b: call r10
@@ -118,8 +118,8 @@
     bytes:       [72, 133, 192]
 0x1111: jne 0x161d
     bytes:       [15, 133, 6, 5, 0, 0]
-0x1117: movabs rax, 0x7ff7011c4490
-    bytes:       [72, 184, 144, 68, 28, 1, 247, 127, 0, 0]
+0x1117: movabs rax, 0x7ff736974490
+    bytes:       [72, 184, 144, 68, 151, 54, 247, 127, 0, 0]
 0x1121: mov rcx, r12
     bytes:       [76, 137, 225]
 0x1124: call rax
@@ -134,8 +134,8 @@
     bytes:       [131, 192, 1]
 0x1137: mov byte ptr [rdi + rsi], al
     bytes:       [136, 4, 55]
-0x113a: movabs rdx, 0x7ff7011c4490
-    bytes:       [72, 186, 144, 68, 28, 1, 247, 127, 0, 0]
+0x113a: movabs rdx, 0x7ff736974490
+    bytes:       [72, 186, 144, 68, 151, 54, 247, 127, 0, 0]
 0x1144: mov rcx, r12
     bytes:       [76, 137, 225]
 0x1147: call rdx
@@ -150,8 +150,8 @@
     bytes:       [129, 194, 255, 0, 0, 0]
 0x115d: mov byte ptr [rdi + rsi], dl
     bytes:       [136, 20, 55]
-0x1160: movabs r9, 0x7ff7011c4490
-    bytes:       [73, 185, 144, 68, 28, 1, 247, 127, 0, 0]
+0x1160: movabs r9, 0x7ff736974490
+    bytes:       [73, 185, 144, 68, 151, 54, 247, 127, 0, 0]
 0x116a: mov rcx, r12
     bytes:       [76, 137, 225]
 0x116d: call r9
@@ -160,8 +160,8 @@
     bytes:       [72, 133, 192]
 0x1173: jne 0x161d
     bytes:       [15, 133, 164, 4, 0, 0]
-0x1179: movabs r11, 0x7ff7011c4490
-    bytes:       [73, 187, 144, 68, 28, 1, 247, 127, 0, 0]
+0x1179: movabs r11, 0x7ff736974490
+    bytes:       [73, 187, 144, 68, 151, 54, 247, 127, 0, 0]
 0x1183: lea rax, [rsi + 0x7530]
     bytes:       [72, 141, 134, 48, 117, 0, 0]
 0x118a: test rsi, rsi
@@ -186,8 +186,8 @@
     bytes:       [132, 201]
 0x11b0: jne 0x11ae
     bytes:       [15, 133, 248, 255, 255, 255]
-0x11b6: movabs rax, 0x7ff7011c42d0
-    bytes:       [72, 184, 208, 66, 28, 1, 247, 127, 0, 0]
+0x11b6: movabs rax, 0x7ff7369742d0
+    bytes:       [72, 184, 208, 66, 151, 54, 247, 127, 0, 0]
 0x11c0: call rax
     bytes:       [255, 208]
 0x11c2: test rax, rax
@@ -196,8 +196,8 @@
     bytes:       [15, 133, 82, 4, 0, 0]
 0x11cb: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x11d0: movabs rdx, 0x7ff7011c42d0
-    bytes:       [72, 186, 208, 66, 28, 1, 247, 127, 0, 0]
+0x11d0: movabs rdx, 0x7ff7369742d0
+    bytes:       [72, 186, 208, 66, 151, 54, 247, 127, 0, 0]
 0x11da: call rdx
     bytes:       [255, 210]
 0x11dc: test rax, rax
@@ -422,8 +422,8 @@
     bytes:       [73, 15, 76, 242]
 0x13e6: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x13eb: movabs r11, 0x7ff7011c42d0
-    bytes:       [73, 187, 208, 66, 28, 1, 247, 127, 0, 0]
+0x13eb: movabs r11, 0x7ff7369742d0
+    bytes:       [73, 187, 208, 66, 151, 54, 247, 127, 0, 0]
 0x13f5: call r11
     bytes:       [65, 255, 211]
 0x13f8: test rax, rax
@@ -444,8 +444,8 @@
     bytes:       [129, 193, 253, 0, 0, 0]
 0x1422: mov byte ptr [rdi + rsi], cl
     bytes:       [136, 12, 55]
-0x1425: movabs rdx, 0x7ff7011c42d0
-    bytes:       [72, 186, 208, 66, 28, 1, 247, 127, 0, 0]
+0x1425: movabs rdx, 0x7ff7369742d0
+    bytes:       [72, 186, 208, 66, 151, 54, 247, 127, 0, 0]
 0x142f: call rdx
     bytes:       [255, 210]
 0x1431: test rax, rax
@@ -458,8 +458,8 @@
     bytes:       [131, 193, 7]
 0x1442: mov byte ptr [rdi + rsi], cl
     bytes:       [136, 12, 55]
-0x1445: movabs r9, 0x7ff7011c42d0
-    bytes:       [73, 185, 208, 66, 28, 1, 247, 127, 0, 0]
+0x1445: movabs r9, 0x7ff7369742d0
+    bytes:       [73, 185, 208, 66, 151, 54, 247, 127, 0, 0]
 0x144f: call r9
     bytes:       [65, 255, 209]
 0x1452: test rax, rax
@@ -468,8 +468,8 @@
     bytes:       [15, 133, 194, 1, 0, 0]
 0x145b: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x1460: movabs r11, 0x7ff7011c42d0
-    bytes:       [73, 187, 208, 66, 28, 1, 247, 127, 0, 0]
+0x1460: movabs r11, 0x7ff7369742d0
+    bytes:       [73, 187, 208, 66, 151, 54, 247, 127, 0, 0]
 0x146a: call r11
     bytes:       [65, 255, 211]
 0x146d: test rax, rax
@@ -482,8 +482,8 @@
     bytes:       [131, 193, 3]
 0x147e: mov byte ptr [rdi + rsi], cl
     bytes:       [136, 12, 55]
-0x1481: movabs rax, 0x7ff7011c42d0
-    bytes:       [72, 184, 208, 66, 28, 1, 247, 127, 0, 0]
+0x1481: movabs rax, 0x7ff7369742d0
+    bytes:       [72, 184, 208, 66, 151, 54, 247, 127, 0, 0]
 0x148b: call rax
     bytes:       [255, 208]
 0x148d: test rax, rax
@@ -500,8 +500,8 @@
     bytes:       [72, 15, 76, 242]
 0x14ac: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x14b1: movabs r8, 0x7ff7011c42d0
-    bytes:       [73, 184, 208, 66, 28, 1, 247, 127, 0, 0]
+0x14b1: movabs r8, 0x7ff7369742d0
+    bytes:       [73, 184, 208, 66, 151, 54, 247, 127, 0, 0]
 0x14bb: call r8
     bytes:       [65, 255, 208]
 0x14be: test rax, rax
@@ -522,8 +522,8 @@
     bytes:       [129, 193, 255, 0, 0, 0]
 0x14e4: mov byte ptr [rdi + rbx], cl
     bytes:       [136, 12, 31]
-0x14e7: movabs rsi, 0x7ff7011c42d0
-    bytes:       [72, 190, 208, 66, 28, 1, 247, 127, 0, 0]
+0x14e7: movabs rsi, 0x7ff7369742d0
+    bytes:       [72, 190, 208, 66, 151, 54, 247, 127, 0, 0]
 0x14f1: call rsi
     bytes:       [255, 214]
 0x14f3: test rax, rax
@@ -540,8 +540,8 @@
     bytes:       [72, 15, 76, 240]
 0x150e: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x1513: movabs rdx, 0x7ff7011c42d0
-    bytes:       [72, 186, 208, 66, 28, 1, 247, 127, 0, 0]
+0x1513: movabs rdx, 0x7ff7369742d0
+    bytes:       [72, 186, 208, 66, 151, 54, 247, 127, 0, 0]
 0x151d: call rdx
     bytes:       [255, 210]
 0x151f: test rax, rax
@@ -554,8 +554,8 @@
     bytes:       [131, 193, 3]
 0x1530: mov byte ptr [rdi + rsi], cl
     bytes:       [136, 12, 55]
-0x1533: movabs r9, 0x7ff7011c42d0
-    bytes:       [73, 185, 208, 66, 28, 1, 247, 127, 0, 0]
+0x1533: movabs r9, 0x7ff7369742d0
+    bytes:       [73, 185, 208, 66, 151, 54, 247, 127, 0, 0]
 0x153d: call r9
     bytes:       [65, 255, 209]
 0x1540: test rax, rax
@@ -568,8 +568,8 @@
     bytes:       [129, 193, 250, 0, 0, 0]
 0x1554: mov byte ptr [rdi + rsi], cl
     bytes:       [136, 12, 55]
-0x1557: movabs rax, 0x7ff7011c42d0
-    bytes:       [72, 184, 208, 66, 28, 1, 247, 127, 0, 0]
+0x1557: movabs rax, 0x7ff7369742d0
+    bytes:       [72, 184, 208, 66, 151, 54, 247, 127, 0, 0]
 0x1561: call rax
     bytes:       [255, 208]
 0x1563: test rax, rax
@@ -582,8 +582,8 @@
     bytes:       [129, 193, 248, 0, 0, 0]
 0x1577: mov byte ptr [rdi + rsi], cl
     bytes:       [136, 12, 55]
-0x157a: movabs rdx, 0x7ff7011c42d0
-    bytes:       [72, 186, 208, 66, 28, 1, 247, 127, 0, 0]
+0x157a: movabs rdx, 0x7ff7369742d0
+    bytes:       [72, 186, 208, 66, 151, 54, 247, 127, 0, 0]
 0x1584: call rdx
     bytes:       [255, 210]
 0x1586: test rax, rax
@@ -604,8 +604,8 @@
     bytes:       [131, 193, 1]
 0x15ad: mov byte ptr [rdi + rsi], cl
     bytes:       [136, 12, 55]
-0x15b0: movabs r10, 0x7ff7011c42d0
-    bytes:       [73, 186, 208, 66, 28, 1, 247, 127, 0, 0]
+0x15b0: movabs r10, 0x7ff7369742d0
+    bytes:       [73, 186, 208, 66, 151, 54, 247, 127, 0, 0]
 0x15ba: call r10
     bytes:       [65, 255, 210]
 0x15bd: test rax, rax
@@ -626,8 +626,8 @@
     bytes:       [131, 193, 2]
 0x15e4: mov byte ptr [rdi + r11], cl
     bytes:       [66, 136, 12, 31]
-0x15e8: movabs rax, 0x7ff7011c42d0
-    bytes:       [72, 184, 208, 66, 28, 1, 247, 127, 0, 0]
+0x15e8: movabs rax, 0x7ff7369742d0
+    bytes:       [72, 184, 208, 66, 151, 54, 247, 127, 0, 0]
 0x15f2: call rax
     bytes:       [255, 208]
 0x15f4: test rax, rax
