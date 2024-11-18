@@ -4,14 +4,14 @@
     bytes:       [72, 137, 229]
 0x1004: sub rsp, 0x40
     bytes:       [72, 131, 236, 64]
-0x1008: mov qword ptr [rsp + 0x20], rbx
-    bytes:       [72, 137, 92, 36, 32]
-0x100d: mov qword ptr [rsp + 0x28], rsi
-    bytes:       [72, 137, 116, 36, 40]
-0x1012: mov qword ptr [rsp + 0x30], rdi
-    bytes:       [72, 137, 124, 36, 48]
-0x1017: mov qword ptr [rsp + 0x38], r12
-    bytes:       [76, 137, 100, 36, 56]
+0x1008: mov qword ptr [rsp + 0x20], rsi
+    bytes:       [72, 137, 116, 36, 32]
+0x100d: mov qword ptr [rsp + 0x28], rdi
+    bytes:       [72, 137, 124, 36, 40]
+0x1012: mov qword ptr [rsp + 0x30], r12
+    bytes:       [76, 137, 100, 36, 48]
+0x1017: mov qword ptr [rsp + 0x38], r15
+    bytes:       [76, 137, 124, 36, 56]
 0x101c: mov rdi, rcx
     bytes:       [72, 137, 207]
 0x101f: movzx rcx, byte ptr [rdi]
@@ -38,14 +38,14 @@
     bytes:       [73, 137, 204]
 0x1048: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x104d: movabs r8, 0x7ff7011c42d0
-    bytes:       [73, 184, 208, 66, 28, 1, 247, 127, 0, 0]
+0x104d: movabs r8, 0x7ff67d4786e0
+    bytes:       [73, 184, 224, 134, 71, 125, 246, 127, 0, 0]
 0x1057: call r8
     bytes:       [65, 255, 208]
 0x105a: test rax, rax
     bytes:       [72, 133, 192]
-0x105d: jne 0x161d
-    bytes:       [15, 133, 186, 5, 0, 0]
+0x105d: jne 0x161e
+    bytes:       [15, 133, 187, 5, 0, 0]
 0x1063: movzx r10, byte ptr [rdi + rsi]
     bytes:       [76, 15, 182, 20, 55]
 0x1068: test r10b, r10b
@@ -54,114 +54,114 @@
     bytes:       [15, 132, 39, 0, 0, 0]
 0x1071: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x1076: movabs rax, 0x7ff7011c42d0
-    bytes:       [72, 184, 208, 66, 28, 1, 247, 127, 0, 0]
+0x1076: movabs rax, 0x7ff67d4786e0
+    bytes:       [72, 184, 224, 134, 71, 125, 246, 127, 0, 0]
 0x1080: call rax
     bytes:       [255, 208]
 0x1082: test rax, rax
     bytes:       [72, 133, 192]
-0x1085: jne 0x161d
-    bytes:       [15, 133, 146, 5, 0, 0]
+0x1085: jne 0x161e
+    bytes:       [15, 133, 147, 5, 0, 0]
 0x108b: movzx rdx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 20, 55]
 0x1090: test dl, dl
     bytes:       [132, 210]
 0x1092: jne 0x1071
     bytes:       [15, 133, 217, 255, 255, 255]
-0x1098: movabs r11, 0x7ff7011c4490
-    bytes:       [73, 187, 144, 68, 28, 1, 247, 127, 0, 0]
+0x1098: movabs r11, 0x7ff67d4788a0
+    bytes:       [73, 187, 160, 136, 71, 125, 246, 127, 0, 0]
 0x10a2: mov rcx, r12
     bytes:       [76, 137, 225]
 0x10a5: call r11
     bytes:       [65, 255, 211]
 0x10a8: test rax, rax
     bytes:       [72, 133, 192]
-0x10ab: jne 0x161d
-    bytes:       [15, 133, 108, 5, 0, 0]
+0x10ab: jne 0x161e
+    bytes:       [15, 133, 109, 5, 0, 0]
 0x10b1: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x10b6: movabs rax, 0x7ff7011c42d0
-    bytes:       [72, 184, 208, 66, 28, 1, 247, 127, 0, 0]
+0x10b6: movabs rax, 0x7ff67d4786e0
+    bytes:       [72, 184, 224, 134, 71, 125, 246, 127, 0, 0]
 0x10c0: call rax
     bytes:       [255, 208]
 0x10c2: test rax, rax
     bytes:       [72, 133, 192]
-0x10c5: jne 0x161d
-    bytes:       [15, 133, 82, 5, 0, 0]
+0x10c5: jne 0x161e
+    bytes:       [15, 133, 83, 5, 0, 0]
 0x10cb: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x10d0: movabs rdx, 0x7ff7011c42d0
-    bytes:       [72, 186, 208, 66, 28, 1, 247, 127, 0, 0]
+0x10d0: movabs rdx, 0x7ff67d4786e0
+    bytes:       [72, 186, 224, 134, 71, 125, 246, 127, 0, 0]
 0x10da: call rdx
     bytes:       [255, 210]
 0x10dc: test rax, rax
     bytes:       [72, 133, 192]
-0x10df: jne 0x161d
-    bytes:       [15, 133, 56, 5, 0, 0]
-0x10e5: movabs r8, 0x7ff7011c4490
-    bytes:       [73, 184, 144, 68, 28, 1, 247, 127, 0, 0]
+0x10df: jne 0x161e
+    bytes:       [15, 133, 57, 5, 0, 0]
+0x10e5: movabs r8, 0x7ff67d4788a0
+    bytes:       [73, 184, 160, 136, 71, 125, 246, 127, 0, 0]
 0x10ef: mov rcx, r12
     bytes:       [76, 137, 225]
 0x10f2: call r8
     bytes:       [65, 255, 208]
 0x10f5: test rax, rax
     bytes:       [72, 133, 192]
-0x10f8: jne 0x161d
-    bytes:       [15, 133, 31, 5, 0, 0]
-0x10fe: movabs r10, 0x7ff7011c4490
-    bytes:       [73, 186, 144, 68, 28, 1, 247, 127, 0, 0]
+0x10f8: jne 0x161e
+    bytes:       [15, 133, 32, 5, 0, 0]
+0x10fe: movabs r10, 0x7ff67d4788a0
+    bytes:       [73, 186, 160, 136, 71, 125, 246, 127, 0, 0]
 0x1108: mov rcx, r12
     bytes:       [76, 137, 225]
 0x110b: call r10
     bytes:       [65, 255, 210]
 0x110e: test rax, rax
     bytes:       [72, 133, 192]
-0x1111: jne 0x161d
-    bytes:       [15, 133, 6, 5, 0, 0]
-0x1117: movabs rax, 0x7ff7011c4490
-    bytes:       [72, 184, 144, 68, 28, 1, 247, 127, 0, 0]
+0x1111: jne 0x161e
+    bytes:       [15, 133, 7, 5, 0, 0]
+0x1117: movabs rax, 0x7ff67d4788a0
+    bytes:       [72, 184, 160, 136, 71, 125, 246, 127, 0, 0]
 0x1121: mov rcx, r12
     bytes:       [76, 137, 225]
 0x1124: call rax
     bytes:       [255, 208]
 0x1126: test rax, rax
     bytes:       [72, 133, 192]
-0x1129: jne 0x161d
-    bytes:       [15, 133, 238, 4, 0, 0]
+0x1129: jne 0x161e
+    bytes:       [15, 133, 239, 4, 0, 0]
 0x112f: movzx rax, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 4, 55]
 0x1134: add eax, 1
     bytes:       [131, 192, 1]
 0x1137: mov byte ptr [rdi + rsi], al
     bytes:       [136, 4, 55]
-0x113a: movabs rdx, 0x7ff7011c4490
-    bytes:       [72, 186, 144, 68, 28, 1, 247, 127, 0, 0]
+0x113a: movabs rdx, 0x7ff67d4788a0
+    bytes:       [72, 186, 160, 136, 71, 125, 246, 127, 0, 0]
 0x1144: mov rcx, r12
     bytes:       [76, 137, 225]
 0x1147: call rdx
     bytes:       [255, 210]
 0x1149: test rax, rax
     bytes:       [72, 133, 192]
-0x114c: jne 0x161d
-    bytes:       [15, 133, 203, 4, 0, 0]
+0x114c: jne 0x161e
+    bytes:       [15, 133, 204, 4, 0, 0]
 0x1152: movzx rdx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 20, 55]
 0x1157: add edx, 0xff
     bytes:       [129, 194, 255, 0, 0, 0]
 0x115d: mov byte ptr [rdi + rsi], dl
     bytes:       [136, 20, 55]
-0x1160: movabs r9, 0x7ff7011c4490
-    bytes:       [73, 185, 144, 68, 28, 1, 247, 127, 0, 0]
+0x1160: movabs r9, 0x7ff67d4788a0
+    bytes:       [73, 185, 160, 136, 71, 125, 246, 127, 0, 0]
 0x116a: mov rcx, r12
     bytes:       [76, 137, 225]
 0x116d: call r9
     bytes:       [65, 255, 209]
 0x1170: test rax, rax
     bytes:       [72, 133, 192]
-0x1173: jne 0x161d
-    bytes:       [15, 133, 164, 4, 0, 0]
-0x1179: movabs r11, 0x7ff7011c4490
-    bytes:       [73, 187, 144, 68, 28, 1, 247, 127, 0, 0]
+0x1173: jne 0x161e
+    bytes:       [15, 133, 165, 4, 0, 0]
+0x1179: movabs r11, 0x7ff67d4788a0
+    bytes:       [73, 187, 160, 136, 71, 125, 246, 127, 0, 0]
 0x1183: lea rax, [rsi + 0x7530]
     bytes:       [72, 141, 134, 48, 117, 0, 0]
 0x118a: test rsi, rsi
@@ -174,8 +174,8 @@
     bytes:       [65, 255, 211]
 0x1198: test rax, rax
     bytes:       [72, 133, 192]
-0x119b: jne 0x161d
-    bytes:       [15, 133, 124, 4, 0, 0]
+0x119b: jne 0x161e
+    bytes:       [15, 133, 125, 4, 0, 0]
 0x11a1: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
 0x11a6: test cl, cl
@@ -186,24 +186,24 @@
     bytes:       [132, 201]
 0x11b0: jne 0x11ae
     bytes:       [15, 133, 248, 255, 255, 255]
-0x11b6: movabs rax, 0x7ff7011c42d0
-    bytes:       [72, 184, 208, 66, 28, 1, 247, 127, 0, 0]
+0x11b6: movabs rax, 0x7ff67d4786e0
+    bytes:       [72, 184, 224, 134, 71, 125, 246, 127, 0, 0]
 0x11c0: call rax
     bytes:       [255, 208]
 0x11c2: test rax, rax
     bytes:       [72, 133, 192]
-0x11c5: jne 0x161d
-    bytes:       [15, 133, 82, 4, 0, 0]
+0x11c5: jne 0x161e
+    bytes:       [15, 133, 83, 4, 0, 0]
 0x11cb: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x11d0: movabs rdx, 0x7ff7011c42d0
-    bytes:       [72, 186, 208, 66, 28, 1, 247, 127, 0, 0]
+0x11d0: movabs rdx, 0x7ff67d4786e0
+    bytes:       [72, 186, 224, 134, 71, 125, 246, 127, 0, 0]
 0x11da: call rdx
     bytes:       [255, 210]
 0x11dc: test rax, rax
     bytes:       [72, 133, 192]
-0x11df: jne 0x161d
-    bytes:       [15, 133, 56, 4, 0, 0]
+0x11df: jne 0x161e
+    bytes:       [15, 133, 57, 4, 0, 0]
 0x11e5: movzx r8, byte ptr [rdi + rsi]
     bytes:       [76, 15, 182, 4, 55]
 0x11ea: test r8b, r8b
@@ -294,12 +294,12 @@
     bytes:       [131, 193, 1]
 0x12b9: mov byte ptr [rdi + rax], cl
     bytes:       [136, 12, 7]
-0x12bc: lea rdx, [rax + 0x752c]
-    bytes:       [72, 141, 144, 44, 117, 0, 0]
-0x12c3: lea r11, [rax - 4]
+0x12bc: lea r11, [rax - 4]
     bytes:       [76, 141, 88, 252]
-0x12c7: test rax, rax
-    bytes:       [72, 133, 192]
+0x12c0: lea rdx, [rax + 0x752c]
+    bytes:       [72, 141, 144, 44, 117, 0, 0]
+0x12c7: test r11, r11
+    bytes:       [77, 133, 219]
 0x12ca: cmovl r11, rdx
     bytes:       [76, 15, 76, 218]
 0x12ce: movzx rdx, byte ptr [rdi + r11]
@@ -376,12 +376,12 @@
     bytes:       [76, 137, 216]
 0x137c: jmp 0x13a8
     bytes:       [233, 39, 0, 0, 0]
-0x1381: lea rsi, [r11 + 0x752f]
-    bytes:       [73, 141, 179, 47, 117, 0, 0]
-0x1388: lea rax, [r11 - 1]
+0x1381: lea rax, [r11 - 1]
     bytes:       [73, 141, 67, 255]
-0x138c: test r11, r11
-    bytes:       [77, 133, 219]
+0x1385: lea rsi, [r11 + 0x752f]
+    bytes:       [73, 141, 179, 47, 117, 0, 0]
+0x138c: test rax, rax
+    bytes:       [72, 133, 192]
 0x138f: cmovl rax, rsi
     bytes:       [72, 15, 76, 198]
 0x1393: movzx rcx, byte ptr [rdi + rax]
@@ -394,12 +394,12 @@
     bytes:       [73, 137, 195]
 0x13a3: jmp 0x1381
     bytes:       [233, 217, 255, 255, 255]
-0x13a8: lea rcx, [rax + 0x752f]
-    bytes:       [72, 141, 136, 47, 117, 0, 0]
-0x13af: lea rsi, [rax - 1]
+0x13a8: lea rsi, [rax - 1]
     bytes:       [72, 141, 112, 255]
-0x13b3: test rax, rax
-    bytes:       [72, 133, 192]
+0x13ac: lea rcx, [rax + 0x752f]
+    bytes:       [72, 141, 136, 47, 117, 0, 0]
+0x13b3: test rsi, rsi
+    bytes:       [72, 133, 246]
 0x13b6: cmovl rsi, rcx
     bytes:       [72, 15, 76, 241]
 0x13ba: movzx rcx, byte ptr [rdi + rsi]
@@ -422,14 +422,14 @@
     bytes:       [73, 15, 76, 242]
 0x13e6: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x13eb: movabs r11, 0x7ff7011c42d0
-    bytes:       [73, 187, 208, 66, 28, 1, 247, 127, 0, 0]
+0x13eb: movabs r11, 0x7ff67d4786e0
+    bytes:       [73, 187, 224, 134, 71, 125, 246, 127, 0, 0]
 0x13f5: call r11
     bytes:       [65, 255, 211]
 0x13f8: test rax, rax
     bytes:       [72, 133, 192]
-0x13fb: jne 0x161d
-    bytes:       [15, 133, 28, 2, 0, 0]
+0x13fb: jne 0x161e
+    bytes:       [15, 133, 29, 2, 0, 0]
 0x1401: lea rax, [rsi + 1]
     bytes:       [72, 141, 70, 1]
 0x1405: add rsi, -0x752f
@@ -444,52 +444,52 @@
     bytes:       [129, 193, 253, 0, 0, 0]
 0x1422: mov byte ptr [rdi + rsi], cl
     bytes:       [136, 12, 55]
-0x1425: movabs rdx, 0x7ff7011c42d0
-    bytes:       [72, 186, 208, 66, 28, 1, 247, 127, 0, 0]
+0x1425: movabs rdx, 0x7ff67d4786e0
+    bytes:       [72, 186, 224, 134, 71, 125, 246, 127, 0, 0]
 0x142f: call rdx
     bytes:       [255, 210]
 0x1431: test rax, rax
     bytes:       [72, 133, 192]
-0x1434: jne 0x161d
-    bytes:       [15, 133, 227, 1, 0, 0]
+0x1434: jne 0x161e
+    bytes:       [15, 133, 228, 1, 0, 0]
 0x143a: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
 0x143f: add ecx, 7
     bytes:       [131, 193, 7]
 0x1442: mov byte ptr [rdi + rsi], cl
     bytes:       [136, 12, 55]
-0x1445: movabs r9, 0x7ff7011c42d0
-    bytes:       [73, 185, 208, 66, 28, 1, 247, 127, 0, 0]
+0x1445: movabs r9, 0x7ff67d4786e0
+    bytes:       [73, 185, 224, 134, 71, 125, 246, 127, 0, 0]
 0x144f: call r9
     bytes:       [65, 255, 209]
 0x1452: test rax, rax
     bytes:       [72, 133, 192]
-0x1455: jne 0x161d
-    bytes:       [15, 133, 194, 1, 0, 0]
+0x1455: jne 0x161e
+    bytes:       [15, 133, 195, 1, 0, 0]
 0x145b: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x1460: movabs r11, 0x7ff7011c42d0
-    bytes:       [73, 187, 208, 66, 28, 1, 247, 127, 0, 0]
+0x1460: movabs r11, 0x7ff67d4786e0
+    bytes:       [73, 187, 224, 134, 71, 125, 246, 127, 0, 0]
 0x146a: call r11
     bytes:       [65, 255, 211]
 0x146d: test rax, rax
     bytes:       [72, 133, 192]
-0x1470: jne 0x161d
-    bytes:       [15, 133, 167, 1, 0, 0]
+0x1470: jne 0x161e
+    bytes:       [15, 133, 168, 1, 0, 0]
 0x1476: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
 0x147b: add ecx, 3
     bytes:       [131, 193, 3]
 0x147e: mov byte ptr [rdi + rsi], cl
     bytes:       [136, 12, 55]
-0x1481: movabs rax, 0x7ff7011c42d0
-    bytes:       [72, 184, 208, 66, 28, 1, 247, 127, 0, 0]
+0x1481: movabs rax, 0x7ff67d4786e0
+    bytes:       [72, 184, 224, 134, 71, 125, 246, 127, 0, 0]
 0x148b: call rax
     bytes:       [255, 208]
 0x148d: test rax, rax
     bytes:       [72, 133, 192]
-0x1490: jne 0x161d
-    bytes:       [15, 133, 135, 1, 0, 0]
+0x1490: jne 0x161e
+    bytes:       [15, 133, 136, 1, 0, 0]
 0x1496: lea rdx, [rsi + 2]
     bytes:       [72, 141, 86, 2]
 0x149a: add rsi, -0x752e
@@ -500,171 +500,171 @@
     bytes:       [72, 15, 76, 242]
 0x14ac: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x14b1: movabs r8, 0x7ff7011c42d0
-    bytes:       [73, 184, 208, 66, 28, 1, 247, 127, 0, 0]
+0x14b1: movabs r8, 0x7ff67d4786e0
+    bytes:       [73, 184, 224, 134, 71, 125, 246, 127, 0, 0]
 0x14bb: call r8
     bytes:       [65, 255, 208]
 0x14be: test rax, rax
     bytes:       [72, 133, 192]
-0x14c1: jne 0x161d
-    bytes:       [15, 133, 86, 1, 0, 0]
-0x14c7: lea r10, [rsi + 0x752f]
+0x14c1: jne 0x161e
+    bytes:       [15, 133, 87, 1, 0, 0]
+0x14c7: lea r15, [rsi - 1]
+    bytes:       [76, 141, 126, 255]
+0x14cb: lea r10, [rsi + 0x752f]
     bytes:       [76, 141, 150, 47, 117, 0, 0]
-0x14ce: lea rbx, [rsi - 1]
-    bytes:       [72, 141, 94, 255]
-0x14d2: test rsi, rsi
-    bytes:       [72, 133, 246]
-0x14d5: cmovl rbx, r10
-    bytes:       [73, 15, 76, 218]
-0x14d9: movzx rcx, byte ptr [rdi + rbx]
-    bytes:       [72, 15, 182, 12, 31]
+0x14d2: test r15, r15
+    bytes:       [77, 133, 255]
+0x14d5: cmovl r15, r10
+    bytes:       [77, 15, 76, 250]
+0x14d9: movzx rcx, byte ptr [rdi + r15]
+    bytes:       [74, 15, 182, 12, 63]
 0x14de: add ecx, 0xff
     bytes:       [129, 193, 255, 0, 0, 0]
-0x14e4: mov byte ptr [rdi + rbx], cl
-    bytes:       [136, 12, 31]
-0x14e7: movabs rsi, 0x7ff7011c42d0
-    bytes:       [72, 190, 208, 66, 28, 1, 247, 127, 0, 0]
-0x14f1: call rsi
+0x14e4: mov byte ptr [rdi + r15], cl
+    bytes:       [66, 136, 12, 63]
+0x14e8: movabs rsi, 0x7ff67d4786e0
+    bytes:       [72, 190, 224, 134, 71, 125, 246, 127, 0, 0]
+0x14f2: call rsi
     bytes:       [255, 214]
-0x14f3: test rax, rax
+0x14f4: test rax, rax
     bytes:       [72, 133, 192]
-0x14f6: jne 0x161d
+0x14f7: jne 0x161e
     bytes:       [15, 133, 33, 1, 0, 0]
-0x14fc: lea rax, [rbx + 0x752f]
-    bytes:       [72, 141, 131, 47, 117, 0, 0]
-0x1503: lea rsi, [rbx - 1]
-    bytes:       [72, 141, 115, 255]
-0x1507: test rbx, rbx
-    bytes:       [72, 133, 219]
-0x150a: cmovl rsi, rax
+0x14fd: lea rsi, [r15 - 1]
+    bytes:       [73, 141, 119, 255]
+0x1501: lea rax, [r15 + 0x752f]
+    bytes:       [73, 141, 135, 47, 117, 0, 0]
+0x1508: test rsi, rsi
+    bytes:       [72, 133, 246]
+0x150b: cmovl rsi, rax
     bytes:       [72, 15, 76, 240]
-0x150e: movzx rcx, byte ptr [rdi + rsi]
+0x150f: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x1513: movabs rdx, 0x7ff7011c42d0
-    bytes:       [72, 186, 208, 66, 28, 1, 247, 127, 0, 0]
-0x151d: call rdx
+0x1514: movabs rdx, 0x7ff67d4786e0
+    bytes:       [72, 186, 224, 134, 71, 125, 246, 127, 0, 0]
+0x151e: call rdx
     bytes:       [255, 210]
-0x151f: test rax, rax
+0x1520: test rax, rax
     bytes:       [72, 133, 192]
-0x1522: jne 0x161d
+0x1523: jne 0x161e
     bytes:       [15, 133, 245, 0, 0, 0]
-0x1528: movzx rcx, byte ptr [rdi + rsi]
+0x1529: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x152d: add ecx, 3
+0x152e: add ecx, 3
     bytes:       [131, 193, 3]
-0x1530: mov byte ptr [rdi + rsi], cl
+0x1531: mov byte ptr [rdi + rsi], cl
     bytes:       [136, 12, 55]
-0x1533: movabs r9, 0x7ff7011c42d0
-    bytes:       [73, 185, 208, 66, 28, 1, 247, 127, 0, 0]
-0x153d: call r9
+0x1534: movabs r9, 0x7ff67d4786e0
+    bytes:       [73, 185, 224, 134, 71, 125, 246, 127, 0, 0]
+0x153e: call r9
     bytes:       [65, 255, 209]
-0x1540: test rax, rax
+0x1541: test rax, rax
     bytes:       [72, 133, 192]
-0x1543: jne 0x161d
+0x1544: jne 0x161e
     bytes:       [15, 133, 212, 0, 0, 0]
-0x1549: movzx rcx, byte ptr [rdi + rsi]
+0x154a: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x154e: add ecx, 0xfa
+0x154f: add ecx, 0xfa
     bytes:       [129, 193, 250, 0, 0, 0]
-0x1554: mov byte ptr [rdi + rsi], cl
+0x1555: mov byte ptr [rdi + rsi], cl
     bytes:       [136, 12, 55]
-0x1557: movabs rax, 0x7ff7011c42d0
-    bytes:       [72, 184, 208, 66, 28, 1, 247, 127, 0, 0]
-0x1561: call rax
+0x1558: movabs rax, 0x7ff67d4786e0
+    bytes:       [72, 184, 224, 134, 71, 125, 246, 127, 0, 0]
+0x1562: call rax
     bytes:       [255, 208]
-0x1563: test rax, rax
+0x1564: test rax, rax
     bytes:       [72, 133, 192]
-0x1566: jne 0x161d
+0x1567: jne 0x161e
     bytes:       [15, 133, 177, 0, 0, 0]
-0x156c: movzx rcx, byte ptr [rdi + rsi]
+0x156d: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x1571: add ecx, 0xf8
+0x1572: add ecx, 0xf8
     bytes:       [129, 193, 248, 0, 0, 0]
-0x1577: mov byte ptr [rdi + rsi], cl
+0x1578: mov byte ptr [rdi + rsi], cl
     bytes:       [136, 12, 55]
-0x157a: movabs rdx, 0x7ff7011c42d0
-    bytes:       [72, 186, 208, 66, 28, 1, 247, 127, 0, 0]
-0x1584: call rdx
+0x157b: movabs rdx, 0x7ff67d4786e0
+    bytes:       [72, 186, 224, 134, 71, 125, 246, 127, 0, 0]
+0x1585: call rdx
     bytes:       [255, 210]
-0x1586: test rax, rax
+0x1587: test rax, rax
     bytes:       [72, 133, 192]
-0x1589: jne 0x161d
+0x158a: jne 0x161e
     bytes:       [15, 133, 142, 0, 0, 0]
-0x158f: lea r8, [rsi + 2]
+0x1590: lea r8, [rsi + 2]
     bytes:       [76, 141, 70, 2]
-0x1593: add rsi, -0x752e
+0x1594: add rsi, -0x752e
     bytes:       [72, 129, 198, 210, 138, 255, 255]
-0x159a: cmp r8, 0x7530
+0x159b: cmp r8, 0x7530
     bytes:       [73, 129, 248, 48, 117, 0, 0]
-0x15a1: cmovl rsi, r8
+0x15a2: cmovl rsi, r8
     bytes:       [73, 15, 76, 240]
-0x15a5: movzx rcx, byte ptr [rdi + rsi]
+0x15a6: movzx rcx, byte ptr [rdi + rsi]
     bytes:       [72, 15, 182, 12, 55]
-0x15aa: add ecx, 1
+0x15ab: add ecx, 1
     bytes:       [131, 193, 1]
-0x15ad: mov byte ptr [rdi + rsi], cl
+0x15ae: mov byte ptr [rdi + rsi], cl
     bytes:       [136, 12, 55]
-0x15b0: movabs r10, 0x7ff7011c42d0
-    bytes:       [73, 186, 208, 66, 28, 1, 247, 127, 0, 0]
-0x15ba: call r10
+0x15b1: movabs r10, 0x7ff67d4786e0
+    bytes:       [73, 186, 224, 134, 71, 125, 246, 127, 0, 0]
+0x15bb: call r10
     bytes:       [65, 255, 210]
-0x15bd: test rax, rax
+0x15be: test rax, rax
     bytes:       [72, 133, 192]
-0x15c0: jne 0x161d
+0x15c1: jne 0x161e
     bytes:       [15, 133, 87, 0, 0, 0]
-0x15c6: lea rax, [rsi + 1]
+0x15c7: lea rax, [rsi + 1]
     bytes:       [72, 141, 70, 1]
-0x15ca: lea r11, [rsi - 0x752f]
+0x15cb: lea r11, [rsi - 0x752f]
     bytes:       [76, 141, 158, 209, 138, 255, 255]
-0x15d1: cmp rax, 0x7530
+0x15d2: cmp rax, 0x7530
     bytes:       [72, 129, 248, 48, 117, 0, 0]
-0x15d8: cmovl r11, rax
+0x15d9: cmovl r11, rax
     bytes:       [76, 15, 76, 216]
-0x15dc: movzx rcx, byte ptr [rdi + r11]
+0x15dd: movzx rcx, byte ptr [rdi + r11]
     bytes:       [74, 15, 182, 12, 31]
-0x15e1: add ecx, 2
+0x15e2: add ecx, 2
     bytes:       [131, 193, 2]
-0x15e4: mov byte ptr [rdi + r11], cl
+0x15e5: mov byte ptr [rdi + r11], cl
     bytes:       [66, 136, 12, 31]
-0x15e8: movabs rax, 0x7ff7011c42d0
-    bytes:       [72, 184, 208, 66, 28, 1, 247, 127, 0, 0]
-0x15f2: call rax
+0x15e9: movabs rax, 0x7ff67d4786e0
+    bytes:       [72, 184, 224, 134, 71, 125, 246, 127, 0, 0]
+0x15f3: call rax
     bytes:       [255, 208]
-0x15f4: test rax, rax
+0x15f5: test rax, rax
     bytes:       [72, 133, 192]
-0x15f7: jne 0x161d
+0x15f8: jne 0x161e
     bytes:       [15, 133, 32, 0, 0, 0]
-0x15fd: xor rax, rax
+0x15fe: xor rax, rax
     bytes:       [72, 49, 192]
-0x1600: mov rbx, qword ptr [rsp + 0x20]
-    bytes:       [72, 139, 92, 36, 32]
-0x1605: mov rsi, qword ptr [rsp + 0x28]
-    bytes:       [72, 139, 116, 36, 40]
-0x160a: mov rdi, qword ptr [rsp + 0x30]
-    bytes:       [72, 139, 124, 36, 48]
-0x160f: mov r12, qword ptr [rsp + 0x38]
-    bytes:       [76, 139, 100, 36, 56]
-0x1614: add rsp, 0x40
+0x1601: mov rsi, qword ptr [rsp + 0x20]
+    bytes:       [72, 139, 116, 36, 32]
+0x1606: mov rdi, qword ptr [rsp + 0x28]
+    bytes:       [72, 139, 124, 36, 40]
+0x160b: mov r12, qword ptr [rsp + 0x30]
+    bytes:       [76, 139, 100, 36, 48]
+0x1610: mov r15, qword ptr [rsp + 0x38]
+    bytes:       [76, 139, 124, 36, 56]
+0x1615: add rsp, 0x40
     bytes:       [72, 131, 196, 64]
-0x1618: mov rsp, rbp
+0x1619: mov rsp, rbp
     bytes:       [72, 137, 236]
-0x161b: pop rbp
+0x161c: pop rbp
     bytes:       [93]
-0x161c: ret 
+0x161d: ret 
     bytes:       [195]
-0x161d: mov rbx, qword ptr [rsp + 0x20]
-    bytes:       [72, 139, 92, 36, 32]
-0x1622: mov rsi, qword ptr [rsp + 0x28]
-    bytes:       [72, 139, 116, 36, 40]
-0x1627: mov rdi, qword ptr [rsp + 0x30]
-    bytes:       [72, 139, 124, 36, 48]
-0x162c: mov r12, qword ptr [rsp + 0x38]
-    bytes:       [76, 139, 100, 36, 56]
-0x1631: add rsp, 0x40
+0x161e: mov rsi, qword ptr [rsp + 0x20]
+    bytes:       [72, 139, 116, 36, 32]
+0x1623: mov rdi, qword ptr [rsp + 0x28]
+    bytes:       [72, 139, 124, 36, 40]
+0x1628: mov r12, qword ptr [rsp + 0x30]
+    bytes:       [76, 139, 100, 36, 48]
+0x162d: mov r15, qword ptr [rsp + 0x38]
+    bytes:       [76, 139, 124, 36, 56]
+0x1632: add rsp, 0x40
     bytes:       [72, 131, 196, 64]
-0x1635: mov rsp, rbp
+0x1636: mov rsp, rbp
     bytes:       [72, 137, 236]
-0x1638: pop rbp
+0x1639: pop rbp
     bytes:       [93]
-0x1639: ret 
+0x163a: ret 
     bytes:       [195]

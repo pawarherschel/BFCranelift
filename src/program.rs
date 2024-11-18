@@ -1,11 +1,24 @@
+use capstone::Instructions;
 use cranelift::codegen::control::ControlPlane;
-use cranelift::codegen::ir::{Function, UserFuncName};
+use cranelift::codegen::ir::{instructions, Function, UserFuncName};
 use cranelift::codegen::{verify_function, Context};
 use cranelift::prelude::{
     isa, settings, types, AbiParam, Configurable, EntityRef, FunctionBuilder,
     FunctionBuilderContext, InstBuilder, IntCC, MemFlags, Signature, Variable,
 };
 use std::io::{Read, Write};
+
+#[derive(Eq, PartialEq, Clone, Debug)]
+enum Instruction {
+    Add(i8),
+    Move(i64),
+    Input,
+    Output,
+    JumpRight,
+    JumpLeft,
+    Clear,
+    AddTo(i64),
+}
 
 pub const PROGRAM_MEMORY_SIZE: usize = 30_000;
 
@@ -24,6 +37,61 @@ pub struct UnbalancedBrackets(pub char, pub usize);
 impl Program {
     #[allow(clippy::too_many_lines)]
     pub fn new(source: &[u8]) -> Result<Self, UnbalancedBrackets> {
+        let mut instructions = vec![];
+
+        for byte in source {
+            let instruction = match byte {
+                b'+' | b'-' => {
+                    let inc = if *byte == b'+' { 1 } else { -1 };
+                    if let Some(Instruction::Add(value)) = instructions.last_mut() {
+                        *value = value.wrapping_add(inc);
+                        continue;
+                    }
+                    Instruction::Add(inc)
+                }
+                b'.' => Instruction::Output,
+                b',' => Instruction::Input,
+                b'>' | b'<' => {
+                    let inc = if *byte == b'>' { 1 } else { -1 };
+                    if let Some(Instruction::Move(value)) = instructions.last_mut() {
+                        *value += inc;
+                        continue;
+                    }
+                    Instruction::Move(inc)
+                }
+                b'[' => Instruction::JumpRight,
+                b']' => match instructions.as_slice() {
+                    [.., Instruction::JumpRight, Instruction::Add(n)]
+                        if u8::try_from(*n).unwrap() % 2 == 1 =>
+                    {
+                        let len = instructions.len();
+                        instructions.drain(len - 2..);
+                        Instruction::Clear
+                    }
+                    &[.., Instruction::JumpRight, Instruction::Add(-1), Instruction::Move(x), Instruction::Add(1), Instruction::Move(y)]
+                        if x == -y =>
+                    {
+                        let len = instructions.len();
+                        instructions.drain(len - 5..);
+                        Instruction::AddTo(x)
+                    }
+                    _ => Instruction::JumpLeft,
+                },
+
+                _ => continue,
+            };
+
+            instructions.push(instruction);
+        }
+
+        if std::fs::metadata("instructions").is_ok() {
+            std::fs::rename("instructions", "instructions.old").unwrap();
+        }
+        {
+            let is = format!("{instructions:#?}");
+            std::fs::write("instructions", is).unwrap();
+        }
+
         let mut builder = settings::builder();
         builder
             .set("opt_level", "speed")
@@ -62,7 +130,6 @@ impl Program {
         let zero = func_builder.ins().iconst(pointer_type, 0);
         func_builder.def_var(pointer, zero);
 
-        let mut stack = vec![];
         let mem_flags = MemFlags::new();
 
         let (write_sig, write_address) = {
@@ -88,31 +155,12 @@ impl Program {
         let exit_block = func_builder.create_block();
         func_builder.append_block_param(exit_block, pointer_type);
 
-        let mut ops = source
-            .iter()
-            .copied()
-            .enumerate()
-            .filter(|(_, byte)| b"+-><.,[]".contains(byte))
-            .peekable();
+        let mut stack = vec![];
 
-        while let Some((idx, byte)) = ops.next() {
-            match byte {
-                b'+' | b'-' => {
-                    let mut n = match byte {
-                        b'+' => 1,
-                        b'-' => -1,
-                        _ => unreachable!(),
-                    };
-
-                    while ops.peek().map_or(false, |(_, byte)| b"+-".contains(byte)) {
-                        let byte = ops.next().unwrap().1;
-
-                        n += match byte {
-                            b'+' => 1,
-                            b'-' => -1,
-                            _ => unreachable!(),
-                        };
-                    }
+        for (i, instruction) in instructions.into_iter().enumerate() {
+            match instruction {
+                Instruction::Add(n) => {
+                    let n = i64::from(n);
 
                     let pointer_value = func_builder.use_var(pointer);
                     let cell_address = func_builder.ins().iadd(memory_address, pointer_value);
@@ -124,7 +172,38 @@ impl Program {
                         .ins()
                         .store(mem_flags, cell_value, cell_address, 0);
                 }
-                b'.' => {
+                Instruction::Move(n) => {
+                    let n = i64::from(n);
+                    let pointer_value = func_builder.use_var(pointer);
+                    let pointer_plus = func_builder.ins().iadd_imm(pointer_value, n);
+
+                    // could be replaced with i64::rem_euclid
+                    let pointer_value = if n > 0 {
+                        let wrapped = func_builder.ins().iadd_imm(
+                            pointer_value,
+                            n - i64::try_from(PROGRAM_MEMORY_SIZE).unwrap(),
+                        );
+                        let cmp = func_builder.ins().icmp_imm(
+                            IntCC::SignedLessThan,
+                            pointer_plus,
+                            i64::try_from(PROGRAM_MEMORY_SIZE).unwrap(),
+                        );
+                        func_builder.ins().select(cmp, pointer_plus, wrapped)
+                    } else {
+                        let wrapped = func_builder.ins().iadd_imm(
+                            pointer_value,
+                            n + i64::try_from(PROGRAM_MEMORY_SIZE).unwrap(),
+                        );
+                        let cmp =
+                            func_builder
+                                .ins()
+                                .icmp_imm(IntCC::SignedLessThan, pointer_plus, 0);
+                        func_builder.ins().select(cmp, wrapped, pointer_plus)
+                    };
+
+                    func_builder.def_var(pointer, pointer_value);
+                }
+                Instruction::Output => {
                     let pointer_value = func_builder.use_var(pointer);
                     let cell_address = func_builder.ins().iadd(memory_address, pointer_value);
                     let cell_value = func_builder
@@ -146,15 +225,15 @@ impl Program {
                     func_builder.seal_block(after_block);
                     func_builder.switch_to_block(after_block);
                 }
-                b',' => {
+                Instruction::Input => {
                     let pointer_value = func_builder.use_var(pointer);
                     let cell_address = func_builder.ins().iadd(memory_address, pointer_value);
 
-                    let ins =
+                    let inst =
                         func_builder
                             .ins()
                             .call_indirect(read_sig, read_address, &[cell_address]);
-                    let result = func_builder.inst_results(ins)[0];
+                    let result = func_builder.inst_results(inst)[0];
 
                     let after_block = func_builder.create_block();
 
@@ -165,51 +244,7 @@ impl Program {
                     func_builder.seal_block(after_block);
                     func_builder.switch_to_block(after_block);
                 }
-                b'<' | b'>' => {
-                    let mut n = match byte {
-                        b'>' => 1,
-                        b'<' => -1,
-                        _ => unreachable!(),
-                    };
-
-                    while ops.peek().map_or(false, |(_, byte)| b"<>".contains(byte)) {
-                        let byte = ops.next().unwrap().1;
-                        n += match byte {
-                            b'>' => 1,
-                            b'<' => -1,
-                            _ => unreachable!(),
-                        };
-                    }
-
-                    let pointer_value = func_builder.use_var(pointer);
-                    let pointer_plus = func_builder.ins().iadd_imm(pointer_value, n);
-
-                    let pointer_value = if n > 0 {
-                        let wrapped = func_builder.ins().iadd_imm(
-                            pointer_value,
-                            n - i64::try_from(PROGRAM_MEMORY_SIZE).unwrap(),
-                        );
-                        let cmp = func_builder.ins().icmp_imm(
-                            IntCC::SignedLessThan,
-                            pointer_plus,
-                            i64::try_from(PROGRAM_MEMORY_SIZE).unwrap(),
-                        );
-                        func_builder.ins().select(cmp, pointer_plus, wrapped)
-                    } else {
-                        let wrapped = func_builder.ins().iadd_imm(
-                            pointer_value,
-                            n + i64::try_from(PROGRAM_MEMORY_SIZE).unwrap(),
-                        );
-                        let cmp =
-                            func_builder
-                                .ins()
-                                .icmp_imm(IntCC::SignedLessThan, pointer_value, 0);
-                        func_builder.ins().select(cmp, wrapped, pointer_plus)
-                    };
-
-                    func_builder.def_var(pointer, pointer_value);
-                }
-                b'[' => {
+                Instruction::JumpRight => {
                     let inner_block = func_builder.create_block();
                     let after_block = func_builder.create_block();
 
@@ -224,13 +259,11 @@ impl Program {
                         .brif(cell_value, inner_block, &[], after_block, &[]);
 
                     func_builder.switch_to_block(inner_block);
-
                     stack.push((inner_block, after_block));
                 }
-                b']' => {
-                    let (inner_block, after_block) = match stack.pop() {
-                        None => return Err(UnbalancedBrackets(']', idx)),
-                        Some(x) => x,
+                Instruction::JumpLeft => {
+                    let Some((inner_block, after_block)) = stack.pop() else {
+                        return Err(UnbalancedBrackets(']', i));
                     };
 
                     let pointer_value = func_builder.use_var(pointer);
@@ -248,7 +281,50 @@ impl Program {
 
                     func_builder.switch_to_block(after_block);
                 }
-                _ => continue,
+                Instruction::Clear => {
+                    let pointer_value = func_builder.use_var(pointer);
+                    let cell_address = func_builder.ins().iadd(memory_address, pointer_value);
+                    func_builder.ins().store(mem_flags, zero, cell_address, 0);
+                }
+                Instruction::AddTo(n) => {
+                    let pointer_value = func_builder.use_var(pointer);
+                    let to_add = func_builder.ins().iadd_imm(pointer_value, n);
+
+                    let to_add = if n > 0 {
+                        let wrapped = func_builder.ins().iadd_imm(
+                            pointer_value,
+                            n - i64::try_from(PROGRAM_MEMORY_SIZE).unwrap(),
+                        );
+                        let cmp = func_builder.ins().icmp_imm(
+                            IntCC::SignedLessThan,
+                            to_add,
+                            i64::try_from(PROGRAM_MEMORY_SIZE).unwrap(),
+                        );
+                        func_builder.ins().select(cmp, to_add, wrapped)
+                    } else {
+                        let wrapped = func_builder.ins().iadd_imm(
+                            pointer_value,
+                            n + i64::try_from(PROGRAM_MEMORY_SIZE).unwrap(),
+                        );
+                        let cmp = func_builder
+                            .ins()
+                            .icmp_imm(IntCC::SignedLessThan, to_add, 0);
+                        func_builder.ins().select(cmp, wrapped, to_add)
+                    };
+
+                    let from_address = func_builder.ins().iadd(memory_address, pointer_value);
+                    let to_address = func_builder.ins().iadd(memory_address, to_add);
+
+                    let from_value = func_builder
+                        .ins()
+                        .load(types::I8, mem_flags, from_address, 0);
+                    let to_value = func_builder.ins().load(types::I8, mem_flags, to_address, 0);
+
+                    let sum = func_builder.ins().iadd(to_value, from_value);
+
+                    func_builder.ins().store(mem_flags, zero, from_address, 0);
+                    func_builder.ins().store(mem_flags, sum, to_address, 0);
+                }
             }
         }
 
@@ -279,10 +355,7 @@ impl Program {
         std::fs::write("clir", clir).unwrap();
 
         let mut ctx = Context::for_function(func);
-        let code = match ctx.compile(
-            &*isa,
-            /* &mut ControlPlane */ &mut ControlPlane::default(),
-        ) {
+        let code = match ctx.compile(&*isa, &mut ControlPlane::default()) {
             Ok(x) => x,
             Err(err) => {
                 eprintln!("error compiling: {err:#?}");
