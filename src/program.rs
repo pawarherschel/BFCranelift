@@ -4,6 +4,9 @@ use cranelift::prelude::{
     isa, settings, types, AbiParam, Configurable, EntityRef, FunctionBuilder,
     FunctionBuilderContext, InstBuilder, IntCC, MemFlags, Signature, Variable,
 };
+use cranelift_codegen::settings::OptLevel;
+use cranelift_codegen::trace;
+use std::collections::VecDeque;
 use std::io::{Read, Write};
 
 extern "fastcall" fn write(value: u8) -> *mut std::io::Error {
@@ -14,7 +17,7 @@ extern "fastcall" fn write(value: u8) -> *mut std::io::Error {
 
     let mut stdout = std::io::stdout().lock();
 
-    let result = stdout.write_all(&[value]).and_then(|_| stdout.flush());
+    let result = stdout.write_all(&[value]).and_then(|()| stdout.flush());
 
     match result {
         Err(err) => Box::into_raw(Box::new(err)),
@@ -46,20 +49,27 @@ unsafe extern "fastcall" fn read(buf: *mut u8) -> *mut std::io::Error {
     }
 }
 
-const PROGRAM_MEMORY_SIZE: i64 = 30_000;
+pub const PROGRAM_MEMORY_SIZE: i64 = 30_000;
 
-struct Program {
-    code: Vec<u8>,
-    memory: [u8; PROGRAM_MEMORY_SIZE as usize],
+#[derive(Debug, Clone)]
+pub struct Program {
+    pub code: Vec<u8>,
+    pub memory: [u8; PROGRAM_MEMORY_SIZE as usize],
 }
 
-struct UnbalancedBrackets(char, usize);
+#[derive(Debug, Clone)]
+pub struct UnbalancedBrackets(pub char, pub usize);
 
 // PROGRESS: https://rodrigodd.github.io/2022/11/26/bf_compiler-part3.html#fnref:aot:~:text=result%20=%20builder.inst_results(inst)%5B0%5D;-,let%20after_block%20=%20builder.create_block();,-builder.ins().brnz(result%2C%20exit_block%2C%20%26%5Bresult%5D);
 
 impl Program {
     #[allow(clippy::too_many_lines)]
-    fn new(source: &[u8]) -> Result<Program, UnbalancedBrackets> {
+    pub fn new(source: &[u8]) -> Result<Self, UnbalancedBrackets> {
+        // let mut shadow = Box::new([0u8; PROGRAM_MEMORY_SIZE as usize]);
+        // let mut inst_ptr = 0usize;
+        // let mut ptr = 0usize;
+        // let mut ptr_stack = vec![];
+
         let mut builder = settings::builder();
         builder
             .set("opt_level", "speed")
@@ -127,9 +137,14 @@ impl Program {
         let exit_block = func_builder.create_block();
         func_builder.append_block_param(exit_block, pointer_type);
 
+        let mut trace = String::new();
+        let mut prev = None;
+
         for (idx, byte) in source.iter().enumerate() {
             match byte {
                 b'+' => {
+                    let ch = '+';
+                    Self::idfk(&mut trace, &mut prev, ch);
                     let pointer_value = func_builder.use_var(pointer);
                     let cell_address = func_builder.ins().iadd(memory_address, pointer_value);
                     let cell_value = func_builder
@@ -139,8 +154,13 @@ impl Program {
                     func_builder
                         .ins()
                         .store(mem_flags, cell_value, cell_address, 0);
+
+                    // shadow[ptr] = shadow[ptr].wrapping_add(1);
+                    // inst_ptr += 1;
                 }
                 b'-' => {
+                    let ch = '-';
+                    Self::idfk(&mut trace, &mut prev, ch);
                     let pointer_value = func_builder.use_var(pointer);
                     let cell_address = func_builder.ins().iadd(memory_address, pointer_value);
                     let cell_value = func_builder
@@ -150,8 +170,13 @@ impl Program {
                     func_builder
                         .ins()
                         .store(mem_flags, cell_value, cell_address, 0);
+
+                    // shadow[ptr] = shadow[ptr].wrapping_sub(1);
+                    // inst_ptr += 1;
                 }
                 b'.' => {
+                    let ch = '.';
+                    Self::idfk(&mut trace, &mut prev, ch);
                     let pointer_value = func_builder.use_var(pointer);
                     let cell_address = func_builder.ins().iadd(memory_address, pointer_value);
                     let cell_value = func_builder
@@ -163,9 +188,42 @@ impl Program {
                             .ins()
                             .call_indirect(write_sig, write_address, &[cell_value]);
                     let result = func_builder.inst_results(inst)[0];
+
+                    let after_block = func_builder.create_block();
+
+                    func_builder.ins().brnz(result, exit_block, &[result]);
+                    func_builder.ins().jump(after_block, &[]);
+
+                    func_builder.seal_block(after_block);
+                    func_builder.switch_to_block(after_block);
+
+                    // inst_ptr += 1;
                 }
-                b',' => {}
+                b',' => {
+                    let ch = ',';
+                    Self::idfk(&mut trace, &mut prev, ch);
+                    let pointer_value = func_builder.use_var(pointer);
+                    let cell_address = func_builder.ins().iadd(memory_address, pointer_value);
+
+                    let ins =
+                        func_builder
+                            .ins()
+                            .call_indirect(read_sig, read_address, &[cell_address]);
+                    let result = func_builder.inst_results(ins)[0];
+
+                    let after_block = func_builder.create_block();
+
+                    func_builder.ins().brnz(result, exit_block, &[result]);
+                    func_builder.ins().jump(after_block, &[]);
+
+                    func_builder.seal_block(after_block);
+                    func_builder.switch_to_block(after_block);
+
+                    // inst_ptr += 1;
+                }
                 b'<' => {
+                    let ch = '<';
+                    Self::idfk(&mut trace, &mut prev, ch);
                     let pointer_value = func_builder.use_var(pointer);
                     let pointer_minus = func_builder.ins().iadd_imm(pointer_value, -1);
 
@@ -175,8 +233,13 @@ impl Program {
                     let pointer_value = func_builder.ins().select(cmp, wrapped, pointer_minus);
 
                     func_builder.def_var(pointer, pointer_value);
+
+                    // ptr = ptr.wrapping_sub(1);
+                    // inst_ptr += 1;
                 }
                 b'>' => {
+                    let ch = '>';
+                    Self::idfk(&mut trace, &mut prev, ch);
                     let pointer_value = func_builder.use_var(pointer);
                     let pointer_plus = func_builder.ins().iadd_imm(pointer_value, 1);
 
@@ -188,8 +251,13 @@ impl Program {
                     let pointer_value = func_builder.ins().select(cmp, zero, pointer_plus);
 
                     func_builder.def_var(pointer, pointer_value);
+
+                    // ptr = ptr.wrapping_add(1);
+                    // inst_ptr += 1;
                 }
                 b'[' => {
+                    let ch = '[';
+                    Self::idfk(&mut trace, &mut prev, ch);
                     let inner_block = func_builder.create_block();
                     let after_block = func_builder.create_block();
 
@@ -205,8 +273,13 @@ impl Program {
                     func_builder.switch_to_block(inner_block);
 
                     stack.push((inner_block, after_block));
+
+                    // inst_ptr += 1;
+                    // ptr_stack.push(inst_ptr);
                 }
                 b']' => {
+                    let ch = ']';
+                    Self::idfk(&mut trace, &mut prev, ch);
                     let (inner_block, after_block) = match stack.pop() {
                         None => return Err(UnbalancedBrackets(']', idx)),
                         Some(x) => x,
@@ -218,16 +291,32 @@ impl Program {
                         .ins()
                         .load(types::I8, mem_flags, cell_address, 0);
 
-                    func_builder.ins().brz(cell_value, inner_block, &[]);
-                    func_builder.ins().jump(after_block, &[]);
+                    func_builder.ins().brz(cell_value, after_block, &[]);
+                    func_builder.ins().jump(inner_block, &[]);
 
                     func_builder.seal_block(inner_block);
                     func_builder.seal_block(after_block);
 
                     func_builder.switch_to_block(after_block);
+
+                    // if shadow[ptr] == 0 {
+                    //     inst_ptr += 1;
+                    // } else {
+                    //     inst_ptr = ptr_stack.pop().unwrap();
+                    // }
                 }
                 _ => continue,
             }
+
+            // let not_trailing_zeros = shadow.iter().rev().skip_while(|&&v| v == 0).count();
+            // for byte in shadow.iter().take(not_trailing_zeros) {
+            // print!("{byte:03} ");
+            // }
+            // println!();
+            // for _ in 0..ptr {
+            // print!("    ");
+            // }
+            // println!(" ^");
         }
 
         if !stack.is_empty() {
@@ -249,6 +338,14 @@ impl Program {
             panic!("{errors}");
         }
 
+        let clir = func.display().to_string();
+        std::fs::write("clir", clir).unwrap();
+
+        if prev.is_some() {
+            Self::idfk(&mut trace, &mut prev, '_')
+        }
+        std::fs::write("prog", trace).unwrap();
+
         let mut ctx = Context::for_function(func);
         let code = match ctx.compile(&*isa) {
             Ok(x) => x,
@@ -264,5 +361,34 @@ impl Program {
             code,
             memory: [0; PROGRAM_MEMORY_SIZE as usize],
         })
+    }
+
+    fn idfk(trace: &mut String, prev: &mut Option<(char, i32)>, ch: char) {
+        match prev {
+            Some((curr, n)) if *curr == ch => *prev = Some((ch, *n + 1)),
+            Some((other, n)) => {
+                trace.push_str(format!("{other}: {n}\n").as_str());
+                *prev = Some((ch, 1));
+            }
+            None => *prev = Some((ch, 1)),
+        }
+    }
+
+    pub fn run(&mut self) {
+        let mut buffer = memmap2::MmapOptions::new()
+            .len(self.code.len())
+            .map_anon()
+            .unwrap();
+
+        buffer.copy_from_slice(self.code.as_slice());
+
+        let buffer = buffer.make_exec().unwrap();
+
+        let code_fn: unsafe extern "C" fn(*mut u8) -> *mut std::io::Error =
+            unsafe { std::mem::transmute(buffer.as_ptr()) };
+
+        let error = unsafe { code_fn(self.memory.as_mut_ptr()) };
+
+        assert!(error.is_null(), "{error:#?}");
     }
 }
