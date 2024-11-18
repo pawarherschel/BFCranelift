@@ -79,7 +79,23 @@ fn main() {
 
     let mut buf = String::new();
 
-    println!("number of instructions generated: {}", insns.len());
+    if std::fs::metadata("cs.txt.len").is_ok() {
+        std::fs::rename("cs.txt.len", "cs.txt.len.old").unwrap();
+    }
+    std::fs::write("cs.txt.len", insns.len().to_string()).unwrap();
+    let old = std::fs::read_to_string("cs.txt.len.old")
+        .map(|s| s.parse::<usize>().unwrap_or_default())
+        .unwrap_or_default();
+
+    if old == insns.len() {
+        println!("number of instructions generated: {}", insns.len());
+    } else {
+        println!(
+            "number of instructions generated: {} -> {}",
+            old,
+            insns.len()
+        );
+    }
 
     for i in insns.iter() {
         writeln!(buf, "{i}").unwrap();

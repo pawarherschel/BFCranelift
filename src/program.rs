@@ -101,10 +101,6 @@ impl Program {
         let memory_address = func_builder.block_params(func_block)[0];
 
         let zero = func_builder.ins().iconst(pointer_type, 0);
-        let wrapped = func_builder.ins().iconst(
-            pointer_type,
-            i64::try_from(PROGRAM_MEMORY_SIZE).unwrap() - 1,
-        );
         func_builder.def_var(pointer, zero);
 
         let mut stack = vec![];
@@ -133,26 +129,38 @@ impl Program {
         let exit_block = func_builder.create_block();
         func_builder.append_block_param(exit_block, pointer_type);
 
-        for (idx, byte) in source.iter().enumerate() {
+        let mut ops = source
+            .iter()
+            .copied()
+            .enumerate()
+            .filter(|(_, byte)| b"+-><.,[]".contains(byte))
+            .peekable();
+
+        while let Some((idx, byte)) = ops.next() {
             match byte {
-                b'+' => {
+                b'+' | b'-' => {
+                    let mut n = match byte {
+                        b'+' => 1,
+                        b'-' => -1,
+                        _ => unreachable!(),
+                    };
+
+                    while ops.peek().map_or(false, |(_, byte)| b"+-".contains(byte)) {
+                        let byte = ops.next().unwrap().1;
+
+                        n += match byte {
+                            b'+' => 1,
+                            b'-' => -1,
+                            _ => unreachable!(),
+                        };
+                    }
+
                     let pointer_value = func_builder.use_var(pointer);
                     let cell_address = func_builder.ins().iadd(memory_address, pointer_value);
                     let cell_value = func_builder
                         .ins()
                         .load(types::I8, mem_flags, cell_address, 0);
-                    let cell_value = func_builder.ins().iadd_imm(cell_value, 1);
-                    func_builder
-                        .ins()
-                        .store(mem_flags, cell_value, cell_address, 0);
-                }
-                b'-' => {
-                    let pointer_value = func_builder.use_var(pointer);
-                    let cell_address = func_builder.ins().iadd(memory_address, pointer_value);
-                    let cell_value = func_builder
-                        .ins()
-                        .load(types::I8, mem_flags, cell_address, 0);
-                    let cell_value = func_builder.ins().iadd_imm(cell_value, -1);
+                    let cell_value = func_builder.ins().iadd_imm(cell_value, n);
                     func_builder
                         .ins()
                         .store(mem_flags, cell_value, cell_address, 0);
@@ -175,8 +183,6 @@ impl Program {
                     func_builder
                         .ins()
                         .brif(result, exit_block, &[result], after_block, &[]);
-                    // func_builder.ins().brnz(result, exit_block, &[result]);
-                    // func_builder.ins().jump(after_block, &[]);
 
                     func_builder.seal_block(after_block);
                     func_builder.switch_to_block(after_block);
@@ -196,33 +202,51 @@ impl Program {
                     func_builder
                         .ins()
                         .brif(result, exit_block, &[result], after_block, &[]);
-                    // func_builder.ins().brnz(result, exit_block, &[result]);
-                    // func_builder.ins().jump(after_block, &[]);
 
                     func_builder.seal_block(after_block);
                     func_builder.switch_to_block(after_block);
                 }
-                b'<' => {
+                b'<' | b'>' => {
+                    let mut n = match byte {
+                        b'>' => 1,
+                        b'<' => -1,
+                        _ => unreachable!(),
+                    };
+
+                    while ops.peek().map_or(false, |(_, byte)| b"<>".contains(byte)) {
+                        let byte = ops.next().unwrap().1;
+                        n += match byte {
+                            b'>' => 1,
+                            b'<' => -1,
+                            _ => unreachable!(),
+                        };
+                    }
+
                     let pointer_value = func_builder.use_var(pointer);
-                    let pointer_minus = func_builder.ins().iadd_imm(pointer_value, -1);
+                    let pointer_plus = func_builder.ins().iadd_imm(pointer_value, n);
 
-                    let cmp = func_builder
-                        .ins()
-                        .icmp_imm(IntCC::SignedLessThan, pointer_minus, 0);
-                    let pointer_value = func_builder.ins().select(cmp, wrapped, pointer_minus);
-
-                    func_builder.def_var(pointer, pointer_value);
-                }
-                b'>' => {
-                    let pointer_value = func_builder.use_var(pointer);
-                    let pointer_plus = func_builder.ins().iadd_imm(pointer_value, 1);
-
-                    let cmp = func_builder.ins().icmp_imm(
-                        IntCC::Equal,
-                        pointer_plus,
-                        i64::try_from(PROGRAM_MEMORY_SIZE).unwrap(),
-                    );
-                    let pointer_value = func_builder.ins().select(cmp, zero, pointer_plus);
+                    let pointer_value = if n > 0 {
+                        let wrapped = func_builder.ins().iadd_imm(
+                            pointer_value,
+                            n - i64::try_from(PROGRAM_MEMORY_SIZE).unwrap(),
+                        );
+                        let cmp = func_builder.ins().icmp_imm(
+                            IntCC::SignedLessThan,
+                            pointer_plus,
+                            i64::try_from(PROGRAM_MEMORY_SIZE).unwrap(),
+                        );
+                        func_builder.ins().select(cmp, pointer_plus, wrapped)
+                    } else {
+                        let wrapped = func_builder.ins().iadd_imm(
+                            pointer_value,
+                            n + i64::try_from(PROGRAM_MEMORY_SIZE).unwrap(),
+                        );
+                        let cmp =
+                            func_builder
+                                .ins()
+                                .icmp_imm(IntCC::SignedLessThan, pointer_value, 0);
+                        func_builder.ins().select(cmp, wrapped, pointer_plus)
+                    };
 
                     func_builder.def_var(pointer, pointer_value);
                 }
@@ -239,8 +263,6 @@ impl Program {
                     func_builder
                         .ins()
                         .brif(cell_value, inner_block, &[], after_block, &[]);
-                    // func_builder.ins().brz(cell_value, after_block, &[]);
-                    // func_builder.ins().jump(inner_block, &[]);
 
                     func_builder.switch_to_block(inner_block);
 
@@ -261,8 +283,6 @@ impl Program {
                     func_builder
                         .ins()
                         .brif(cell_value, inner_block, &[], after_block, &[]);
-                    // func_builder.ins().brz(cell_value, after_block, &[]);
-                    // func_builder.ins().jump(inner_block, &[]);
 
                     func_builder.seal_block(inner_block);
                     func_builder.seal_block(after_block);
